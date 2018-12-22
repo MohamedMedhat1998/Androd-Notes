@@ -1,0 +1,2 @@
+URL or Uniform Resource Locator
+A URL is a URI that identifies a web or network resource.

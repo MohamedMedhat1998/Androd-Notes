@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/35815615/how-to-make-scrollable-tab-in-android
+
+tabs.setTabMode(TabLayout.MODE_SCROLLABLE)

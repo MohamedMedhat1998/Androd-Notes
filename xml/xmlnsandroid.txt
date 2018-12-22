@@ -1,0 +1,3 @@
+xmlns:android
+Defines the Android namespace. 
+This attribute should always be set to "http://schemas.android.com/apk/res/android".

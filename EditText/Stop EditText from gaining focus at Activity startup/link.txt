@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/1555109/stop-edittext-from-gaining-focus-at-activity-startup

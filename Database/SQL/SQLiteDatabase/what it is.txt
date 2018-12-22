@@ -1,0 +1,2 @@
+SQLiteDatabase has methods to create, delete, execute SQL commands,
+and perform other common database management tasks.

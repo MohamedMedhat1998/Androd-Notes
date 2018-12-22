@@ -1,0 +1,1 @@
+Instantiates a layout XML file into its corresponding View objects

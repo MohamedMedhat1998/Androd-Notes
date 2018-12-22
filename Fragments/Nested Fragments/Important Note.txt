@@ -1,0 +1,4 @@
+If you have two fragments inside each other, the child one has special manager can be retreived by
+getChildFragmentManager();
+
+see example for details

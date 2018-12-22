@@ -1,0 +1,5 @@
+bools.xml file stores values for boolean attributes
+
+Example
+
+<bool name="abc">true</bool>

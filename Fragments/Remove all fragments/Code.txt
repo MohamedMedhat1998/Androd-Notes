@@ -1,0 +1,3 @@
+for (Fragment fragment:getSupportFragmentManager().getFragments()) {
+                getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+            }

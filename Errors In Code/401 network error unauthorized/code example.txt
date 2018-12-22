@@ -1,0 +1,9 @@
+URL mUrl = new URL(url);
+        HttpURLConnection urlConnection = (HttpURLConnection) mUrl.openConnection();
+        urlConnection.setRequestMethod("GET");
+        //Authentication part
+        String userCredentials = "username:password";
+        byte[] data = userCredentials.getBytes("UTF-8");
+        String basicAuth = "Basic " + Base64.encodeToString(data, Base64.DEFAULT);
+        urlConnection.setRequestProperty ("Authorization", basicAuth);
+        //---------------------

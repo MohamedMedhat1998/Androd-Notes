@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html -->
+<html lang="en" itemscope="" itemtype="http://schema.org/Article"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+
+
+
+
+<script async="" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/async-ads.js.download"></script><script type="text/javascript" async="" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/linkid.js.download"></script><script async="" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/analytics.js.download"></script><script type="text/javascript" async="" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/recaptcha__en.js.download"></script><script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script>
+
+
+
+
+
+<meta name="xsrf_token" content="pgK_P26W5hmGqOS-tyckrFxSRrluludh5gngimaCJ4s6MTUxNjU1MTYzMjYzMzA4MA">
+
+  
+    <link rel="canonical" href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html">
+  
+
+  
+    <link rel="alternate" href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html" hreflang="en">
+  
+    <link rel="alternate" href="https://developer.android.google.cn/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html" hreflang="en-cn">
+  
+
+  <link rel="alternate" href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html" hreflang="x-default">
+
+
+
+
+<link rel="shortcut icon" href="https://developer.android.com/_static/407853721c/images/android/favicon.png">
+
+<link rel="apple-touch-icon" href="https://developer.android.com/_static/407853721c/images/android/touchicon-180.png">
+
+
+<title>
+
+  ItemTouchHelper.SimpleCallback | Android Developers
+
+</title>
+
+
+
+  <meta itemprop="dateModified" content="2017-10-25T17:01:36.189460">
+
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="./ItemTouchHelper.SimpleCallback _ Android Developers_files/css">
+<link rel="stylesheet" href="./ItemTouchHelper.SimpleCallback _ Android Developers_files/css(1)" title="roboto">
+<link rel="stylesheet" href="./ItemTouchHelper.SimpleCallback _ Android Developers_files/dac-devsite.css">
+
+
+
+
+
+
+
+<link href="./ItemTouchHelper.SimpleCallback _ Android Developers_files/default.css" rel="stylesheet" type="text/css">
+<!-- JAVASCRIPT -->
+<script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/android_3p-bundle.js.download" type="text/javascript"></script>
+<script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/script_foot_closure_android.js.download"></script>
+<script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/script_foot_android.js.download"></script>
+
+<script type="text/javascript">
+  var toRoot = '/';
+  devsite.permissions.init({"f62218c009ec029abef196bba5aa34cf": true, "098dafe57affddc137df300142652cfd": false, "8e03e230de0bd8a6fe173fdf172e8b3f": true, "cb025a64a50094835616312f4774a53d": true, "51470233c56fc1fde50f00b73c52b216": false, "d169d485cf24243a263783dbe42029b1": true, "039e5d84b87fd75807ffb37b7f1bbf2c": true, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true});
+
+  var replaceBlog = false;
+  var replaceYouTube = false;
+  var siteDefaultLocale = 'en';
+
+  var ANDROID_LANGUAGES = [
+      'id','de','en','es','es-419','fr','pt-br','vi','tr','ru','th','ja','zh-cn','zh-tw','ko'
+  ];
+</script>
+<script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/docs.js.download" type="text/javascript"></script>
+
+
+<script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/jsapi" type="text/javascript"></script><link type="text/css" href="./ItemTouchHelper.SimpleCallback _ Android Developers_files/default+en.css" rel="stylesheet"><link type="text/css" href="./ItemTouchHelper.SimpleCallback _ Android Developers_files/default(1).css" rel="stylesheet"><script type="text/javascript" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/default+en.I.js.download"></script><style type="text/css">.gsc-control-cse{font-family:Arial, sans-serif;border-color:#ECEFF1;background-color:#ECEFF1}.gsc-control-cse .gsc-table-result{font-family:Arial, sans-serif}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#D9D9D9}input.gsc-search-button,input.gsc-search-button:hover,input.gsc-search-button:focus{border-color:#2F5BB7;background-color:#357AE8;background-image:none;filter:none}.gsc-tabHeader.gsc-tabhInactive{border-color:#CCCCCC;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhActive{border-color:#CCCCCC;border-bottom-color:#FFFFFF;background-color:#FFFFFF}.gsc-tabsArea{border-color:#CCCCCC}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#ECEFF1;background-color:#ECEFF1}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#ECEFF1;background-color:#ECEFF1}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#039BE5}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#039BE5}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#039BE5}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#039BE5}.gsc-cursor-page{color:#039BE5}a.gsc-trailing-more-results:link{color:#039BE5}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#333333}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#333333}.gs-webResult div.gs-visibleUrl-short{color:#333333}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#ECEFF1}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#CCCCCC;background-color:#ECEFF1;color:#039BE5}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#039BE5}.gsc-webResult.gsc-result.gsc-promotion{border-color:#F6F6F6;background-color:#F6F6F6}.gsc-completion-title{color:#039BE5}.gsc-completion-snippet{color:#333333}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#1155CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#1155CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#1155CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#1155CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#666666}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#039BE5}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:5.5px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+
+<body class="gc-documentation             api apilevel-24.1.0                            develop               reference                           dac-nav-open">
+  
+
+
+  
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Reference&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-49880327-2&quot;}">
+  
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Reference&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-5831155-1&quot;}">
+  
+
+
+
+  
+  
+    <script>
+      var dataLayer = [{"freeTrialEligibleUser": "False", "userCountry": "EG", "language": {"requested": "en", "served": "en"}, "projectName": "Reference", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script>
+  
+
+
+
+  
+  <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#top" id="skip-to-main">Skip to content</a>
+  <header id="header-wrapper">
+    <div class="dac-header" id="header">
+      <div class="dac-header-inner">
+        
+        <a class="dac-nav-toggle" data-dac-toggle-nav="" href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html" title="Open navigation">
+          <span class="dac-nav-hamburger">
+            <span class="dac-nav-hamburger-top"></span>
+            <span class="dac-nav-hamburger-mid"></span>
+            <span class="dac-nav-hamburger-bot"></span>
+          </span>
+        </a>
+        
+        <a class="dac-header-logo" href="https://developer.android.com/index.html">
+          <img class="dac-header-logo-image" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/android_logo.png" srcset="https://developer.android.com/static/images/android_logo_2x.png 2x" width="32" height="36" alt="Android"> Developers</a>
+        <ul class="dac-header-tabs">
+          <li>
+            <a class="dac-header-tab" href="https://developer.android.com/design/index.html" zh-tw-lang="設計" zh-cn-lang="设计" ru-lang="Проектирование" ko-lang="디자인" ja-lang="設計" es-lang="Diseñar">
+              
+              Design</a>
+          </li>
+          <li>
+            <a class="dac-header-tab selected" href="https://developer.android.com/develop/index.html" zh-tw-lang="開發" zh-cn-lang="开发" ru-lang="Разработка" ko-lang="개발" ja-lang="開発" es-lang="Desarrollar">
+              
+              Develop</a>
+          </li>
+          <li>
+            <a class="dac-header-tab" href="https://developer.android.com/distribute/index.html" zh-tw-lang="發佈" zh-cn-lang="分发" ru-lang="Распространение" ko-lang="배포" ja-lang="配布" es-lang="Distribuir">
+              
+              Distribute</a>
+          </li>
+        </ul>
+
+
+        
+
+        <a class="dac-header-console-btn gc-analytics-event" href="https://play.google.com/apps/publish/" data-category="User" data-action="Console" data-label="Clicked">
+          
+          <img src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/developer-console-icon.svg" width="18" height="19" alt="">Play Console</a>
+        
+
+<form data-search="" class="dac-header-search">
+  <button class="dac-header-search-close" data-search-close="">
+    <i class="dac-sprite dac-back-arrow"></i>
+  </button>
+
+  <div class="dac-header-search-inner">
+    <i class="dac-sprite dac-search-white dac-header-search-icon"></i>
+    
+    <input id="search_autocomplete" type="text" value="" autocomplete="off" name="q" class="dac-header-search-input" placeholder="Search">
+    <button class="dac-header-search-clear dac-hidden" data-search-clear="">
+      <i class="dac-sprite dac-close-black"></i>
+    </button>
+  </div>
+</form>
+
+        
+      </div><!--/.header-wrap.wrap-->
+    </div><!--/.header-->
+
+    
+
+<div id="search-results" class="dac-search-results">
+  <div id="dac-search-results-history" class="dac-search-results-history">
+    <div class="wrap dac-search-results-history-wrap">
+      <div class="cols">
+        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
+          
+          <h2 style="padding-bottom: 0px;">Most visited</h2><hr>
+          <div class="resource-flow-layout cols" data-history-query="history:most/visited" data-maxresults="3" data-cardsizes="18x2"><div class="resource-flow-page"><div class="col-6of6"><a class="resource resource-card resource-card-18x2 resource-card-develop" href="https://developer.android.com/guide/topics/manifest/activity-element.html"><div class="card-bg" style="background-image: url(&quot;/static/images/resource-card-default-android.jpg&quot;);"></div><div class="card-info"><div class="section">api guides</div><div class="title">&lt;activity&gt;</div><div class="description ellipsis" style="height: 20px;"><div class="text" style="height: auto;">Declares an activity (an Activity subclass) that implements part of the application's visual user interface. All activities must be represented by {@code } elements in the manifest file. Any that are not declared there will not be seen by the system…</div></div></div></a></div><div class="col-6of6"><a class="resource resource-card resource-card-18x2 resource-card-develop" href="https://developer.android.com/guide/topics/manifest/meta-data-element.html"><div class="card-bg" style="background-image: url(&quot;/static/images/resource-card-default-android.jpg&quot;);"></div><div class="card-info"><div class="section">api guides</div><div class="title">&lt;meta-data&gt;</div><div class="description ellipsis" style="height: 20px;"><div class="text" style="height: auto;">A name-value pair for an item of additional, arbitrary data that can be supplied to the parent component. A component element can contain any number of Bundle object and made available to the component as the metaData field. Ordinary values are specified…</div></div></div></a></div><div class="col-6of6"><a class="resource resource-card resource-card-18x2 resource-card-develop" href="https://developer.android.com/guide/components/activities/activity-lifecycle.html"><div class="card-bg" style="background-image: url(&quot;/images/activity_lifecycle.png&quot;);"></div><div class="card-info"><div class="section">api guides</div><div class="title">The Activity Lifecycle</div><div class="description ellipsis" style="height: 20px;"><div class="text" style="height: auto;">An Activity is an application component that provides a screen with which users can interact in order to do something, such as dial the phone, take a photo, send an email, or view a map. Each activity is given a window in which to draw its user interface…</div></div></div></a></div></div></div>
+        </div>
+
+        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
+          
+          <h2 style="padding-bottom: 0px;">Recently visited</h2><hr>
+          <div class="resource-flow-layout cols" data-history-query="history:recent" data-allow-duplicates="true" data-maxresults="3" data-cardsizes="18x2"><div class="resource-flow-page"><div class="col-6of6"><a class="resource resource-card resource-card-18x2 resource-card-develop" href="https://developer.android.com/guide/topics/manifest/activity-element.html"><div class="card-bg" style="background-image: url(&quot;/static/images/resource-card-default-android.jpg&quot;);"></div><div class="card-info"><div class="section">api guides</div><div class="title">&lt;activity&gt;</div><div class="description ellipsis" style="height: 20px;"><div class="text" style="height: auto;">Declares an activity (an Activity subclass) that implements part of the application's visual user interface. All activities must be represented by {@code } elements in the manifest file. Any that are not declared there will not be seen by the system…</div></div></div></a></div><div class="col-6of6"><a class="resource resource-card resource-card-18x2 resource-card-develop" href="https://developer.android.com/guide/topics/ui/settings.html"><div class="card-bg" style="background-image: url(&quot;/images/ui/settings/settings.png&quot;);"></div><div class="card-info"><div class="section">api guides</div><div class="title">Settings</div><div class="description ellipsis" style="height: 20px;"><div class="text" style="height: auto;">Applications often include settings that allow users to modify app features and behaviors. For example, some apps allow users to specify whether notifications are enabled or specify how often the application syncs data with the cloud. If you want to provide…</div></div></div></a></div><div class="col-6of6"><a class="resource resource-card resource-card-18x2 resource-card-develop" href="https://developer.android.com/guide/components/activities/tasks-and-back-stack.html"><div class="card-bg" style="background-image: url(&quot;/images/fundamentals/diagram_backstack.png&quot;);"></div><div class="card-info"><div class="section">api guides</div><div class="title">Tasks and Back Stack</div><div class="description ellipsis" style="height: 20px;"><div class="text" style="height: auto;">An app usually contains multiple activities . Each activity should be designed around a specific kind of action the user can perform and can start other activities. For example, an email app might have one activity to show a list of new…</div></div></div></a></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dac-search-results-content" class="dac-search-results-content">
+    <div class="dac-search-results-metadata wrap">
+      <div class="dac-search-results-for">
+          <h2 style="padding-bottom: 0px;">
+          
+          Results for <span id="search-results-for"></span>
+          </h2><hr>
+      </div>
+
+      <div id="dac-search-results-hero"></div>
+
+      <div class="dac-search-results-hero cols">
+        <div id="dac-search-results-reference" class="col-6of6 col-tablet-2of2 col-mobile-1of1">
+          <div class="suggest-card reference no-display">
+            <ul class="dac-search-results-reference">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="cols dac-search-results-cse">
+        <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/cse.js.download" async=""></script>
+        <div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr" style="visibility: hidden;"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8" style="display: none;"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 " style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" dir="ltr" spellcheck="false" placeholder="Custom Search" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; outline: none; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><input type="image" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/search_box_icon.png" class="gsc-search-button gsc-search-button-v2" title="search"></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table><table cellspacing="0" cellpadding="0" class="gsc-branding"><tbody><tr><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img"><img src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/googlelogo_grey_46x15dp.png" class="gsc-branding-img" srcset="https://www.google.com/cse/static/images/2x/googlelogo_grey_46x15dp.png 2x"></td></tr></tbody></table></form><div class="gsc-results-wrapper-nooverlay"><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </header>
+
+  <a name="navigation" tabindex="0" class="nav-start-marker">navigation</a>
+  <nav class="dac-nav">
+    <div class="dac-nav-dimmer" data-dac-toggle-nav=""></div>
+    <div class="dac-nav-sidebar" data-swap="" data-dynamic="false" data-transition-speed="300" data-dac-nav="">
+      <div data-swap-container="">
+        
+        <a class="dac-nav-back-button dac-swap-section dac-up dac-active" tabindex="0" data-swap-button="">
+          
+          
+          <i class="dac-sprite dac-nav-back"></i> <span class="dac-nav-back-title">
+          
+          Reference</span>
+        </a>
+
+        <div class="dac-nav-sub dac-swap-section dac-right dac-active" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          
+          
+            
+              
+              <button data-fullscreen="" class="dac-nav-fullscreen">
+                <i class="dac-sprite dac-fullscreen"></i>
+              </button>
+              <script>$('[data-fullscreen]').dacFullscreen();</script>
+              <div id="devdoc-nav">
+                <div id="api-nav-header">
+                  <div id="api-level-toggle" style="display: none;">
+                    <label for="apiLevelCheckbox" class="disabled" title="Select your target API level to dim unavailable APIs">
+                        
+                        API:
+                    </label>
+                    <div class="select-wrapper">
+                      <select id="apiLevelSelector"><option value="27" selected="true">27</option><option value="26">26</option><option value="25">25</option><option value="24">24</option><option value="23">23</option><option value="22">22</option><option value="21">21</option><option value="20">20</option><option value="19">19</option><option value="18">18</option><option value="17">17</option><option value="16">16</option><option value="15">15</option><option value="14">14</option><option value="13">13</option><option value="12">12</option><option value="11">11</option><option value="10">10</option><option value="9">9</option><option value="8">8</option><option value="7">7</option><option value="6">6</option><option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select>
+                    </div>
+                  </div><!-- end toggle -->
+                  <div id="api-nav-title">
+                    <select id="reference-selector">
+                      
+                      <option value="android">Android Platform</option>
+                      
+                      
+                      <option value="android/support">Android Support Library</option>
+                      
+                      
+                      <option value="android/arch">Architecture Components</option>
+                      
+                      <option value="android/support/constraint">Constraint Library</option>
+                      
+                      
+                      <option value="com/android/billingclient">Play Billing Library</option>
+                      
+                      <option value="android/support/test">Test Support Library</option>
+                      
+                      <option value="android/support/wearable">Wearable Library</option>
+                    </select>
+                  </div>
+                </div><!-- end nav header -->
+                <script>
+                  buildApiLevelSelector();
+                  initReferenceSelector();
+                </script>
+                <div class="dac-reference-nav" data-reference-tree="">
+                  <ul class="dac-reference-nav-list" data-reference-namespaces="">
+                    <li class="api no-toggle"><a href="https://developer.android.com/reference/android/support/classes.html">Class Index</a></li><li class="api no-toggle"><a href="https://developer.android.com/reference/android/support/packages.html">Package Index</a></li><li class="api apilevel-25.4.0"><a href="https://developer.android.com/reference/android/support/animation/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.animation</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/annotation/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.annotation</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/app/recommendation/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.app.recommendation</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/compat/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.compat</a></li><li class="api apilevel-27.0.0"><a href="https://developer.android.com/reference/android/support/content/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.content</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/coreui/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.coreui</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/coreutils/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.coreutils</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/customtabs/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.customtabs</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/design/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.design</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/design/widget/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.design.widget</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/dynamicanimation/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.dynamicanimation</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/exifinterface/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.exifinterface</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/fragment/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.fragment</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/graphics/drawable/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.graphics.drawable</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/graphics/drawable/animated/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.graphics.drawable.animated</a></li><li class="api apilevel-25.1.0"><a href="https://developer.android.com/reference/android/support/media/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.media</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/media/tv/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.media.tv</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/mediacompat/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.mediacompat</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/mediacompat/testlib/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.mediacompat.testlib</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/percent/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.percent</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/recommendation/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.recommendation</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/text/emoji/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.text.emoji</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/text/emoji/appcompat/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.text.emoji.appcompat</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/text/emoji/bundled/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.text.emoji.bundled</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/text/emoji/widget/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.text.emoji.widget</a></li><li class="api apilevel-25.1.0"><a href="https://developer.android.com/reference/android/support/transition/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.transition</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v13/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v13</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v13/app/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v13.app</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v13/view/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v13.view</a></li><li class="api apilevel-25.1.0"><a href="https://developer.android.com/reference/android/support/v13/view/inputmethod/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v13.view.inputmethod</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v14/preference/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v14.preference</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v17/leanback/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/app/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.app</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/database/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.database</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/graphics/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.graphics</a></li><li class="api apilevel-25.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/media/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.media</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/system/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.system</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/widget/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.widget</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v17/leanback/widget/picker/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.leanback.widget.picker</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v17/preference/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v17.preference</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v4/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/accessibilityservice/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.accessibilityservice</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/app/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.app</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/content/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.content</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v4/content/pm/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.content.pm</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v4/content/res/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.content.res</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/database/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.database</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/graphics/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.graphics</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/graphics/drawable/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.graphics.drawable</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/hardware/display/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.hardware.display</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.hardware.fingerprint</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/v4/math/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.math</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/media/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.media</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/v4/media/app/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.media.app</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/media/session/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.media.session</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/net/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.net</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/os/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.os</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/print/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.print</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/provider/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.provider</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/text/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.text</a></li><li class="api apilevel-25.1.0"><a href="https://developer.android.com/reference/android/support/v4/text/util/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.text.util</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/util/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.util</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/view/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.view</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/view/accessibility/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.view.accessibility</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/view/animation/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.view.animation</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v4/widget/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v4.widget</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/app/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.app</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/appcompat/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.appcompat</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v7/cardview/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.cardview</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/content/res/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.content.res</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/graphics/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.graphics</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/graphics/drawable/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.graphics.drawable</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v7/gridlayout/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.gridlayout</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/media/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.media</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v7/mediarouter/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.mediarouter</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/v7/palette/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.palette</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/preference/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.preference</a></li><li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/recyclerview/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.recyclerview</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/util/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.util</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/view/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.view</a></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.widget</a></li><li class="api apilevel-24.1.0 selected"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/package-summary.html" class="dac-reference-nav-toggle">android.support.v7.widget.helper</a><ul data-reference-resources="" class="dac-reference-nav-resources" style="display: block;"><li><a href="https://developer.android.com/reference/android/support/v7/widget/helper/package-summary.html" class="dac-reference-nav-resource">Overview</a></li>
+    
+    
+    <li><h2 tabindex="0" class="dac-reference-nav-toggle dac-closed">Interfaces</h2>
+      <ul class="dac-reference-nav-resources">
+          <li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.ViewDropHandler.html" class="dac-reference-nav-resource">ItemTouchHelper.ViewDropHandler</a></li>
+          <li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchUIUtil.html" class="dac-reference-nav-resource">ItemTouchUIUtil</a></li>
+      </ul>
+    </li>
+    
+    <li><h2 tabindex="0" class="dac-reference-nav-toggle">Classes</h2>
+      <ul class="dac-reference-nav-resources" style="display: block;">
+          <li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html" class="dac-reference-nav-resource">ItemTouchHelper</a></li>
+          <li class="api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html" class="dac-reference-nav-resource">ItemTouchHelper.Callback</a></li>
+          <li class="selected api apilevel-24.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html" class="dac-reference-nav-resource">ItemTouchHelper.SimpleCallback</a></li>
+      </ul>
+    </li>
+    
+    
+    
+  </ul></li><li class="api apilevel-22.1.0"><a href="https://developer.android.com/reference/android/support/v7/widget/util/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.v7.widget.util</a></li><li class="api apilevel-"><a href="https://developer.android.com/reference/android/support/wear/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.wear</a></li><li class="api apilevel-27.0.0"><a href="https://developer.android.com/reference/android/support/wear/ambient/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.wear.ambient</a></li><li class="api apilevel-27.0.0"><a href="https://developer.android.com/reference/android/support/wear/utils/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.wear.utils</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/wear/widget/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.wear.widget</a></li><li class="api apilevel-26.1.0"><a href="https://developer.android.com/reference/android/support/wear/widget/drawer/package-summary.html" class="dac-reference-nav-toggle dac-closed">android.support.wear.widget.drawer</a></li>
+                  </ul>
+                </div>
+              </div>
+            
+          
+        </div>
+        
+        
+          
+
+
+
+<ul id="dac-main-navigation" class="dac-nav-list dac-swap-section dac-left" tabindex="0">
+  <li class="dac-nav-item home">
+    
+    <a class="dac-nav-link" href="https://developer.android.com/index.html">Home</a>
+    <i class="dac-sprite dac-expand-more-black dac-nav-sub-slider" tabindex="0"></i>
+    <ul class="dac-nav-secondary about" style="display: none;">
+      <li class="dac-nav-item versions">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/about/versions/o/index.html">Android</a>
+      </li>
+      <li class="dac-nav-item wear">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/wear/index.html">Wear</a>
+      </li>
+      <li class="dac-nav-item tv">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/tv/index.html">TV</a>
+      </li>
+      <li class="dac-nav-item auto">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/auto/index.html">Auto</a>
+      </li>
+      
+      <li class="dac-nav-item chrome-os">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/chrome-os/index.html">Chrome OS</a>
+      </li>
+      
+      <li class="dac-nav-item things">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/things/index.html">Things</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dac-nav-item design">
+    <a class="dac-nav-link" href="https://developer.android.com/design/index.html" zh-tw-lang="設計" zh-cn-lang="设计" ru-lang="Проектирование" ko-lang="디자인" ja-lang="設計" es-lang="Diseñar">
+      
+      Design</a>
+  </li>
+  <li class="dac-nav-item develop">
+    <a class="dac-nav-link has-subnav" href="https://developer.android.com/develop/index.html" zh-tw-lang="開發" zh-cn-lang="开发" ru-lang="Разработка" ko-lang="개발" ja-lang="開発" es-lang="Desarrollar">
+      
+      Develop</a>
+    <i class="dac-sprite dac-nav-sub-slider dac-expand-less-black" tabindex="0"></i>
+    <ul class="dac-nav-secondary develop">
+      <li class="dac-nav-item training">
+        <a class="dac-nav-link" href="https://developer.android.com/training/index.html" zh-tw-lang="訓練課程" zh-cn-lang="培训" ru-lang="Курсы" ko-lang="교육" ja-lang="トレーニング" es-lang="Capacitación">
+            
+            Training</a>
+      </li>
+      <li class="dac-nav-item guide">
+        <a class="dac-nav-link" href="https://developer.android.com/guide/index.html" zh-tw-lang="API 指南" zh-cn-lang="API 指南" ru-lang="Руководства по API" ko-lang="API 가이드" ja-lang="API ガイド" es-lang="Guías de la API">
+          
+          API Guides</a>
+      </li>
+      <li class="dac-nav-item reference">
+        <a class="dac-nav-link selected" href="https://developer.android.com/reference/packages.html" zh-tw-lang="參考資源" zh-cn-lang="参考" ru-lang="Справочник" ko-lang="참조문서" ja-lang="リファレンス" es-lang="Referencia">
+          
+          Reference</a><span class="dac-nav-link-forward" tabindex="0"><i class="dac-sprite dac-nav-forward"></i></span>
+      </li>
+      <li class="dac-nav-item samples">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/samples/index.html">Samples</a>
+      </li>
+      <li class="dac-nav-item libraries">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/topic/libraries/index.html">Libraries</a></li>
+      <li class="dac-nav-item studio">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/studio/index.html">Android Studio</a></li>
+      <li class="dac-nav-item ndk">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/ndk/index.html">Android NDK</a></li>
+      <li class="dac-nav-item google">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/google/index.html">Google Services</a>
+      </li>
+      <li class="dac-nav-item quality-guidelines">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/develop/quality-guidelines/index.html">Quality Guidelines</a>
+      </li>
+      <li class="dac-nav-item kotlin">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/kotlin/index.html">Kotlin</a>
+       </li>
+    </ul>
+  </li>
+  <li class="dac-nav-item distribute">
+    <a class="dac-nav-link" href="https://developer.android.com/distribute/index.html" zh-tw-lang="發佈" zh-cn-lang="分发" ru-lang="Распространение" ko-lang="배포" ja-lang="配布" de-lang="Vertrieb" es-lang="Distribuir" es-419-lang="Distribuye" fr-lang="Distribuer" id-lang="Distribusikan" pt-br-lang="Distribuição" th-lang="จัดจำหน่าย" tr-lang="Dağıtma" vi-lang="Phân phối">
+      
+      Distribute</a>
+    <i class="dac-sprite dac-expand-more-black dac-nav-sub-slider" tabindex="0"></i>
+    <ul class="dac-nav-secondary distribute" style="display: none;">
+      <li class="dac-nav-item google-play">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/distribute/google-play/index.html">Google Play</a>
+      </li>
+      <li class="dac-nav-item console">
+        
+        <a class="dac-nav-link" href="https://developer.android.com/distribute/console/index.html">Play Console</a>
+      </li>
+      <li class="dac-nav-item best-practices">
+        <a class="dac-nav-link" href="https://developer.android.com/distribute/best-practices/index.html" es-419-lang="Recomendaciones" fr-lang="Bonnes pratiques" id-lang="Praktik terbaik" ja-lang="おすすめの方法" ko-lang="권장사항" pt-br-lang="Práticas recomendadas" ru-lang="Рекомендации" th-lang="จัดจำหน่าย" tr-lang="En iyi uygulamalar" vi-lang="Các phương pháp hay nhất" zh-cn-lang="最佳做法" zh-tw-lang="最佳做法">
+          
+          Best practices</a>
+      </li>
+      <li class="dac-nav-item marketing-tools">
+        <a class="dac-nav-link" href="https://developer.android.com/distribute/marketing-tools/index.html" de-lang="Marketing-Tools" es-419-lang="Herramientas de marketing" fr-lang="Outils marketing" id-lang="Fitur pemasaran" ja-lang="マーケティング ツール" ko-lang="마케팅 도구" pt-br-lang="Ferramentas de marketing" ru-lang="Маркетинговые инструменты" th-lang="เครื่องมือการตลาด" tr-lang="Pazarlama araçları" vi-lang="Công cụ tiếp thị" zh-cn-lang="营销工具" zh-tw-lang="行銷工具">
+          
+          Marketing tools</a>
+      </li>
+      <li class="dac-nav-item policy-center">
+        
+        <a class="dac-nav-link" href="https://play.google.com/about/developer-content-policy/" target="_blank">Policy center</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dac-nav-item stories">
+    
+    <a class="dac-nav-link" href="https://developer.android.com/stories/index.html">Stories</a>
+  </li>
+  
+</ul>
+
+        
+      </div>
+    </div>
+  </nav>
+
+  <a name="top" tabindex="0"></a>
+  
+  <div class="wrap clearfix" id="body-content">
+  
+    
+      
+    
+    <div class="jd-descr " itemprop="articleBody">
+      <div id="doc-api-level" class="24.1.0" style="display:none"></div>
+
+
+
+
+<div id="naMessage"></div>
+
+<div id="api-info-block">
+<div class="api-level">
+  
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a>
+  
+    <br>
+  belongs to Maven artifact com.android.support:recyclerview-v7:27.0.0
+  
+  
+  
+  
+
+</div>
+
+
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+Summary:
+
+
+
+
+
+
+  <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#inhconstants">Inherited Constants</a>
+  
+
+
+
+
+  | <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#pubctors">Ctors</a>
+  
+
+
+
+  | <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#pubmethods">Methods</a>
+  
+
+
+
+  | <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#inhmethods">Inherited Methods</a>
+
+| <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+</div><!-- end api-info-block -->
+
+<div class="api apilevel-24.1.0" id="jd-content">
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<h1 class="api-title">ItemTouchHelper.SimpleCallback</h1>
+<p>
+<code class="api-signature">
+  public
+  static
+  
+  abstract
+  class
+  ItemTouchHelper.SimpleCallback
+</code>
+<br>
+
+
+<code class="api-signature">
+  
+  
+  
+</code>
+
+<code class="api-signature">
+  
+    extends <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html">ItemTouchHelper.Callback</a>
+  
+  
+  
+</code>
+
+<code class="api-signature">
+  
+  
+  
+</code>
+
+</p><table class="jd-inheritance-table">
+
+
+  <tbody><tr>
+    
+    <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object
+    </td>
+  </tr>
+  
+
+  <tr>
+    
+      <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td>
+    
+    <td colspan="2" class="jd-inheritance-class-cell"><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html">android.support.v7.widget.helper.ItemTouchHelper.Callback</a>
+    </td>
+  </tr>
+  
+
+  <tr>
+    
+      <td class="jd-inheritance-space">&nbsp;</td>
+    
+      <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td>
+    
+    <td colspan="1" class="jd-inheritance-class-cell">android.support.v7.widget.helper.ItemTouchHelper.SimpleCallback
+    </td>
+  </tr>
+  
+
+</tbody></table>
+  
+
+    
+
+<br><hr>
+
+
+  <p>A simple wrapper to the default Callback which you can construct with drag and swipe
+ directions and this class will handle the flag callbacks. You should still override onMove
+ or
+ onSwiped depending on your use case.
+
+ </p><pre class="prettyprint"><span class="pln">&nbsp;</span><span class="typ">ItemTouchHelper</span><span class="pln"> mIth </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ItemTouchHelper</span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ItemTouchHelper</span><span class="pun">.</span><span class="typ">SimpleCallback</span><span class="pun">(</span><span class="typ">ItemTouchHelper</span><span class="pun">.</span><span class="pln">UP </span><span class="pun">|</span><span class="pln"> </span><span class="typ">ItemTouchHelper</span><span class="pun">.</span><span class="pln">DOWN</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="typ">ItemTouchHelper</span><span class="pun">.</span><span class="pln">LEFT</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">abstract</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> onMove</span><span class="pun">(</span><span class="typ">RecyclerView</span><span class="pln"> recyclerView</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="typ">ViewHolder</span><span class="pln"> viewHolder</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ViewHolder</span><span class="pln"> target</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> fromPos </span><span class="pun">=</span><span class="pln"> viewHolder</span><span class="pun">.</span><span class="pln">getAdapterPosition</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> toPos </span><span class="pun">=</span><span class="pln"> target</span><span class="pun">.</span><span class="pln">getAdapterPosition</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">// move item in `fromPos` to `toPos` in adapter.</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="com">// true if moved, false otherwise</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onSwiped</span><span class="pun">(</span><span class="typ">ViewHolder</span><span class="pln"> viewHolder</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> direction</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">// remove from adapter</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">}</span><span class="pln"><br>&nbsp;</span><span class="pun">});</span><span class="pln"><br>&nbsp;</span></pre>
+<p></p>
+
+
+
+
+
+
+
+
+
+<h2 class="api-section" style="padding-bottom: 0px;">Summary</h2><hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="inhconstants" class="responsive constants inhtable">
+<tbody><tr><th><h3>Inherited constants</h3></th></tr>
+
+
+  <tr class="api apilevel-">
+  <td>
+  <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" id="inherited-constants-android.support.v7.widget.helper.ItemTouchHelper.Callback" class="jd-expando-trigger closed" onclick="return toggleInherited(this, null)">
+    <img id="inherited-constants-android.support.v7.widget.helper.ItemTouchHelper.Callback-trigger" class="jd-expando-trigger-img" height="34" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/disclosure_down.png">
+  </a>From
+  class
+  <code>
+    <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html">android.support.v7.widget.helper.ItemTouchHelper.Callback</a>
+  </code>
+  <div id="inherited-constants-android.support.v7.widget.helper.ItemTouchHelper.Callback">
+    <div id="inherited-constants-android.support.v7.widget.helper.ItemTouchHelper.Callback-list" class="jd-inheritedlinks">
+    </div>
+    <div id="inherited-constants-android.support.v7.widget.helper.ItemTouchHelper.Callback-summary" style="display: none;">
+      <table class="jd-sumtable-expando responsive">
+      
+
+    
+    <tbody><tr class="api apilevel-24.1.0">
+        <td><code>int</code></td>
+        <td width="100%">
+          <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#DEFAULT_DRAG_ANIMATION_DURATION">DEFAULT_DRAG_ANIMATION_DURATION</a></code>
+          <p>
+          
+    
+</p>
+        </td>
+    </tr>
+    
+    
+    <tr class="api apilevel-24.1.0">
+        <td><code>int</code></td>
+        <td width="100%">
+          <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#DEFAULT_SWIPE_ANIMATION_DURATION">DEFAULT_SWIPE_ANIMATION_DURATION</a></code>
+          <p>
+          
+    
+</p>
+        </td>
+    </tr>
+    
+    
+</tbody></table>
+    </div>
+  </div>
+  </td></tr>
+
+
+
+
+</tbody></table>
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="responsive constructors">
+<tbody><tr><th colspan="2"><h3>Public constructors</h3></th></tr>
+
+
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#ItemTouchHelper.SimpleCallback(int, int)">ItemTouchHelper.SimpleCallback</a>(int dragDirs, int swipeDirs)
+      </code>
+      
+        <p>Creates a Callback for the given drag and swipe allowance.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+
+</tbody></table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="responsive methods">
+<tbody><tr><th colspan="2"><h3>Public methods</h3></th></tr>
+
+
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#getDragDirs(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">getDragDirs</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Returns the drag directions for the provided ViewHolder.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#getMovementFlags(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">getMovementFlags</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Should return a composite flag which defines the enabled move directions in each state
+ (idle, swiping, dragging).
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#getSwipeDirs(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">getSwipeDirs</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Returns the swipe directions for the provided ViewHolder.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#setDefaultDragDirs(int)">setDefaultDragDirs</a>(int defaultDragDirs)
+      </code>
+      
+        <p>Updates the default drag directions.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#setDefaultSwipeDirs(int)">setDefaultSwipeDirs</a>(int defaultSwipeDirs)
+      </code>
+      
+        <p>Updates the default swipe directions.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+
+</tbody></table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="methods inhtable">
+<tbody><tr><th><h3>Inherited methods</h3></th></tr>
+
+
+<tr class="api apilevel-">
+<td colspan="2">
+  <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" id="inherited-methods-android.support.v7.widget.helper.ItemTouchHelper.Callback" class="jd-expando-trigger closed" onclick="return toggleInherited(this, null)">
+    <img id="inherited-methods-android.support.v7.widget.helper.ItemTouchHelper.Callback-trigger" class="jd-expando-trigger-img" height="34" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/disclosure_down.png">
+  </a>From
+class
+<code>
+  
+    <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html">android.support.v7.widget.helper.ItemTouchHelper.Callback</a>
+  
+</code>
+<div id="inherited-methods-android.support.v7.widget.helper.ItemTouchHelper.Callback">
+  <div id="inherited-methods-android.support.v7.widget.helper.ItemTouchHelper.Callback-list" class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.support.v7.widget.helper.ItemTouchHelper.Callback-summary" style="display: none;">
+    <table class="jd-sumtable-expando responsive">
+      
+
+
+  
+  <tbody><tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#canDropOver(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, android.support.v7.widget.RecyclerView.ViewHolder)">canDropOver</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> current, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> target)
+      </code>
+      
+        <p>Return true if the current ViewHolder can be dropped over the the target ViewHolder.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a></code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#chooseDropTarget(android.support.v7.widget.RecyclerView.ViewHolder, java.util.List&lt;android.support.v7.widget.RecyclerView.ViewHolder&gt;, int, int)">chooseDropTarget</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> selected, List&lt;<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a>&gt; dropTargets, int curX, int curY)
+      </code>
+      
+        <p>Called by ItemTouchHelper to select a drop target from the list of ViewHolders that
+ are under the dragged View.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#clearView(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">clearView</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Called by the ItemTouchHelper when the user interaction with an element is over and it
+ also completed its animation.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#convertToAbsoluteDirection(int, int)">convertToAbsoluteDirection</a>(int flags, int layoutDirection)
+      </code>
+      
+        <p>Converts a given set of flags to absolution direction which means <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#START">START</a></code> and
+ <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#END">END</a></code> are replaced with <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#LEFT">LEFT</a></code> and <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#RIGHT">RIGHT</a></code> depending on the layout
+ direction.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        static
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#convertToRelativeDirection(int, int)">convertToRelativeDirection</a>(int flags, int layoutDirection)
+      </code>
+      
+        <p>Replaces a movement direction with its relative version by taking layout direction into
+ account.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        long</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getAnimationDuration(android.support.v7.widget.RecyclerView, int, float, float)">getAnimationDuration</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, int animationType, float animateDx, float animateDy)
+      </code>
+      
+        <p>Called by the ItemTouchHelper when user action finished on a ViewHolder and now the View
+ will be animated to its final position.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getBoundingBoxMargin()">getBoundingBoxMargin</a>()
+      </code>
+      
+        <p>When finding views under a dragged view, by default, ItemTouchHelper searches for views
+ that overlap with the dragged View.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        static
+        
+        
+        <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchUIUtil.html">ItemTouchUIUtil</a></code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getDefaultUIUtil()">getDefaultUIUtil</a>()
+      </code>
+      
+        <p>Returns the <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchUIUtil.html">ItemTouchUIUtil</a></code> that is used by the <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html">ItemTouchHelper.Callback</a></code> class for
+ visual
+ changes on Views in response to user interactions.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        float</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getMoveThreshold(android.support.v7.widget.RecyclerView.ViewHolder)">getMoveThreshold</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Returns the fraction that the user should move the View to be considered as it is
+ dragged.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        abstract
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getMovementFlags(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">getMovementFlags</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Should return a composite flag which defines the enabled move directions in each state
+ (idle, swiping, dragging).
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        float</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getSwipeEscapeVelocity(float)">getSwipeEscapeVelocity</a>(float defaultValue)
+      </code>
+      
+        <p>Defines the minimum velocity which will be considered as a swipe action by the user.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        float</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getSwipeThreshold(android.support.v7.widget.RecyclerView.ViewHolder)">getSwipeThreshold</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)
+      </code>
+      
+        <p>Returns the fraction that the user should move the View to be considered as swiped.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        float</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#getSwipeVelocityThreshold(float)">getSwipeVelocityThreshold</a>(float defaultValue)
+      </code>
+      
+        <p>Defines the maximum velocity ItemTouchHelper will ever calculate for pointer movements.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#interpolateOutOfBoundsScroll(android.support.v7.widget.RecyclerView, int, int, int, long)">interpolateOutOfBoundsScroll</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, int viewSize, int viewSizeOutOfBounds, int totalSize, long msSinceStartScroll)
+      </code>
+      
+        <p>Called by the ItemTouchHelper when user is dragging a view out of bounds.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#isItemViewSwipeEnabled()">isItemViewSwipeEnabled</a>()
+      </code>
+      
+        <p>Returns whether ItemTouchHelper should start a swipe operation if a pointer is swiped
+ over the View.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#isLongPressDragEnabled()">isLongPressDragEnabled</a>()
+      </code>
+      
+        <p>Returns whether ItemTouchHelper should start a drag and drop operation if an item is
+ long pressed.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        static
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#makeFlag(int, int)">makeFlag</a>(int actionState, int directions)
+      </code>
+      
+        <p>Shifts the given direction flags to the offset of the given action state.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        static
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#makeMovementFlags(int, int)">makeMovementFlags</a>(int dragFlags, int swipeFlags)
+      </code>
+      
+        <p>Convenience method to create movement flags.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onChildDraw(android.graphics.Canvas, android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, float, float, int, boolean)">onChildDraw</a>(<a href="https://developer.android.com/reference/android/graphics/Canvas.html">Canvas</a> c, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive)
+      </code>
+      
+        <p>Called by ItemTouchHelper on RecyclerView's onDraw callback.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onChildDrawOver(android.graphics.Canvas, android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, float, float, int, boolean)">onChildDrawOver</a>(<a href="https://developer.android.com/reference/android/graphics/Canvas.html">Canvas</a> c, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive)
+      </code>
+      
+        <p>Called by ItemTouchHelper on RecyclerView's onDraw callback.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        abstract
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onMove(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, android.support.v7.widget.RecyclerView.ViewHolder)">onMove</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> target)
+      </code>
+      
+        <p>Called when ItemTouchHelper wants to move the dragged item from its old position to
+ the new position.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onMoved(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, int, android.support.v7.widget.RecyclerView.ViewHolder, int, int, int)">onMoved</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder, int fromPos, <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> target, int toPos, int x, int y)
+      </code>
+      
+        <p>Called when <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onMove(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, android.support.v7.widget.RecyclerView.ViewHolder)">onMove(RecyclerView, ViewHolder, ViewHolder)</a></code> returns true.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onSelectedChanged(android.support.v7.widget.RecyclerView.ViewHolder, int)">onSelectedChanged</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder, int actionState)
+      </code>
+      
+        <p>Called when the ViewHolder swiped or dragged by the ItemTouchHelper is changed.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-24.1.0">
+  
+  
+    <td><code>
+        abstract
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#onSwiped(android.support.v7.widget.RecyclerView.ViewHolder, int)">onSwiped</a>(<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder, int direction)
+      </code>
+      
+        <p>Called when a ViewHolder is swiped by the user.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+
+    </tbody></table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-">
+<td colspan="2">
+  <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed" onclick="return toggleInherited(this, null)">
+    <img id="inherited-methods-java.lang.Object-trigger" class="jd-expando-trigger-img" height="34" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/disclosure_down.png">
+  </a>From
+class
+<code>
+  
+    java.lang.Object
+  
+</code>
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list" class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando responsive">
+      
+
+
+  
+  <tbody><tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        Object</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      clone()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      equals(Object arg0)
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      finalize()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        Class&lt;?&gt;</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      getClass()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      hashCode()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      notify()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      notifyAll()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        String</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      toString()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      wait(long arg0, int arg1)
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      wait(long arg0)
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      wait()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+
+    </tbody></table>
+  </div>
+</div>
+</td></tr>
+
+
+</tbody></table>
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2 class="api-section" style="padding-bottom: 0px;">Public constructors</h2><hr>
+
+
+
+<a name="ItemTouchHelper.SimpleCallback(int, int)"></a>
+
+<div class="api apilevel-24.1.0">
+    <h3 class="api-name">ItemTouchHelper.SimpleCallback</h3>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a></div>
+      
+  
+
+    </div>
+<pre class="api-signature no-pretty-print">ItemTouchHelper.SimpleCallback (int dragDirs, 
+                int swipeDirs)</pre>
+    
+    
+
+    
+  <p>Creates a Callback for the given drag and swipe allowance. These values serve as
+ defaults
+ and if you want to customize behavior per ViewHolder, you can override
+ <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#getSwipeDirs(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">getSwipeDirs(RecyclerView, ViewHolder)</a></code>
+ and / or <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#getDragDirs(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)">getDragDirs(RecyclerView, ViewHolder)</a></code>.</p><p></p>
+    <table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>dragDirs</code></td>
+        <td width="100%">
+          <code>int</code>: Binary OR of direction flags in which the Views can be dragged. Must be
+                  composed of <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#LEFT">LEFT</a></code>, <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#RIGHT">RIGHT</a></code>, <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#START">START</a></code>, <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#END">END</a></code>,
+                  <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#UP">UP</a></code> and <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#DOWN">DOWN</a></code>.<p></p></td>
+      </tr>
+      <tr>
+        <td><code>swipeDirs</code></td>
+        <td width="100%">
+          <code>int</code>: Binary OR of direction flags in which the Views can be swiped. Must be
+                  composed of <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#LEFT">LEFT</a></code>, <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#RIGHT">RIGHT</a></code>, <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#START">START</a></code>, <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#END">END</a></code>,
+                  <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#UP">UP</a></code> and <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html#DOWN">DOWN</a></code>.
+<p></p></td>
+      </tr>
+    </tbody></table>
+
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2 class="api-section" style="padding-bottom: 0px;">Public methods</h2><hr>
+
+
+
+<a name="getDragDirs(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)"></a>
+
+<div class="api apilevel-24.1.0">
+    <h3 class="api-name">getDragDirs</h3>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a></div>
+      
+  
+
+    </div>
+<pre class="api-signature no-pretty-print">int getDragDirs (<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, 
+                <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)</pre>
+    
+    
+
+    
+  <p>Returns the drag directions for the provided ViewHolder.
+ Default implementation returns the drag directions that was set via constructor or
+ <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#setDefaultDragDirs(int)">setDefaultDragDirs(int)</a></code>.</p><p></p>
+    <table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>recyclerView</code></td>
+        <td width="100%">
+          <code>RecyclerView</code>: The RecyclerView to which the ItemTouchHelper is attached to.<p></p></td>
+      </tr>
+      <tr>
+        <td><code>viewHolder</code></td>
+        <td width="100%">
+          <code>RecyclerView.ViewHolder</code>: The RecyclerView for which the swipe direction is queried.<p></p></td>
+      </tr>
+    </tbody></table>
+    <table class="responsive">
+      <tbody><tr><th colspan="2">Returns</th></tr>
+      <tr>
+        <td><code>int</code></td>
+        <td width="100%">A binary OR of direction flags.
+<p></p></td>
+      </tr>
+    </tbody></table>
+
+</div>
+
+
+<a name="getMovementFlags(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)"></a>
+
+<div class="api apilevel-24.1.0">
+    <h3 class="api-name">getMovementFlags</h3>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a></div>
+      
+  
+
+    </div>
+<pre class="api-signature no-pretty-print">int getMovementFlags (<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, 
+                <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)</pre>
+    
+    
+
+    
+  <p>Should return a composite flag which defines the enabled move directions in each state
+ (idle, swiping, dragging).
+ </p><p>
+ Instead of composing this flag manually, you can use <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#makeMovementFlags(int, int)">makeMovementFlags(int, int)</a></code>
+ or <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.Callback.html#makeFlag(int, int)">makeFlag(int, int)</a></code>.
+ </p><p>
+ This flag is composed of 3 sets of 8 bits, where first 8 bits are for IDLE state, next
+ 8 bits are for SWIPE state and third 8 bits are for DRAG state.
+ Each 8 bit sections can be constructed by simply OR'ing direction flags defined in
+ <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html">ItemTouchHelper</a></code>.
+ </p><p>
+ For example, if you want it to allow swiping LEFT and RIGHT but only allow starting to
+ swipe by swiping RIGHT, you can return:
+ </p><pre class="prettyprint"><span class="pln">&nbsp; &nbsp; &nbsp; makeFlag</span><span class="pun">(</span><span class="pln">ACTION_STATE_IDLE</span><span class="pun">,</span><span class="pln"> RIGHT</span><span class="pun">)</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> makeFlag</span><span class="pun">(</span><span class="pln">ACTION_STATE_SWIPE</span><span class="pun">,</span><span class="pln"> LEFT </span><span class="pun">|</span><span class="pln"> RIGHT</span><span class="pun">);</span><span class="pln"><br>&nbsp;</span></pre>
+ This means, allow right movement while IDLE and allow right and left movement while
+ swiping.<p></p><p></p>
+    <table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>recyclerView</code></td>
+        <td width="100%">
+          <code>RecyclerView</code>: The RecyclerView to which ItemTouchHelper is attached.<p></p></td>
+      </tr>
+      <tr>
+        <td><code>viewHolder</code></td>
+        <td width="100%">
+          <code>RecyclerView.ViewHolder</code>: The ViewHolder for which the movement information is necessary.<p></p></td>
+      </tr>
+    </tbody></table>
+    <table class="responsive">
+      <tbody><tr><th colspan="2">Returns</th></tr>
+      <tr>
+        <td><code>int</code></td>
+        <td width="100%">flags specifying which movements are allowed on this ViewHolder.<p></p></td>
+      </tr>
+    </tbody></table>
+
+</div>
+
+
+<a name="getSwipeDirs(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder)"></a>
+
+<div class="api apilevel-24.1.0">
+    <h3 class="api-name">getSwipeDirs</h3>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a></div>
+      
+  
+
+    </div>
+<pre class="api-signature no-pretty-print">int getSwipeDirs (<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">RecyclerView</a> recyclerView, 
+                <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html">RecyclerView.ViewHolder</a> viewHolder)</pre>
+    
+    
+
+    
+  <p>Returns the swipe directions for the provided ViewHolder.
+ Default implementation returns the swipe directions that was set via constructor or
+ <code><a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#setDefaultSwipeDirs(int)">setDefaultSwipeDirs(int)</a></code>.</p><p></p>
+    <table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>recyclerView</code></td>
+        <td width="100%">
+          <code>RecyclerView</code>: The RecyclerView to which the ItemTouchHelper is attached to.<p></p></td>
+      </tr>
+      <tr>
+        <td><code>viewHolder</code></td>
+        <td width="100%">
+          <code>RecyclerView.ViewHolder</code>: The RecyclerView for which the swipe direction is queried.<p></p></td>
+      </tr>
+    </tbody></table>
+    <table class="responsive">
+      <tbody><tr><th colspan="2">Returns</th></tr>
+      <tr>
+        <td><code>int</code></td>
+        <td width="100%">A binary OR of direction flags.
+<p></p></td>
+      </tr>
+    </tbody></table>
+
+</div>
+
+
+<a name="setDefaultDragDirs(int)"></a>
+
+<div class="api apilevel-24.1.0">
+    <h3 class="api-name">setDefaultDragDirs</h3>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a></div>
+      
+  
+
+    </div>
+<pre class="api-signature no-pretty-print">void setDefaultDragDirs (int defaultDragDirs)</pre>
+    
+    
+
+    
+  <p>Updates the default drag directions. For example, you can use this method to toggle
+ certain directions depending on your use case.</p><p></p>
+    <table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>defaultDragDirs</code></td>
+        <td width="100%">
+          <code>int</code>: Binary OR of directions in which the ViewHolders can be dragged.
+<p></p></td>
+      </tr>
+    </tbody></table>
+
+</div>
+
+
+<a name="setDefaultSwipeDirs(int)"></a>
+
+<div class="api apilevel-24.1.0">
+    <h3 class="api-name">setDefaultSwipeDirs</h3>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 24.1.0</a></div>
+      
+  
+
+    </div>
+<pre class="api-signature no-pretty-print">void setDefaultSwipeDirs (int defaultSwipeDirs)</pre>
+    
+    
+
+    
+  <p>Updates the default swipe directions. For example, you can use this method to toggle
+ certain directions depending on your use case.</p><p></p>
+    <table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>defaultSwipeDirs</code></td>
+        <td width="100%">
+          <code>int</code>: Binary OR of directions in which the ViewHolders can be swiped.
+<p></p></td>
+      </tr>
+    </tbody></table>
+
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div><!-- end jd-content -->
+
+
+
+<div class="data-reference-resources-wrapper">
+  
+  
+  
+</div>
+
+
+
+
+    </div>
+
+    
+
+  
+    
+  
+    
+
+
+
+
+  
+
+
+<footer class="devsite-footer-promos nocontent">
+  <nav class="devsite-full-site-width">
+    <ul class="devsite-footer-promos-list">
+      
+      <li class="devsite-footer-promo">
+        <a href="https://twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo">
+          
+          
+          <img class="devsite-footer-promo-icon" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/logo-twitter.svg">
+          
+          
+            Twitter
+          
+        </a>
+        <div class="devsite-footer-promo-description">Follow @AndroidDev on Twitter</div>
+      </li>
+      
+      <li class="devsite-footer-promo">
+        <a href="https://plus.google.com/+AndroidDevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google+ Promo">
+          
+          
+          <img class="devsite-footer-promo-icon" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/google_plus_48dp.png">
+          
+          
+            Google+
+          
+        </a>
+        <div class="devsite-footer-promo-description">Follow Android Developers on Google+</div>
+      </li>
+      
+      <li class="devsite-footer-promo">
+        <a href="https://www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo">
+          
+          
+          <img class="devsite-footer-promo-icon" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/youtube_48dp.png">
+          
+          
+            YouTube
+          
+        </a>
+        <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+      </li>
+      
+    </ul>
+  </nav>
+</footer>
+
+
+
+<div class="wrap dac-footer-container">
+  <footer class="dac-footer ">
+    <div class="cols dac-footer-main">
+      <div class="col-1of1">
+        <div class="dac-footer-contact">
+          
+          <a class="dac-footer-contact-link" href="https://developer.android.com/newsletter/index.html" title="Newsletter">Newsletter</a>
+          
+          <a class="dac-footer-contact-link" href="https://android-developers.blogspot.com/" title="Blog" target="_blank">Blog</a>
+          
+          <a class="dac-footer-contact-link" href="https://developer.android.com/support.html" title="Support">Support</a>
+          
+          <a class="dac-footer-contact-link" href="https://docs.google.com/forms/d/e/1FAIpQLSf27XIxoFmNpTjTYdk-m1uKWGqEnd7_4C_E1AD5fdCfyTBWNA/viewform?usp=pp_url&amp;entry.1909689089&amp;entry.208743710&amp;entry.408796755&amp;entry.1341430893&amp;entry.594931249&amp;entry.1640656812&amp;entry.1759804042&amp;entry.1441312344=developer.android.com" title="Join user studies" target="_blank">Join user studies</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="dac-footer-separator">
+      
+      <p class="dac-footer-copyright">
+        
+        Except as noted, this content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/" target="_blank">Creative Commons Attribution 2.5</a>. For details and restrictions, see the <a href="https://developer.android.com/license.html">Content License</a>.
+      </p>
+    
+
+    <p class="dac-footer-links">
+      
+      <a href="https://www.android.com/" title="Android.com" target="_blank">Android.com</a>
+      
+      <a href="https://developer.android.com/" title="Android Developers">Android Developers</a>
+      
+      <a href="https://developer.android.com/studio/index.html" title="Android Studio">Android Studio</a>
+      
+      <a href="https://developer.android.com/distribute/console/index.html" title="Google Play Console">Google Play Console</a>
+      
+      <a href="https://developer.android.com/legal.html" title="Legal Notice">Legal Notice</a>
+    </p>
+
+    
+    <form class="devsite-utility-footer-language" id="setlang" action="https://developer.android.com/i18n/setlang/" method="post">
+      <input type="hidden" name="xsrf_token" value="pgK_P26W5hmGqOS-tyckrFxSRrluludh5gngimaCJ4s6MTUxNjU1MTYzMjYzMzA4MA">
+      <input type="hidden" name="next" value="/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html">
+      <span id="language" class="locales">
+        <select class="devsite-utility-footer-language-select" name="language">
+          
+          <option value="id">
+            Bahasa Indonesia
+          </option>
+          
+          <option value="de">
+            Deutsch
+          </option>
+          
+          <option value="en" selected="selected">
+            English
+          </option>
+          
+          <option value="es">
+            español
+          </option>
+          
+          <option value="es-419">
+            Español (América Latina)
+          </option>
+          
+          <option value="fr">
+            français
+          </option>
+          
+          <option value="pt-br">
+            Português Brasileiro
+          </option>
+          
+          <option value="vi">
+            Tiếng Việt
+          </option>
+          
+          <option value="tr">
+            Türkçe
+          </option>
+          
+          <option value="ru">
+            Русский
+          </option>
+          
+          <option value="th">
+            ภาษาไทย
+          </option>
+          
+          <option value="ja">
+            日本語
+          </option>
+          
+          <option value="zh-cn">
+            简体中文
+          </option>
+          
+          <option value="zh-tw">
+            繁體中文
+          </option>
+          
+          <option value="ko">
+            한국어
+          </option>
+          
+        </select>
+      </span>
+    </form>
+  </footer>
+</div><!--/.wrap -->
+
+<div class="dac-toast-group">
+  <div class="dac-toast" data-toast="">
+    <div class="dac-toast-wrap">
+      
+      This site uses cookies to store your preferences for site-specific language and display options.
+      <button class="dac-toast-close-btn">
+        
+        <span class="dac-button dac-raised dac-primary">OK</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div data-modal="newsletter" data-newsletter-fb="" data-swap="" class="dac-modal newsletter">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <div class="dac-swap" data-swap-container="">
+          <section class="dac-swap-section dac-active dac-down">
+            
+            <h2 class="norule dac-modal-header-title" data-t="newsletter.title">Get the latest Android developer news and tips that will help you find success on Google Play.</h2>
+            
+            <p class="dac-modal-header-subtitle" data-t="newsletter.requiredHint">* Required Fields</p>
+          </section>
+          <section class="dac-swap-section dac-up">
+            
+            <h2 class="norule dac-modal-header-title" data-t="newsletter.successTitle">Hooray!</h2>
+          </section>
+        </div>
+      </header>
+      <div class="dac-swap" data-swap-container="">
+        <section class="dac-swap-section dac-active dac-left">
+          <form action="https://services.google.com/fb/submissions/android-developer-mailing-list/" class="dac-form" method="post">
+            <section class="dac-modal-content">
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <div class="dac-form-input-group">
+                      
+                      <label for="newsletter-full-name" class="dac-form-floatlabel" data-t="newsletter.name">Full name</label>
+                      <input type="text" class="dac-form-input" name="fullname" id="newsletter-full-name" required="">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                    <div class="dac-form-input-group">
+                      
+                      <label for="newsletter-email" class="dac-form-floatlabel" data-t="newsletter.email">Email address</label>
+                      <input type="email" class="dac-form-input" name="emailaddress" id="newsletter-email" required="">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol">
+                    <div class="dac-form-input-group">
+                      
+                      <label for="newsletter-company" class="dac-form-floatlabel" data-t="newsletter.company">Company / developer name</label>
+                      <input type="text" class="dac-form-input" name="companydevelopername" id="newsletter-company">
+                    </div>
+                    <div class="dac-form-input-group">
+                      
+                      <label for="newsletter-play-store" class="dac-form-floatlabel" data-t="newsletter.appUrl">One of your Play Store app URLs</label>
+                      <input type="url" class="dac-form-input" name="playstoreappurls" id="newsletter-play-store">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  
+                  <div class="col-1of2 newsletter-leftCol newsletter-interested" data-validation-message="Please check at least one item.">
+                    
+                    <legend class="dac-form-legend">What are you interested in?<span class="dac-form-required">*</span></legend>
+                    <div class="dac-form-radio-group">
+                      <input type="checkbox" class="dac-form-checkbox" name="interested" id="interested-whats-new" value="whats-new">
+                      <label for="interested-whats-new" class="dac-form-checkbox-button"></label>
+                      
+                      <label for="interested-whats-new" class="dac-form-label">What's new</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input type="checkbox" class="dac-form-checkbox" name="interested" id="interested-games-updates" value="games-updates">
+                      <label for="interested-games-updates" class="dac-form-checkbox-button"></label>
+                      
+                      <label for="interested-games-updates" class="dac-form-label">Games updates</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input type="checkbox" class="dac-form-checkbox" name="interested" id="interested-android-development" value="android-development">
+                      <label for="interested-android-development" class="dac-form-checkbox-button"></label>
+                      
+                      <label for="interested-android-development" class="dac-form-label">Android development</label>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol newsletter-checkboxes">
+                    <div class="dac-form-input-group">
+                      
+                      <label for="newsletter-receive-in">Receive newsletter in</label>
+                      <select name="language" class="dac-form-select" id="newsletter-receive-in">
+                        <option value="en-US" selected="">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="zh">Chinese (Simplified)</option>
+                        <option value="zh-TW">Chinese (Traditional)</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="id">Indonesian (Bahasa)</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                        <option value="pt-BR">Portuguese (Brazilian)</option>
+                        <option value="ru">Russian</option>
+                        <option value="es-419">Spanish (Latin American)</option>
+                        <option value="th">Thai</option>
+                        <option value="tr">Turkish</option>
+                        <option value="vi">Vietnamese</option>
+                      </select>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input type="checkbox" class="dac-form-checkbox" name="marketingoptin" id="newsletter-add" required="" value="Add me to the mailing list.">
+                          <label for="newsletter-add" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-add" class="dac-form-label dac-form-aside">
+                            
+                            Add me to the mailing list.
+                            <span class="dac-form-required">*</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input type="checkbox" class="dac-form-checkbox" name="privacystatement" id="newsletter-terms" required="" value="I acknowledge that the information provided in this form will be subject to Google&#39;s privacy policy (https://www.google.com/policies/privacy/).">
+                          <label for="newsletter-terms" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-terms" class="dac-form-label dac-form-aside"><span data-t="newsletter.privacyPolicy" data-t-html="">I acknowledge that the information provided in this form will be subject to Google's <a href="https://www.google.com/policies/privacy/" target="_blank">privacy policy</a>.</span>
+                          <span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/api.js.download"></script>
+                      <div class="g-recaptcha" data-sitekey="6Lfc9CkTAAAAAEdusoAjrREyhAgNE1ppGE1Fc5q0"><div style="width: 304px; height: 78px;"><div><iframe src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/anchor.html" width="304" height="78" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+            <input type="hidden" name="referrer" value="dac">
+            <footer class="dac-modal-footer">
+              <div class="cols">
+                <div class="col-2of5">
+                </div>
+              </div>
+              <button type="submit" value="Submit" class="dac-fab dac-primary dac-large dac-modal-action"><i class="dac-sprite dac-arrow-right"></i></button>
+            </footer>
+          </form>
+        </section>
+        <section class="dac-swap-section dac-right">
+          <div class="dac-modal-content">
+            <p class="newsletter-success-message" data-t="newsletter.successDetails">You have successfully signed up for the latest Android developer news and tips.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div><!--/.dac-modal.newsletter-->
+
+<div data-modal="wechat" class="dac-modal">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section>
+          
+          <h2 class="norule dac-modal-header-title">Follow Google Developers on WeChat</h2>
+        </section>
+      </header>
+      <section class="dac-modal-content figure-center center-img">
+        <img src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/qr-wechat.png">
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal[dac-modal=wechat]-->
+
+
+<div data-modal="langform" class="dac-modal" id="langform">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section class="dac-swap-section dac-active dac-down">
+          <h2 class="norule dac-modal-header-title">
+            
+            Browse this site in <span class="span-target-lang">English</span>?
+          </h2>
+        </section>
+      </header>
+      <section class="dac-swap-section dac-active dac-left">
+          <section class="dac-modal-content">
+            <fieldset class="dac-form-fieldset">
+              <div class="cols">
+                <div class="col-2of2 langform-leftCol">
+                  <p id="resetLangText">
+                    
+                    You requested a page in <span class="span-target-lang">English</span>, but your language preference for this site is <span class="span-current-lang">English</span>.
+                  </p>
+                  <p id="resetLangCta">
+                    
+                    Would you like to change your language preference and browse this site in <span class="span-target-lang">English</span>? If you want to change your language preference later, use the language menu at the bottom of each page.
+                  </p>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+          <footer class="dac-modal-footer" id="langfooter">
+            <div class="cols">
+              <div class="col-2of5">
+              </div>
+            </div>
+            <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" class="yes" onclick="return false;">
+              <button class="button dac-primary dac-modal-action lang yes" data-t="newsletter.resetLangButtonYes" data-modal-toggle="">Change Language</button>
+            </a>
+            <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" class="" onclick="return false;">
+              <button class="button dac-primary dac-modal-action lang no" data-t="newsletter.resetLangButtonNo" data-modal-toggle="">Not Now</button>
+            </a>
+          </footer>
+        
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal-->
+
+
+<div data-modal="api-unavailable" class="dac-modal" id="api-unavailable">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section class="dac-swap-section dac-active dac-down">
+          <h2 class="norule dac-modal-header-title">
+            
+            This class requires API level <span class="api-level"></span> or higher
+          </h2>
+        </section>
+      </header>
+      <section class="dac-swap-section dac-active dac-left">
+          <section class="dac-modal-content">
+            <p>
+              
+              This doc is hidden because your selected API level for the documentation is <span class="api-level"></span>. You can change the documentation API level with the selector above the left navigation.
+            </p>
+            
+            <p>For more information about specifying the API level your app requires, read <a href="https://developer.android.com/training/basics/supporting-devices/platforms.html">Supporting Different Platform Versions</a>.</p>
+          </section>
+          <footer class="dac-modal-footer" id="langfooter">
+            <div class="cols">
+              <div class="col-2of5">
+              </div>
+            </div>
+            <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#" class="ok" onclick="return false;">
+              <button class="button dac-primary dac-modal-action ok" data-modal-toggle="">
+                
+                OK, make this page visible
+              </button>
+            </a>
+          </footer>
+        
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal#api-unavailable-->
+
+    
+  </div><!--/#body-content-->
+
+  <!-- Nav Setup -->
+  <script>$('[data-dac-nav]').dacNav();</script>
+  <script type="text/javascript">
+    $('.slideshow-container').dacSlideshow({
+        btnPrev: '.slideshow-prev',
+        btnNext: '.slideshow-next',
+        btnPause: '#pauseButton'
+    });
+
+    $(".feed").dacTabbedList({
+      nav_id: '.feed-nav',
+      frame_id: '.feed-frame'
+    });
+  </script>
+  
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/ytblogger_lists_unified.js.download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/android_metadata_en.js.download" defer=""></script>
+  
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/lists.js.download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/gms_lists.js.download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/lists.js(1).download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/lists.js(2).download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/lists.js(3).download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/lists.js(4).download" defer=""></script>
+  <script src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/saved_resource"></script>
+  <script>
+    // Load localized metadata.
+    (function(lang) {
+      if (lang === 'en') { return; }
+      document.write('<script src="https://developer.android.com/android_metadata_en.js?v=2018012104" defer></' + 'script>');
+    })(getLangPref())
+
+    // Add skip to content for accessibility.
+    $('#skip-to-main').click(function() {
+      $('a[name=top]').focus();
+    });
+
+    $('.devsite-utility-footer-language-select').each(function() {
+      $(this).change(function() {
+        changeLangPref(this.value, true)
+        $('.devsite-utility-footer-language').submit();
+      });
+    });
+  </script>
+
+  <script>
+    (function($) {
+      devsite.analytics.InitAnalytics();
+      devsite.navigatingRadio.init();
+      devsite.kennedy.InitializeTabbars();
+      // overflowMenu must be initialized after tabbar.
+      devsite.overflowMenu.init();
+    })(jQuery);
+  </script>
+
+  
+
+
+<div id="survey-box-wrapper">
+  <div class="material-dialog" style="width:270px">
+    <div class="material-dialog-title">
+      Take a short survey?
+    </div>
+    <div class="material-dialog-description">
+      Help us improve the Android developer experience.
+      (Dec 2017 Android Platform &amp; Tools Survey)
+    </div>
+    <div class="material-button-bar">
+      <a class="dac-button dac-primary dac-raised" target="_blank" href="https://goo.gl/UwhSLi">Okay</a>
+      <a class="dac-button" href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html#">No thanks</a>
+    </div>
+  </div>
+</div>
+
+
+
+<table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 172px; display: none; top: 873px; left: 279px; position: absolute;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><div style="background-color: #fff; border: 1px solid #ccc; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); position: absolute; left: 0px; top: -10000px; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: #fff; opacity: 0.05;  filter: alpha(opacity=5)"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0; height: 0; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0; height: 0; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./ItemTouchHelper.SimpleCallback _ Android Developers_files/bframe.html" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" name="ydy0t8tzpynp" style="width: 100%; height: 100%;"></iframe></div></div></body></html>

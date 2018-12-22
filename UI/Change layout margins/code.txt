@@ -1,0 +1,15 @@
+LayoutParams params = new LayoutParams(
+        LayoutParams.WRAP_CONTENT,      
+        LayoutParams.WRAP_CONTENT
+);
+params.setMargins(left, top, right, bottom);
+yourbutton.setLayoutParams(params);
+
+//-----------------
+
+Resources r = mContext.getResources();
+int px = (int) TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        yourdpmeasure, 
+        r.getDisplayMetrics()
+);

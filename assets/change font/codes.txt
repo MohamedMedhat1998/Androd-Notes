@@ -1,0 +1,4 @@
+TextView tv = (TextView) findViewById(R.id.appname);
+Typeface face = Typeface.createFromAsset(getAssets(),
+            "epimodem.ttf");
+tv.setTypeface(face);

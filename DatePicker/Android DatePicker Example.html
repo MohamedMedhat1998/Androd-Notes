@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.zoftino.com/android-datepicker-example -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+
+<meta name="description" content="Android DatePicker example, DatePickerDialog, DatePicker widget, DatePicker material style, DatePicker custom material styles, DatePicker event handling, DatePicker spinner, and DatePicker Spinner style examples.">
+<link rel="canonical" href="http://www.zoftino.com/android-datepicker-example">
+<script async="" src="./Android DatePicker Example_files/analytics.js.download"></script><script src="./Android DatePicker Example_files/f(11).txt"></script><script src="./Android DatePicker Example_files/ca-pub-9403925692853787.js.download"></script><script async="" src="./Android DatePicker Example_files/f(12).txt"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9403925692853787",
+          enable_page_level_ads: true
+     });</script>
+
+<meta name="google-site-verification" content="Fdq5luY56ivE5u8Hk7y04dQJUjJx8Ux5Zo1x8L_N-v8">
+<title>Android DatePicker Example</title>    
+<link rel="shortcut icon" href="http://www.zoftino.com/zft/img/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/ico" href="http://www.zoftino.com/zft/img/favicon.ico">
+<link href="./Android DatePicker Example_files/zftbsminc.css" rel="stylesheet">
+<link href="./Android DatePicker Example_files/blg.css" rel="stylesheet">
+<link rel="preload" href="./Android DatePicker Example_files/f(13).txt" as="script"><script type="text/javascript" src="./Android DatePicker Example_files/f(13).txt"></script><link rel="preload" href="./Android DatePicker Example_files/f(14).txt" as="script"><script type="text/javascript" src="./Android DatePicker Example_files/f(14).txt"></script></head>
+<body>
+<div class="container"><div class="blg-header">
+<a href="http://www.zoftino.com/" alt="ZOFTINO.COM android and web dev tutorials"><img src="./Android DatePicker Example_files/logoz.png" alt="ZOFTINO.COM android and web dev tutorials" height="40" width="260"></a></div>
+</div>
+<div class="blg-masthead">
+<div class="container">
+<nav class="blg-nav">
+<a class="blg-nav-item" href="http://www.zoftino.com/" alt="Android app development tutorials and web app development tutorials">Home</a>
+<a class="blg-nav-item" href="http://www.zoftino.com/android" alt="Android Development Tutorials and Programming Examples">Android</a>
+<a class="blg-nav-item" href="http://www.zoftino.com/java" alt="Java Development Tutorials and Programming Examples">Java</a>
+</nav>
+</div>
+</div>
+
+<div class="container">
+<div class="blg-header">
+       </div>
+<div class="row">
+<div class="col-md-8 blg-main">
+<div class="blg-post"><h2 class="blg-post-title">Android DatePicker Example</h2><p class="blg-post-meta">October 04, 2017</p><p>Android DatePicker allows user to select a date making the picked date valid and formatted correctly. DatePicker can be used in two modes: calendar mode and spinner mode. If you use material themes, by default DatePicker is displayed as calendar view.</p><p>In this post, you can find details on DatePickerDialog, DatePicker widget, DatePicker material styles, DatePicker custom material styles, DatePicker event handling, DatePicker calendar, DatePicker spinner, and DatePicker spinner styles.</p><h3>Android DatePickerDialog Example</h3><p>Date picker can be shown as dialog using DatePickerDialog. To use DatePickerDialog, first you need to create a dialog fragment by extending DialogFragment and implementing onCreateDialog method which returns DatePickerDialog instance. In the implementation of onCreateDialog method of date picker fragment, instantiate DatePickerDialog by setting current date and return it.</p><p>Below DatePickerDialog examples displays a screen with button, on clicking it, date picker dialog will be shown and the picked date will be displayed as a toast message.</p><h4>DatePicker fragment</h4><pre><code class="hljs java"><span class="hljs-keyword">package</span> dialog.zoftino.com.dialog;
+
+<span class="hljs-keyword">import</span> android.app.DatePickerDialog;
+<span class="hljs-keyword">import</span> android.app.Dialog;
+<span class="hljs-keyword">import</span> android.os.Bundle;
+<span class="hljs-keyword">import</span> android.support.v4.app.DialogFragment;
+<span class="hljs-keyword">import</span> android.widget.DatePicker;
+<span class="hljs-keyword">import</span> android.widget.Toast;
+
+<span class="hljs-keyword">import</span> java.util.Calendar;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyDatePickerFragment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DialogFragment</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Dialog <span class="hljs-title">onCreateDialog</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+
+        <span class="hljs-keyword">final</span> Calendar c = Calendar.getInstance();
+        <span class="hljs-keyword">int</span> year = c.get(Calendar.YEAR);
+        <span class="hljs-keyword">int</span> month = c.get(Calendar.MONTH);
+        <span class="hljs-keyword">int</span> day = c.get(Calendar.DAY_OF_MONTH);
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DatePickerDialog(getActivity(), dateSetListener, year, month, day);
+    }
+
+    <span class="hljs-keyword">private</span> DatePickerDialog.OnDateSetListener dateSetListener =
+            <span class="hljs-keyword">new</span> DatePickerDialog.OnDateSetListener() {
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDateSet</span><span class="hljs-params">(DatePicker view, <span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month, <span class="hljs-keyword">int</span> day)</span> </span>{
+                    Toast.makeText(getActivity(), <span class="hljs-string">"selected date is "</span> + view.getYear() +
+                            <span class="hljs-string">" / "</span> + (view.getMonth()+<span class="hljs-number">1</span>) +
+                            <span class="hljs-string">" / "</span> + view.getDayOfMonth(), Toast.LENGTH_SHORT).show();
+                }
+            };
+}
+</code></pre><p></p><div class="recbx"><ins class="adsbygoogle" style="display: block; height: 92px;" data-ad-client="ca-pub-9403925692853787" data-ad-slot="1663445752" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: 92px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent;"><ins id="aswift_1_anchor" style="display: block; border: none; height: 92px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent; overflow: hidden;"><iframe width="750" height="92" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0px; position: absolute; top: 0px; width: 750px; height: 92px;" src="./Android DatePicker Example_files/saved_resource(8).html"></iframe></ins></ins></ins></div><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><p></p><h4>Activity</h4><pre><code class="hljs scala"><span class="hljs-keyword">package</span> dialog.zoftino.com.dialog;
+
+<span class="hljs-keyword">import</span> android.support.v4.app.<span class="hljs-type">DialogFragment</span>;
+<span class="hljs-keyword">import</span> android.support.v7.app.<span class="hljs-type">AppCompatActivity</span>;
+<span class="hljs-keyword">import</span> android.os.<span class="hljs-type">Bundle</span>;
+<span class="hljs-keyword">import</span> android.view.<span class="hljs-type">View</span>;
+
+public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">protected</span> void onCreate(<span class="hljs-type">Bundle</span> savedInstanceState) {
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(<span class="hljs-type">R</span>.layout.activity_main);
+    }
+    public void showDatePicker(<span class="hljs-type">View</span> v) {
+        <span class="hljs-type">DialogFragment</span> newFragment = <span class="hljs-keyword">new</span> <span class="hljs-type">MyDatePickerFragment</span>();
+        newFragment.show(getSupportFragmentManager(), <span class="hljs-string">"date picker"</span>);
+    }
+}
+</code></pre><h4>Activity layout</h4><pre><code class="hljs xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"utf-8"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">android.support.constraint.ConstraintLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">"http://schemas.android.com/tools"</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">"dialog.zoftino.com.dialog.MainActivity"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/textView"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">"Date Picker Example"</span>
+        <span class="hljs-attr">app:layout_constraintLeft_toLeftOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintRight_toRightOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">"parent"</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/button"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_marginEnd</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:layout_marginStart</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">"24dp"</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">"Pick Date"</span>
+        <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">"showDatePicker"</span>
+        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toBottomOf</span>=<span class="hljs-string">"@+id/textView"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.constraint.ConstraintLayout</span>&gt;</span>
+</code></pre><h4> Android DatePickerDialog example output</h4><img src="./Android DatePicker Example_files/android-datepickerdialog-example.png" class="img-responsive" alt="android datepickerdialog example"><h4> Android DatePickerDialog event handling</h4><p>As shown in the above date picker example, date picker event can be handled by implementing DatePickerDialog.OnDateSetListener. DatePickerDialog.OnDateSetListener has a callback method onDateSet which gets called when date is picked from date picker dialog. In onDateSet method, you can get user selected date as shown in the code below.</p><p></p><div class="recbx"><ins class="adsbygoogle" style="display: block; height: 92px;" data-ad-client="ca-pub-9403925692853787" data-ad-slot="1663445752" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display: inline-table; border: none; height: 92px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent;"><ins id="aswift_2_anchor" style="display: block; border: none; height: 92px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent; overflow: hidden;"><iframe width="750" height="92" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; width: 750px; height: 92px;" src="./Android DatePicker Example_files/saved_resource(9).html"></iframe></ins></ins></ins></div><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><p></p><pre><code class="hljs java"> DatePickerDialog.OnDateSetListener dateSetListener =
+            <span class="hljs-keyword">new</span> DatePickerDialog.OnDateSetListener() {
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDateSet</span><span class="hljs-params">(DatePicker view, <span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month, <span class="hljs-keyword">int</span> day)</span> </span>{
+                    Toast.makeText(getActivity(), <span class="hljs-string">"selected date is "</span> + view.getYear() +
+                            <span class="hljs-string">" / "</span> + (view.getMonth()+<span class="hljs-number">1</span>) +
+                            <span class="hljs-string">" / "</span> + view.getDayOfMonth(), Toast.LENGTH_SHORT).show();
+                }
+            }; </code></pre><p>Above date set callback method gets called every time date is picked only after adding it to DatePickerDialog by passing it to constructor of the DatePickerDialog.</p><h3>DatePicker Widget Example</h3><p>DatePicker can be shown using DatePicker widget. To use DatePicker widget first define date picker in layout xml as shown below.</p><h4>Layout with DatePicker widget</h4><pre><code class="hljs xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"utf-8"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">android.support.constraint.ConstraintLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">"http://schemas.android.com/tools"</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/textView"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_marginEnd</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:layout_marginStart</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">"Date Picker Widget"</span>
+        <span class="hljs-attr">app:layout_constraintLeft_toLeftOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintRight_toRightOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">"parent"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DatePicker</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/datePicker"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_marginEnd</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:layout_marginStart</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">"8dp"</span>
+        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toBottomOf</span>=<span class="hljs-string">"@+id/textView"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.constraint.ConstraintLayout</span>&gt;</span>
+</code></pre><h4>Activity</h4><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DatePickerWidgetActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.datepicker);
+
+        DatePicker dp = findViewById(R.id.datePicker);
+        dp.setOnDateChangedListener(dateChangedListener);
+    }
+    <span class="hljs-keyword">private</span> DatePicker.OnDateChangedListener dateChangedListener =
+            <span class="hljs-keyword">new</span> DatePicker.OnDateChangedListener(){
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDateChanged</span><span class="hljs-params">(DatePicker datePicker, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> i1, <span class="hljs-keyword">int</span> i2)</span> </span>{
+            Toast.makeText(DatePickerWidgetActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"picked date is "</span> + datePicker.getDayOfMonth() +
+                    <span class="hljs-string">" / "</span> + (datePicker.getMonth()+<span class="hljs-number">1</span>) +
+                    <span class="hljs-string">" / "</span> + datePicker.getYear(), Toast.LENGTH_SHORT).show();
+        }
+    };
+
+}
+</code></pre><h4>DatePicker widget date change listener</h4><p>To handle DatePicker widget events, you need to implement DatePicker.OnDateChangedListener and add it to DatePicker widget by calling setOnDateChangedListener method. DatePicker.OnDateChangedListener has one callback onDateChanged which gets called when date is changed and this where you can get user picket date, see above code for details.</p><h4>DatePicker widget output</h4><img src="./Android DatePicker Example_files/android-datepicker-widget-example.png" class="img-responsive" alt="android datepicker widget example"><p></p><div class="recbx"><ins class="adsbygoogle" style="display: block; height: 93px;" data-ad-client="ca-pub-9403925692853787" data-ad-slot="3640889758" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display: inline-table; border: none; height: 93px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent;"><ins id="aswift_3_anchor" style="display: block; border: none; height: 93px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent; overflow: hidden;"><iframe width="750" height="93" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left: 0px; position: absolute; top: 0px; width: 750px; height: 93px;" src="./Android DatePicker Example_files/saved_resource(10).html"></iframe></ins></ins></ins></div><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><p></p><h3>Android DatePicker Material Style</h3><h4> DatePicker material styles application level</h4><p>Android platform provides material styles for DatePicker following material design guidelines. Above pictures show default material style of DatePicker with application them set to app compact material style Theme.AppCompat.Light.DarkActionBar.</p><p>Date picker style can be customized at application level by extending app compact themes and setting color properties as shown below.</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"MyAppTheme"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"colorAccent"</span>&gt;</span>#ff6d00<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"colorControlActivated"</span>&gt;</span>#33691e<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:selectableItemBackgroundBorderless"</span>&gt;</span>@color/colorPrimaryDark<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"colorControlHighlight"</span>&gt;</span>#d50000<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre><p>DatePicker output using custom theme.</p><img src="./Android DatePicker Example_files/android-datepicker-material-style-example.png" class="img-responsive" alt="android datepicker material style example"><h4>DatePicker material styles individual</h4><p>With the above custom theme, all UI controls throughout the application get impacted. To customize only DatePicker in your application, you need to extend android material themes for DatePicker widget (Widget.Material.DatePicker) or alert dialog (ThemeOverlay.AppCompat.Dialog.Alert) and set datePickerStyle or datePickerDialogTheme properties of app compact application theme.</p><p>Below style is a custom DatePickerDialog theme.</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"MyDatePickerDialogStyle"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"@style/ThemeOverlay.AppCompat.Dialog.Alert"</span>&gt;</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"showTitle"</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"colorControlActivated"</span>&gt;</span>#ffea00<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:selectableItemBackgroundBorderless"</span>&gt;</span>@color/colorItmBg<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"colorControlHighlight"</span>&gt;</span>#c51162<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:headerBackground"</span>&gt;</span>#00c853<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre><p>Below style extends app compact theme with datePickerDialogTheme set to above custom theme.</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"MyAppThemeTwo"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:datePickerDialogTheme"</span>&gt;</span>@style/MyDatePickerDialogStyle<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre> <p>Below picture shows date picker output after applying above custom theme to application.</p>
+<img src="./Android DatePicker Example_files/android-datepicker-custom-material-style-example.png" class="img-responsive" alt="android datepicker custom material style example"><h3>Android DatePicker Spinner</h3><p>If you use material themes, by default the data picker is in calendar mode. You can change the look of DatePicker by setting datePickerMode attribute to either spinner or calendar mode.</p><p>Below style sets datepicker mode to spinner.</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"MyDatePickerStyle"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"@android:style/Widget.Material.DatePicker"</span>&gt;</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:colorControlActivated"</span>&gt;</span>#ffea00<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+     . . .
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:datePickerMode"</span>&gt;</span>spinner<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:calendarViewShown"</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre><p>Apply above style to date picker.</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">DatePicker</span>
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/datePicker"</span>
+    <span class="hljs-attr">style</span>=<span class="hljs-string">"@style/MyDatePickerStyle"</span>
+    <span class="hljs-attr">android:theme</span>=<span class="hljs-string">"@style/MyDatePickerSpinnerStyle"</span>
+    <span class="hljs-attr">.</span> <span class="hljs-attr">.</span> <span class="hljs-attr">.</span>/&gt;</span>
+</code></pre><p>Ouput of date picker in spinner mode.</p><img src="./Android DatePicker Example_files/android-datepicker-spinner.png" class="img-responsive" alt="android datepicker spinner example"><p>If datePickerMode is set spinner and calendarViewShown is not set to false, both spinner and calendar views will be displayed as shown below.</p><img src="./Android DatePicker Example_files/android-datepicker-calendar-spinner.png" class="img-responsive" alt="android datepicker spinner and calendar view"><h3>Android DatePicker Spinner Style</h3><p>Below custom material style for spinner DatePicker sets selection divider color.</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"MyDatePickerSpinnerStyle"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"@android:style/Widget.Material.DatePicker"</span>&gt;</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:datePickerMode"</span>&gt;</span>spinner<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:calendarViewShown"</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"colorControlNormal"</span>&gt;</span>#d50000<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre><img src="./Android DatePicker Example_files/android-datepicker-spinner-style.png" class="img-responsive" alt="android datepicker spinner style"></div>
+<p><ins class="adsbygoogle" style="display: block; height: 93px;" data-ad-client="ca-pub-9403925692853787" data-ad-slot="9047111751" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display: inline-table; border: none; height: 93px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent;"><ins id="aswift_4_anchor" style="display: block; border: none; height: 93px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 750px; background-color: transparent; overflow: hidden;"><iframe width="750" height="93" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left: 0px; position: absolute; top: 0px; width: 750px; height: 93px;" src="./Android DatePicker Example_files/saved_resource(11).html"></iframe></ins></ins></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+</div>
+<div class="col-md-4">
+<div class="sidebar-module sidebar-module-inset">
+<h4>About</h4>
+<p>Android app development tutorials and web app development tutorials with programming examples and code samples.</p>
+</div>
+<div class="sidebar-module">
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9403925692853787" data-ad-slot="2751729352" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:360px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:360px;background-color:transparent;"><iframe width="360" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;width:360px;height:280px;" src="./Android DatePicker Example_files/saved_resource(12).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div class="sidebar-module">
+<h4>Recommended</h4>
+ <p><a href="http://www.zoftino.com/android-firebase-cloud-functions-cloud-storage-trigger-example" alt="Android Firebase Cloud Functions Cloud Storage Trigger Example">Android Firebase Cloud Functions Cloud Storage Trigger Example</a></p>
+ <p><a href="http://www.zoftino.com/android-firebase-cloud-functions-realtime-database-trigger-example" alt="Android Firebase Cloud Functions Realtime Database Trigger Example">Android Firebase Cloud Functions Realtime Database Trigger Example</a></p>
+ <p><a href="http://www.zoftino.com/fireabase-crashlytics-android-crash-reporting" alt="Fireabase Crashlytics Android Crash Reporting">Fireabase Crashlytics Android Crash Reporting</a></p>
+ <p><a href="http://www.zoftino.com/android-login-and-registration-with-firebase-cloud-functions-and-firestore" alt="Android Login and Registration with Firebase Cloud Functions and Firestore">Android Login and Registration with Firebase Cloud Functions and Firestore</a></p>
+ <p><a href="http://www.zoftino.com/firebase-performance-monitoring-for-android" alt="Firebase Performance Monitoring for Android">Firebase Performance Monitoring for Android</a></p>
+ <p><a href="http://www.zoftino.com/predicting-app-user-behavior-using-firebase-predictions" alt="Predicting App User Behavior Using Firebase Predictions">Predicting App User Behavior Using Firebase Predictions</a></p>
+ <p><a href="http://www.zoftino.com/current-location-and-nearby-places-android-example" alt="Current Location and Nearby Places Android Example">Current Location and Nearby Places Android Example</a></p>
+ <p><a href="http://www.zoftino.com/google-places-api-place-picker-android-example" alt="Google Places API Place Picker Android Example">Google Places API Place Picker Android Example</a></p>
+ <p><a href="http://www.zoftino.com/google-places-auto-complete-android" alt="Google Places Auto Complete Android">Google Places Auto Complete Android</a></p>
+ <p><a href="http://www.zoftino.com/google-places-api-photos-android" alt="Google Places API Photos Android">Google Places API Photos Android</a></p>
+ <p><a href="http://www.zoftino.com/android-picture-in-picture-mode-example" alt="Android Picture in Picture Mode Example">Android Picture in Picture Mode Example</a></p>
+ <p><a href="http://www.zoftino.com/android-data-binding-library-tutorial" alt="Android Data Binding Library Tutorial">Android Data Binding Library Tutorial</a></p>
+ <p><a href="http://www.zoftino.com/android-recyclerview-data-binding-example" alt="Android RecyclerView Data Binding Example">Android RecyclerView Data Binding Example</a></p>
+ <p><a href="http://www.zoftino.com/android-localization-example" alt="Android Localization Example">Android Localization Example</a></p>
+ <p><a href="http://www.zoftino.com/android-resources-tutorial" alt="Android Resources Tutorial">Android Resources Tutorial</a></p>
+ <p><a href="http://www.zoftino.com/android-color-state-list-example" alt="Android Color State List Example">Android Color State List Example</a></p>
+ <p><a href="http://www.zoftino.com/android-shape-drawable-examples" alt="Android Shape Drawable Examples">Android Shape Drawable Examples</a></p>
+ <p><a href="http://www.zoftino.com/android-drawable-resources-tutorial" alt="Android Drawable Resources Tutorial">Android Drawable Resources Tutorial</a></p>
+ <p><a href="http://www.zoftino.com/android-activities" alt="Android Activities">Android Activities</a></p>
+ <p><a href="http://www.zoftino.com/android-capture-image-from-camera-and-save" alt="Android Capture Image from Camera and Save">Android Capture Image from Camera and Save</a></p>
+ </div>
+<div class="sidebar-module">
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9403925692853787" data-ad-slot="9994895125" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:360px;background-color:transparent;"><ins id="aswift_6_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:360px;background-color:transparent;"><iframe width="360" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;width:360px;height:280px;" src="./Android DatePicker Example_files/saved_resource(13).html"></iframe></ins></ins></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div></div></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:NaNpx;margin:0;padding:0;position:relative;visibility:visible;width:NaNpx;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:NaNpx;margin:0;padding:0;position:relative;visibility:visible;width:NaNpx;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:NaNpx;height:NaNpx;" src="./Android DatePicker Example_files/saved_resource(14).html"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_344113229862" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Android DatePicker Example_files/saved_resource(15).html"></iframe>
+
+<footer>
+<hr>
+<div class="container">
+<ul><li style="width:23%"><ul><li><a href="http://www.zoftino.com/about/" rel="nofollow">About</a></li>
+<li><a href="http://www.zoftino.com/contact" rel="nofollow">Contact</a></li></ul>
+</li><li style="width:23%"><ul><li><a href="http://www.zoftino.com/android" alt="Android Development Tutorials and Programming Examples">Android Tutorials</a></li>
+</ul>
+</li><li style="width:23%"><ul>
+<li><a href="https://www.facebook.com/zoftino" rel="nofollow" target="_blank" alt="Zoftino on Facebook">Facebook</a></li>
+<li><a href="https://twitter.com/zoftinocom" rel="nofollow" target="_blank" alt="Zoftino on Twitter">Twitter</a></li>
+<li><a href="https://plus.google.com/+Zoftino" rel="nofollow" target="_blank" alt="Zoftino on Google Plus">Google+</a></li>
+</ul></li>                    
+</ul>
+<div class="margtz txtcent"><a href="http://www.zoftino.com/android-datepicker-example#">Back to top</a></div><hr>
+<div class="margtz cpr">© 2016 Zoftino.<br>This content is copyrighted to Zoftino and may not be reproduced anywhere.</div>
+</div>  
+</footer>
+<script type="text/javascript" src="./Android DatePicker Example_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Android DatePicker Example_files/zftbsmin.js.download"></script>
+<link rel="stylesheet" href="./Android DatePicker Example_files/github.min.css">
+<script type="text/javascript" src="./Android DatePicker Example_files/highlight.pack.js.download"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84936961-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body></html>

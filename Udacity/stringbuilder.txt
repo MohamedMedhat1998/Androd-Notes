@@ -1,0 +1,1 @@
+use this when you want to create different strings multiple times , It's better according to memory

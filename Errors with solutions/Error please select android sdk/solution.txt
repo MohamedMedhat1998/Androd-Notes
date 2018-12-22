@@ -1,0 +1,1 @@
+Tools -> Android -> Sync Project with Gradle Files 

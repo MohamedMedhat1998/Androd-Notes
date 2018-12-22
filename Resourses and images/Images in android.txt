@@ -1,0 +1,8 @@
+Graphics Library
+-
+GetPixels();  is used to load the pixels into an integer array.
+-
+SetPixels();  is used to load the integer array onto an image
+-
+ Before overwriting a bitmap image,
+ it is always a good practice to release the old bitmap by using Bitmap.recycle().

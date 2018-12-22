@@ -1,0 +1,87 @@
+raw folder ááÕæÊ
+-----------------
+áÚãá ÕæÑ ãÎÊáİÉ ááÒÑ äŞæã ÈÃäÔÇÁ XML İí Drawable
+æíÓãì selector
+æÊÖÇİ items
+statepressed
+statefocus
+drawable
+----------------------------
+WakeLock ÊÓÊÎÏã áãäÚ ÇáÔÇÔÉ ãä Úãá sleep æíÓÊÎÏã áåÇ PowerManager
+æáÇÒã äÓÊÏÚí acquire æ release
+------------------------------------
+Layout-Land İí ÇáÑíÓæÑÓíÒ íÓÊÎÏã İí ÇäÔÇÁ ÇáÔÇÔÉ İí æÖÚ landscape
+------------------------------
+Surface View ãËá View æáßä Surface View áÇ íÓÊÎÏã invalidate() æíÓÊÎÏã ÈÏáÇ ãäåÇ Thread
+View Èå ÏÇáÉ OnDraw
+Surface view Èå SurfaceHolder æíŞæã ÈÚãá implement á Runnable
+-------------------------------
+áÃäÔÇÁ äæÚ ÎØ äŞæã ÈæÖÚ ÇáÎØ İí İæáÏÑ assests æíÊã ÊÚÑíİå ÈÇÓÊÎÏÇã TypeFace
+------------------------
+oreintation İí AndroidMainefst ÈÊÍÏÏ ÇĞÇ ßÇäÊ ÇáÔÇÔÉ portrat Ãæ LandScape
+-------------------------------
+sound pool íÊíÍ ÊÔÛíá ÃßËÑ ãä ÕæÊ İí äİÓ ÇáæŞÊ
+-------------------------------
+longClickListener
+-----------------------
+sliding drawer
+ããßä äÓÊÎÏã ÎÇÕíÉ rotation ÚÔÇä äÎáíåÇ ÊíÌí ãä ÇáÔãÇá ááíãíä
+----------------------
+framelayout
+ããßä ááÚäÇÕÑ İíåÇ ÇäåÇ ÊÙåÑ İæŞ ÈÚÖ
+----------------------
+ÎÇÕíÉ rotation
+---------------------
+Tabs
+ÈÊÊÚÏá ãä ÌÇİÇ ãÔ xml
+áÊÓØíÈ ÇáåæÓÊ
+TabHost th = (TabHost) findViewById(R.Id.tabhost);
+th.setup();
+æáÊÓØíÈ Tab ÌÏíÏÉ
+TabSpec spec = th.newTabSpec("Tag 1 for first tab Tag 2 for second tab ...");
+spec.setContent(Id of linerlayout in xml);
+spec.setIndicator("name");
+æááÇÖÇİÉ
+th.addTab(spec);
+áÚãá new Tab
+TabSpec new_tab = th.newTabSpec("tag");
+new_tab.setContent(new TabHost.TabContentFactory(){
+
+//ÇáÏÇáÉ ÊæáÏ ÊáŞÇÆíÇğ
+
+}
+ÈÚÏíä äÚãá Çáindecator æäÖíİ ÈÇÓÊÎÏÇã addtab
+---------------------------------------
+áÌáÈ ÇáæŞÊ ãä ÇáíÓÊã
+long my_time = System.currentTimeMillis();
+------------------------
+ááÊÍæíá ãä long Çáì string äßÊÈ
+Long.toString(ÇáŞíãÉ ÇáãÑÇÏ ÊÍæáåÇ);
+-------------------------------
+browser
+ãÍÊÇÌ permission áÇÓÊÎÏÇã ÇáÇäÊÑäÊ
+loadUrl("https//:www.google.com")
+ÚÔÇä ÃÎáí ÇáãÊÕİÍ íİÊÍ Çááíäß İí äİÓ ÇáãÊÕİÍ ÈäÓÊÎÏã
+setWebViewClient();
+áÊİÚíá ÇáÌÇİÇ ÓßÑÈÊ
+ÖÑæÑí áÊÔÛíá youtube
+ourbrowser.getSettings().setJavaScriptEnaled(true);
+--------------------------------
+áÃÛáÇŞ ÇáßíÈæÑÏ
+InputMethodManager x = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+x.hideSoftInputFromWindow(EditText.getWindowToken(),0);
+-------------------------------
+FlipperView
+Ïå ÈäÍØ İíå ßĞÇ ÚäÕÑ æáãÇ ÈäÏæÓ İí Ãí ãßÇä ÇáÚäÕÑ ÇáÇæá ÈíÑæÍ æÇáÊÇäí ÈíÌí ÈÇÓÊÎÏÇã ÏÇáÉ showNext(); İí onClick
+ÏÇáÉ flippy.setFlipInterval(milliseconds);
+   flippy.startflipping();
+íÎáíå íÛíÑ ÈÚÏ ÇáæŞÊ ÇáãÍÏÏ
+-------------------------------
+SharedPreferences íÓÊÎÏã İí ÍİÙ ÇáÈíÇäÇÊ
+İí SD
+------------------------------
+FileOutputStream íÓÊÎÏã İí ÇÏÎÇá ÇáÈíÇäÇÊ
+fos = openFileOutput("file name" , Context.MODE_PRIVATE);
+fos.write(stringdata.getBytes());
+fos.close
+FileInputStream íÓÊÎÏã İí ÇÓÊÑÌÇÚ ÇáÈíÇäÇÊ

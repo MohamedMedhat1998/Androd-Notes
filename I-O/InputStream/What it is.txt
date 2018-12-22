@@ -1,0 +1,23 @@
+It is a stream of bytes that can be processed to get an image or other types of usually large data.
+//-----------
+Inputstream is an abstract class which allows you to read content from files in for of a stream (A stream is a sequence of data.)
+It’s the sibling of OutStream which allows you to write content to a file.
+It’s to note that inputStream can only read data in form of bytes, 
+whereas an inputStreamReader which you also encounter in the video reads data in form of String.
+//-----------
+You have to think of a stream as an ordered flow of data that is transmitted 
+//-----------
+Think of a Stream as a channel through which pieces of data are broadcasted. 
+If you are at the end which receives data, then you have an input stream. Otherwise, 
+if you are at the end that sends data, you have an output stream
+//-----------
+It reads any type of data which is represented as bytes
+//-----------
+Java has two kinds of classes for input and output (I/O): streams and readers/writers.
+Streams (InputStream, OutputStream and everything that extends these) are for reading and writing binary data from files,
+ the network, or whatever other device.
+Readers and writers are for reading and writing text (characters). 
+They are a layer on top of streams, that converts binary data (bytes) to characters and back, using a character encoding.
+Reading data from disk byte-by-byte is very inefficient. 
+One way to speed it up is to use a buffer: instead of reading one byte at a time, you read a few thousand bytes at once, 
+and put them in a buffer, in memory. Then you can look at the bytes in the buffer one by one.

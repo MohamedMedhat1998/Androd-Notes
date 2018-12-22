@@ -1,0 +1,9 @@
+/** Use this function to open another application from your application
+     * @param packageName the package of the application you want to launch
+     *                    example facebook : "com.facebook.katana"
+     *                    whatsapp : "com.whatsapp"
+     */
+    private void openApp(String packageName){
+        Intent i = getPackageManager().getLaunchIntentForPackage(packageName);
+        startActivity(i);
+    }

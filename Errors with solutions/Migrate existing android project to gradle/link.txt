@@ -1,0 +1,1 @@
+https://coderwall.com/p/npki6q/migrate-existing-android-project-to-gradle

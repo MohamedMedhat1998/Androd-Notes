@@ -1,0 +1,20 @@
+AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
+            alertBuilder.setCancelable(false);
+            alertBuilder.setMessage("Application Not Found , Do You Want to install it ?");
+            alertBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i2 = new Intent();
+                        i2.setAction(VK_LINK);
+                        startActivity(i2);
+                    }
+                });
+            alertBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alertDialog = alertBuilder.create();
+            alertDialog.setTitle("App Not Found");
+            alertDialog.show();

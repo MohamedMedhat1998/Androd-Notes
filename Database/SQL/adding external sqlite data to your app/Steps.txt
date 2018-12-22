@@ -1,0 +1,7 @@
+1- Create your own database using "DB browser for sql"
+2- Copy the database file (((must be .db))) to your asset folder
+3- Start buffering (copying database from assets to the apps folder in the phone)
+4- get access to this data base using this line of code
+	SQLiteDatabase database =
+                SQLiteDatabase.openDatabase("/data/data/com.andalus.mn_edek_a7la/databases/dummy.db",null,SQLiteDatabase.OPEN_READWRITE);
+5- After that create a cursor object and deal with it as you want

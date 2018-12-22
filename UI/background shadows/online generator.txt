@@ -1,0 +1,3 @@
+http://inloop.github.io/shadow4android/
+
+https://romannurik.github.io/AndroidAssetStudio/nine-patches.html#&sourceDensity=320&name=example

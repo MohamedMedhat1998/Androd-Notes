@@ -1,0 +1,2 @@
+It is used to provide data for each view holder that shouldn't be shown on the UI
+Remember the swipe action in the 7th lesson SQL when you remove items

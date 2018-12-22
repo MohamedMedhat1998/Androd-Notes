@@ -1,0 +1,1 @@
+used to add append text to the text view

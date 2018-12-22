@@ -1,0 +1,9 @@
+1- You need an editor object attatched to a pre-defined SharedPreferences Object
+2- Call put methods to edit preferences
+3- call apply
+
+Example
+
+SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("show_bass",false);
+	editor.apply();

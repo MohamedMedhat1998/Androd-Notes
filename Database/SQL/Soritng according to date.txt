@@ -1,0 +1,5 @@
+-First create a column called date
+-Store the current time using the next line
+   String date = String.valueOf(System.currentTimeMillis());
+-after that query the data and put orde by date (use " DESC" for descending)
+cursor = myDatabase.query(tableName,null,null,null,null,null,DatabaseContract.COLUMN_DATE +" DESC");

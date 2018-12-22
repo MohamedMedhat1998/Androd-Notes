@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/25278821/how-to-round-an-image-with-glide-library

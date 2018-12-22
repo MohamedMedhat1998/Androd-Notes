@@ -1,0 +1,4 @@
+-They enable you to read or write data to contacts , calenders or documentations.
+
+-In short, a content provider is a class that sits between an application and its data source,
+and its job is to provide easily managed access to the underlying data source.

@@ -1,0 +1,42 @@
+<string name="format_full_friendly_date">
+        <xliff:g id="month">%1$s</xliff:g>, <xliff:g id="day">%2$s</xliff:g>
+    </string>
+//--------------------------answer---------------
+Hi @abomed7at55
+
+And in XML, you access it by
+
+@string/format_full_friendly_date
+
+e.g.
+
+<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/format_full_friendly_date"
+/>
+EDIT:
+
+It’s a parameterised String resource, so to fully make use of it in Java, you need to approach it slightly differently.
+
+String month = "January";
+String day = "Monday";
+
+String s = getString(R.string.format_friendly_date, month, day);
+Which should result in
+
+“January, Monday” on your screen.
+
+A better example would be if you added a String resource
+
+<resources>
+  <string name="welcome_message">Hello, %1$s!</string>
+</resources>
+and then
+
+String variableWithName = "John";
+
+String s = getString(R.string.welcome_message, variableWithName)
+tv.setText(s);
+This allows for more dynamic UI.
+

@@ -1,0 +1,8 @@
+deliverResult :
+This method leads directly to the onLoadFinished callback , so it is useful when we have stored data
+forceLoad :
+this method starts the whole thread from the beginnig
+
+see lifecycle pic for more details
+
+Note : These methods are from AsyncTaskLoader class

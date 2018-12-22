@@ -1,0 +1,6 @@
+-SharedPreferences is our way of persisting the preferences 
+while PreferenceScreen is for them to be shown to users 
+and getting the choice which gets saved in SharedPreferences.
+
+getPreferenceScreen();
+Gets the root of the preference hierarchy that this fragment is showing.

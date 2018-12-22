@@ -1,0 +1,23 @@
+Instead of reading line-by-line, 
+you can read the entire contents of the file into a single string by using “\A” as the delimiter. 
+This works because the delimiter \A is a boundary match for the beginning of input
+as declard in java.util.regex.Pattern which is why Scanner is returing the entire
+String from the InputStream.
+In addition , in regular expressions, \\A is used to represent the start of a text.
+So when we set the delimiter to \\A,
+ we are forcing the scanner to get the contents of the file from very start.
+
+scanner.useDelimiter("\\A");
+
+//----------------------------
+scanner.useDelimiter("\\A");
+forces the scanner to read the contents of the file from the very start 
+and hence will contain the entire data of the file, 
+if you don’t use this then you can’t be sure if you are reading the entire file contents or not.
+//-------------------
+So , the function of the method “useDelimiter” is only forcing the scanner 
+to read from the beginning in order not to lose any data?
+Yes, precisely
+Now when you call .next() on the scanner, 
+it will return you the entire data from the start to the end!
+

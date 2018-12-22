@@ -1,0 +1,1 @@
+ContentResolver resolver = getContentResolver();

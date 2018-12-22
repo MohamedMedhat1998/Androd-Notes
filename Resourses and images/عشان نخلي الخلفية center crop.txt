@@ -1,0 +1,3 @@
+in xml
+
+android:scaleXY = "center crop" (or any value)

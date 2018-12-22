@@ -1,0 +1,2 @@
+To insert data into the database , 
+we need to use a ContentValues object that maps column names as the key to the desired values

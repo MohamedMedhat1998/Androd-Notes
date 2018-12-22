@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://coderwall.com/p/npki6q/migrate-existing-android-project-to-gradle -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta property="current_user:id">
+
+<title>Migrate existing android project to gradle (Example)</title>
+<meta name="description" content="A protip by itseranga about shell, build, gradle, android-studio, and android.">
+<meta name="keywords" content="shell, build, gradle, android-studio, android">
+<link rel="canonical" href="https://coderwall.com/p/npki6q/migrate-existing-android-project-to-gradle">
+<meta property="og:title" content="Migrate existing android project to gradle (Example)">
+<meta property="og:url" content="https://coderwall.com/p/npki6q/migrate-existing-android-project-to-gradle">
+<meta property="og:site_name" content="Coderwall">
+<meta property="og:description" content="A protip by itseranga about shell, build, gradle, android-studio, and android.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/113865/892414_10151468467596730_1847316210_o.jpg">
+<meta name="twitter:title" content="Migrate existing android project to gradle (Example)">
+<meta name="twitter:url" content="https://coderwall.com/p/npki6q/migrate-existing-android-project-to-gradle">
+<meta name="twitter:site_name" content="Coderwall">
+<meta name="twitter:site" content="@coderwall">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="167010820">
+<meta name="twitter:image" content="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/113865/892414_10151468467596730_1847316210_o.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="https://coderwall.com/itseranga">
+<link rel="stylesheet" media="all" href="./Migrate existing android project to gradle (Example)_files/application-71f25c5b4babacd4d2b89f389a378305c632e186772c63a9467a89757d934e53.css">
+<script async="" src="./Migrate existing android project to gradle (Example)_files/analytics.js.download"></script><script src="./Migrate existing android project to gradle (Example)_files/application-09347f501fa7bf5a026571320cd149371f4b6d45cef9aab4b3236ee9a0027fbb.js.download"></script><script type="text/javascript" async="" src="./Migrate existing android project to gradle (Example)_files/bsa.js.download"></script>
+<script src="./Migrate existing android project to gradle (Example)_files/pEaCoeG7.js.download"></script>
+<script src="./Migrate existing android project to gradle (Example)_files/application-ab79f51b2ef92a7ee106.js.download"></script>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Xs4QnPU+2iWoML3fpH+csu52CuPE8T4GJFgDs4J/XJpTbcRvIDW37gXSqnifQuQK8qPe+MXLL94c3zNL5lYdxg==">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-797907-8', 'auto', {'cookieExpires': 0});
+    ga('set', 'anonymizeIp', true);
+  </script>
+
+
+<link rel="stylesheet" type="text/css" href="./Migrate existing android project to gradle (Example)_files/prettify.css"><script type="text/javascript" id="_bsap_js_74f50e679004d8f4d62fec4b0f74ccf1" src="./Migrate existing android project to gradle (Example)_files/s_74f50e679004d8f4d62fec4b0f74ccf1.js.download" async="async"></script><script type="text/javascript" src="./Migrate existing android project to gradle (Example)_files/pro.js.download" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./Migrate existing android project to gradle (Example)_files/saved_resource" async="async"></script></head>
+<body>
+<div class="clearfix">
+<header class="border-bottom">
+<nav class="clearfix py2">
+<div class="col col-4 sm-col-3 md-col-2">
+<div class="sm-ml1">
+<a class="btn logo relative" href="https://coderwall.com/">
+<div class="absolute" style="top: 2px">
+<svg version="1.1" viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="5" cy="5" r="1.4142" fill="#A26FF9"></circle>
+  <circle cx="10" cy="5" r="1.4142" fill="#A26FF9"></circle>
+  <circle cx="15" cy="5" r="1.4142" fill="#A26FF9"></circle>
+  <circle cx="10" cy="10" r="1.4142" fill="#A26FF9"></circle>
+  <circle cx="15" cy="10" r="1.4142" fill="#A26FF9"></circle>
+  <circle cx="15" cy="15" r="1.4142" fill="#A26FF9"></circle>
+</svg>
+
+</div>
+<div class="left font-x-lg" style="padding-left: 35px;">
+Coderwall
+</div>
+</a>
+</div>
+</div>
+<div class="col col-3 sm-col-6 md-col-8 h6">
+<a class="btn muted-until-hover xs-hide sm-mr1" href="https://coderwall.com/t/ruby/popular">Ruby</a>
+<a class="btn muted-until-hover xs-hide" href="https://coderwall.com/t/python/popular">Python</a>
+<a class="btn muted-until-hover xs-hide" href="https://coderwall.com/t/javascript/popular">JavaScript</a>
+<a class="btn muted-until-hover xs-hide sm-only-hide" href="https://coderwall.com/t/web/popular">Front-End</a>
+<a class="btn muted-until-hover xs-hide sm-only-hide" href="https://coderwall.com/t/tools/popular">Tools</a>
+<a class="btn muted-until-hover xs-hide sm-only-hide" href="https://coderwall.com/t/ios/popular">iOS</a>
+<div class="btn dropdown" style="margin-top: -3px;">
+<span class="h3 muted-until-hover">
+<i class="fa fa-sort-down relative xs-hide" style="top: -2px; margin-right: 2px;"></i>
+</span>
+<span class="muted-until-hover xs-ml3">
+<span class="xs-hide">More</span>
+Tips
+</span>
+<div class="dropdown-content bg-white mt1 py1 border z4" style="left:0">
+<a class="btn py1 muted-until-hover sm-hide" href="https://coderwall.com/t/ruby/popular">Ruby</a>
+<a class="btn py1 muted-until-hover sm-hide" href="https://coderwall.com/t/python/popular">Python</a>
+<a class="btn py1 muted-until-hover sm-hide" href="https://coderwall.com/t/javascript/popular">JavaScript</a>
+<a class="btn py1 muted-until-hover md-hide nowrap" href="https://coderwall.com/t/web/popular">Front-End</a>
+<a class="btn py1 muted-until-hover md-hide" href="https://coderwall.com/t/tools/popular">Tools</a>
+<a class="btn py1 muted-until-hover md-hide" href="https://coderwall.com/t/ios/popular">iOS</a>
+<a class="btn py1 muted-until-hover" href="https://coderwall.com/t/php/popular">PHP</a>
+<a class="btn py1 muted-until-hover" href="https://coderwall.com/t/android/popular">Android</a>
+<a class="btn py1 muted-until-hover" href="https://coderwall.com/t/dot-net/popular">.NET</a>
+<a class="btn py1 muted-until-hover" href="https://coderwall.com/t/java/popular">Java</a>
+<a class="btn py1 muted-until-hover green md-hide" href="https://coderwall.com/jobs">Jobs</a>
+</div>
+</div>
+<a class="btn border-left xs-hide sm-only-hide" href="https://coderwall.com/jobs">
+<div class="green">Jobs</div>
+</a>
+</div>
+<div class="col col-5 sm-col-3 md-col-2">
+<div class="right pr2">
+<a class="btn btn-primary bg-purple white ml1" href="https://coderwall.com/signin">Sign In or Up</a>
+</div>
+</div>
+</nav>
+</header>
+
+
+<div class="mt1 px3">
+
+</div>
+<main>
+<div class="py2 px3"><div class="container protip" id="protip_102764" itemid="migrate-existing-android-project-to-gradle" itemscope="">
+<div class="hide"><time datetime="2018-07-16T06:35:30Z" itemprop="dateModified">July 16, 2018 06:35</time></div>
+<div class="hide" itemprop="name">npki6q</div>
+<div class="clearfix">
+<div class="sm-col sm-col sm-col-12 md-col-8">
+<div class="clearfix mt0 mb1">
+<div class="sm-right">
+<div class="diminish inline mr1">Last Updated: July 16, 2018</div>
+<span class="xs-hide">
+·
+<div class="diminish inline mx1">
+<i class="fa fa-eye"></i>
+38.67K
+</div>
+</span>
+·
+<span class="mx1"><a href="https://coderwall.com/itseranga">itseranga</a></span>
+<div class="avatar" itemprop="image" style="background-color: #d5d85b;"><img src="./Migrate existing android project to gradle (Example)_files/892414_10151468467596730_1847316210_o.jpg"></div>
+</div>
+</div>
+<div class="card p1" style="border-top:solid 5px #d5d85b">
+<h1 class="mt4 mb2 center" itemprop="headline">Migrate existing android project to gradle</h1>
+<div class="center mr1" itemprop="keywords">
+<h6 class="diminish inline px1"><a href="https://coderwall.com/t/shell/popular">shell</a></h6>
+<h6 class="diminish inline px1"><a href="https://coderwall.com/t/build/popular">build</a></h6>
+<h6 class="diminish inline px1"><a href="https://coderwall.com/t/gradle/popular">gradle</a></h6>
+<h6 class="diminish inline px1"><a href="https://coderwall.com/t/android-studio/popular">android-studio</a></h6>
+<h6 class="diminish inline px1"><a href="https://coderwall.com/t/android/popular">android</a></h6>
+</div>
+<div class="content p3 mt4" itemprop="articleBody">
+<h1>Android with ant</h1>
+
+<ul>
+<li><p>Before introducing Android Studio, android apps build with ant(in eclipse and Idea) </p></li>
+<li><p>I have existing android application which build with ant, in rest of this tip I'm gonna demonstrate how to migrate the application in to Gradle </p></li>
+<li><p>I have used IntelliJ Idea for ant based project and gonna use Android Studio with Gradle android project</p></li>
+</ul>
+
+<h1>Existing Idea project</h1>
+
+<ul>
+<li>Following is my exiting project(which build with ant) </li>
+</ul>
+
+<p><img src="./Migrate existing android project to gradle (Example)_files/Screen_Shot_2014-09-15_at_1.56.59_PM.png" alt="Picture"></p>
+
+<ul>
+<li>Project name is SenZors. It contains src, res, lib, asserts etc</li>
+</ul>
+
+<h1>Gradle based project structure</h1>
+
+<ul>
+<li>Gradle based project looks like below</li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pun">└──</span><span class="pln"> project</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> </span><span class="kwd">module</span><span class="pun">/</span><span class="pln">
+        </span><span class="pun">└──</span><span class="pln"> build</span><span class="pun">.</span><span class="pln">gradle</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> build</span><span class="pun">.</span><span class="pln">gradle
+    </span><span class="pun">└──</span><span class="pln"> settings</span><span class="pun">.</span><span class="pln">gradle</span></code></pre>
+
+<ul>
+<li><p>Main project contains <code class="prettyprint prettyprinted" style=""><span class="pln">build</span><span class="pun">.</span><span class="pln">gradle</span></code> and <code class="prettyprint prettyprinted" style=""><span class="pln">settings</span><span class="pun">.</span><span class="pln">gradle</span></code> file </p></li>
+<li><p>Each module contains separate <code class="prettyprint prettyprinted" style=""><span class="pln">build</span><span class="pun">.</span><span class="pln">gradle</span></code> file</p></li>
+</ul>
+
+<h2>Project vs Module</h2>
+
+<ul>
+<li><p>A project is a complete android app. Projects can consist of one or more modules. </p></li>
+<li><p>Module is a component of the project that can build, test, or debug independently</p></li>
+<li><p>There are three types of modules</p></li>
+</ul>
+
+<ol>
+<li>Java library modules </li>
+<li>Android library modules </li>
+<li>Android application modules</li>
+</ol>
+
+<ul>
+<li><p>In above project structure <code class="prettyprint prettyprinted" style=""><span class="kwd">module</span></code> is an application module</p></li>
+<li><p>Many Android apps consists of only one application module. The build system generates an APK package for application modules</p></li>
+<li><p>More info - <a href="http://developer.android.com/sdk/installing/studio-build.html" rel="nofollow">http://developer.android.com/sdk/installing/studio-build.html</a></p></li>
+</ul>
+
+<h2>settings.gradle file</h2>
+
+<ul>
+<li>This file tells gradle about which modules to build, example from SenZors </li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pln">include </span><span class="str">':senz'</span></code></pre>
+
+<ul>
+<li>This specifies to include <code class="prettyprint prettyprinted" style=""><span class="pln">senz</span></code> module when building our SenZors project </li>
+</ul>
+
+<h2>Top level build.gradle file</h2>
+
+<ul>
+<li><p>It is the top level gradle build file, which can use to define configuration options common to all sub modules</p></li>
+<li><p>I'l give more details about this <code class="prettyprint prettyprinted" style=""><span class="pln">build</span><span class="pun">.</span><span class="pln">gradle</span></code> file content later </p></li>
+</ul>
+
+<h2>Module's build.gradle file</h2>
+
+<ul>
+<li><p>Each module contains separate <code class="prettyprint prettyprinted" style=""><span class="pln">build</span><span class="pun">.</span><span class="pln">gradle</span></code> file, so the module can build independently</p></li>
+<li><p>It can define android specific settings, dependency settings etc..</p></li>
+<li><p>I'l discuss more details about this file content later</p></li>
+</ul>
+
+<h2>Gradle application module structure</h2>
+
+<ul>
+<li>My main application module name is <code class="prettyprint prettyprinted" style=""><span class="pln">senz</span></code>
+</li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pun">└──</span><span class="pln"> senz</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> build</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> libs</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> src</span><span class="pun">/</span><span class="pln">
+        </span><span class="pun">└──</span><span class="pln"> main</span><span class="pun">/</span><span class="pln">
+            </span><span class="pun">└──</span><span class="pln"> java</span><span class="pun">/</span><span class="pln">
+            </span><span class="pun">└──</span><span class="pln"> res</span><span class="pun">/</span><span class="pln">
+            </span><span class="pun">└──</span><span class="pln"> asserts</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> build</span><span class="pun">.</span><span class="pln">gradle</span></code></pre>
+
+<ul>
+<li>When migrating existing ant project to gradle we need move ant project content according to the gradle project structure</li>
+</ul>
+
+<h1>Migrating SenZors to gradle</h1>
+
+<ul>
+<li>Main project is <code class="prettyprint prettyprinted" style=""><span class="typ">SenZors</span></code>, I'm use <code class="prettyprint prettyprinted" style=""><span class="pln">senz</span></code> as the main application module</li>
+</ul>
+
+<h2>Define project structure</h2>
+
+<ul>
+<li>Following are the steps for creating project structure</li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="lit">1.</span><span class="pln"> </span><span class="typ">Create</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> application </span><span class="kwd">module</span><span class="pln"> directory </span><span class="str">`senz`</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> </span><span class="str">`SenZors`</span><span class="pln">
+mkdir </span><span class="pun">-</span><span class="pln">p </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">src</span><span class="pun">/</span><span class="pln">main</span><span class="pun">/</span><span class="pln">java
+
+</span><span class="lit">2.</span><span class="pln"> </span><span class="typ">Move</span><span class="pln"> source codes to senz
+mv </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">src</span><span class="pun">/</span><span class="pln">com </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">src</span><span class="pun">/</span><span class="pln">main</span><span class="pun">/</span><span class="pln">java
+
+</span><span class="lit">3.</span><span class="pln"> </span><span class="typ">Move</span><span class="pln"> res </span><span class="kwd">and</span><span class="pln"> asserts
+mv </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">res </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">src</span><span class="pun">/</span><span class="pln">main
+mv </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">asserts </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">src</span><span class="pun">/</span><span class="pln">main  
+
+</span><span class="lit">4.</span><span class="pln"> </span><span class="typ">Move</span><span class="pln"> libs
+mv </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">libs </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">
+
+</span><span class="lit">5.</span><span class="pln"> </span><span class="typ">Move</span><span class="pln"> </span><span class="typ">AndroidManifest</span><span class="pln"> 
+mv </span><span class="typ">SenZors</span><span class="pun">/</span><span class="typ">AndroidManifest</span><span class="pun">.</span><span class="pln">xml </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">src</span><span class="pun">/</span><span class="pln">main
+
+</span><span class="lit">6.</span><span class="pln"> </span><span class="typ">Create</span><span class="pln"> gradle build  files
+touch </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">build</span><span class="pun">.</span><span class="pln">gradle
+touch </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">settings</span><span class="pun">.</span><span class="pln">gradle
+touch </span><span class="typ">SenZors</span><span class="pun">/</span><span class="pln">senz</span><span class="pun">/</span><span class="pln">build</span><span class="pun">.</span><span class="pln">gradle</span></code></pre>
+
+<h2>Define settings.gradle</h2>
+
+<ul>
+<li>Define which modules to build in settings.gradle file(we have only one application module senz)</li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pln">include </span><span class="str">':senz'</span></code></pre>
+
+<h2>Top level build.gradle</h2>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pln">buildscript </span><span class="pun">{</span><span class="pln">
+    repositories </span><span class="pun">{</span><span class="pln">
+        mavenCentral</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    dependencies </span><span class="pun">{</span><span class="pln">
+        classpath </span><span class="str">'com.android.tools.build:gradle:0.9.+'</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+allprojects </span><span class="pun">{</span><span class="pln">
+    repositories </span><span class="pun">{</span><span class="pln">
+        mavenCentral</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com"># Gradle wrapper task</span><span class="pln">
+task wrapper</span><span class="pun">(</span><span class="pln">type</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Wrapper</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    gradleVersion </span><span class="pun">=</span><span class="pln"> </span><span class="str">'1.12'</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<ul>
+<li>There are two main parts in here</li>
+</ul>
+
+<h3>buildscript settings</h3>
+
+<ul>
+<li><p>In here <code class="prettyprint prettyprinted" style=""><span class="pln">buildscript </span><span class="pun">{</span><span class="pln"> </span><span class="pun">...</span><span class="pln"> </span><span class="pun">}</span></code> configures the code driving the build</p></li>
+<li><p>It declares that it uses the Maven Central repository, and that there is a classpath dependency on a Maven artifact</p></li>
+<li><p>This artifact is the library that contains the Android plugin for Gradle in version <code class="prettyprint prettyprinted" style=""><span class="lit">0.9</span><span class="pun">.+</span></code></p></li>
+</ul>
+
+<h3>Gradle wrapper task</h3>
+
+<ul>
+<li><p>The Gradle Wrapper is the preferred way of starting a Gradle build</p></li>
+<li><p>Gradle wrapper consists a batch script for Windows support and a shell script for support on OS-X and Linux </p></li>
+<li><p>These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system(this is very helpful on continuos integration with <code class="prettyprint prettyprinted" style=""><span class="pln">jenkins</span></code>)</p></li>
+<li><p>In above gradle we define gradle wrapper with gradle version 1.12 (<code class="prettyprint prettyprinted" style=""><span class="pln">gradleVersion</span></code> is the version you'd like the project to use)</p></li>
+<li><p>Now execute following command from command line</p></li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pln">gradle wrapper</span></code></pre>
+
+<ul>
+<li>This command will generates some more files in the root of your project</li>
+</ul>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pun">└──</span><span class="pln"> </span><span class="typ">SenZors</span><span class="pln">
+    </span><span class="pun">└──</span><span class="pln"> gradlew
+    </span><span class="pun">└──</span><span class="pln"> gradlew</span><span class="pun">.</span><span class="pln">bat
+    </span><span class="pun">└──</span><span class="pln"> gradle
+        </span><span class="pun">└──</span><span class="pln"> wrapper
+            </span><span class="pun">└──</span><span class="pln"> gradle</span><span class="pun">-</span><span class="pln">wrapper</span><span class="pun">.</span><span class="pln">jar
+            </span><span class="pun">└──</span><span class="pln"> gradle</span><span class="pun">-</span><span class="pln">wrapper</span><span class="pun">.</span><span class="pln">properties
+
+     </span><span class="pun">...</span><span class="pln">
+
+    </span><span class="pun">└──</span><span class="pln"> build</span><span class="pun">.</span><span class="pln">gradle
+    </span><span class="pun">└──</span><span class="pln"> settings</span><span class="pun">.</span><span class="pln">gradle</span></code></pre>
+
+<ul>
+<li><p>The first time you run the wrapper for a specified version of Gradle, it downloads and caches the Gradle binaries for that version</p></li>
+<li><p>These Gradle Wrapper files are designed to be committed to source control.  </p></li>
+<li><p>Then anyone can build the project without having to first install and configure a specific version of Gradle</p></li>
+<li><p>Now you can use <code class="prettyprint prettyprinted" style=""><span class="pun">./</span><span class="pln">gradlew build</span></code> to build the project</p></li>
+<li><p>More info about Gradle wrapper -<a href="http://www.gradle.org/docs/current/userguide/gradle_wrapper.html" rel="nofollow">http://www.gradle.org/docs/current/userguide/gradle_wrapper.html</a></p></li>
+</ul>
+
+<h2>senz module build.gradle file</h2>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="pln">apply plugin</span><span class="pun">:</span><span class="pln"> </span><span class="str">'android'</span><span class="pln">
+
+android </span><span class="pun">{</span><span class="pln">
+    compileSdkVersion </span><span class="lit">19</span><span class="pln">
+    buildToolsVersion </span><span class="str">"19.1.0"</span><span class="pln">
+
+    defaultConfig </span><span class="pun">{</span><span class="pln">
+        minSdkVersion </span><span class="lit">14</span><span class="pln">
+        targetSdkVersion </span><span class="lit">19</span><span class="pln">
+        versionCode </span><span class="lit">1</span><span class="pln">
+        versionName </span><span class="str">"1.0"</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    buildTypes </span><span class="pun">{</span><span class="pln">
+        release </span><span class="pun">{</span><span class="pln">
+            runProguard </span><span class="kwd">false</span><span class="pln">
+            debuggable </span><span class="kwd">false</span><span class="pln">
+            proguardFiles getDefaultProguardFile</span><span class="pun">(</span><span class="str">'proguard-android.txt'</span><span class="pun">),</span><span class="pln"> </span><span class="str">'proguard-rules.txt'</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        debug </span><span class="pun">{</span><span class="pln">
+            debuggable </span><span class="kwd">true</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+dependencies </span><span class="pun">{</span><span class="pln">
+    compile </span><span class="str">'com.android.support:appcompat-v7:19.1.0'</span><span class="pln">
+    compile </span><span class="str">'com.android.support:support-v4:19.1.0'</span><span class="pln">
+    compile </span><span class="str">'com.google.android.gms:play-services:5.+'</span><span class="pln">
+    compile fileTree</span><span class="pun">(</span><span class="pln">dir</span><span class="pun">:</span><span class="pln"> </span><span class="str">'libs'</span><span class="pun">,</span><span class="pln"> include</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'*.jar'</span><span class="pun">])</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<ul>
+<li>Few interesting thing in here</li>
+</ul>
+
+<h3>apply plugin: 'android'</h3>
+
+<ul>
+<li>It applies the <code class="prettyprint prettyprinted" style=""><span class="typ">Android</span><span class="pln"> plugin </span><span class="kwd">for</span><span class="pln"> </span><span class="typ">Gradle</span></code> to this build</li>
+</ul>
+
+<h3>Android specific build option</h3>
+
+<ul>
+<li><p>android {...} configures all the Android-specific build options </p></li>
+<li><p>It specifies SDK versions, release/debug build configurations etc..</p></li>
+</ul>
+
+<h3>Dependencies</h3>
+
+<ul>
+<li><p>The dependencies element is outside and after the android element</p></li>
+<li><p>This element declares the dependencies for this module</p></li>
+</ul>
+
+<h1>Sync the project with Android Studio</h1>
+
+<ul>
+<li><p>Open Android Studio and import the SenZors project. It will sync gradle android project</p></li>
+<li><p>Make sure to tick <code class="prettyprint prettyprinted" style=""><span class="kwd">use</span><span class="pln"> </span><span class="kwd">default</span><span class="pln"> gradle wrapper</span></code> option in Android Studio preferences</p></li>
+</ul>
+
+<p><img src="./Migrate existing android project to gradle (Example)_files/Screen_Shot_2014-09-15_at_7.01.21_PM.png" alt="Picture"></p>
+
+<ul>
+<li>Finalised project directory structure would be looks like below</li>
+</ul>
+
+<p><img src="./Migrate existing android project to gradle (Example)_files/Screen_Shot_2014-09-15_at_7.13.31_PM.png" alt="Picture"></p>
+
+<h1>Build from command line</h1>
+
+<pre><code class="prettyprint prettyprinted" style=""><span class="com"># build project from command line</span><span class="pln">
+</span><span class="pun">./</span><span class="pln">gradlew build
+
+</span><span class="com"># list all available gradle tasks </span><span class="pln">
+</span><span class="pun">./</span><span class="pln">gradlew tasks</span></code></pre>
+
+<h1>References</h1>
+
+<ol>
+<li><a href="http://ryanharter.com/blog/2013/07/17/migrating-android-projects-to-gradle/" rel="nofollow">http://ryanharter.com/blog/2013/07/17/migrating-android-projects-to-gradle/</a></li>
+<li><a href="http://developer.android.com/sdk/installing/studio-build.html" rel="nofollow">http://developer.android.com/sdk/installing/studio-build.html</a></li>
+<li><a href="http://spring.io/guides/gs/gradle-android/" rel="nofollow">http://spring.io/guides/gs/gradle-android/</a></li>
+<li><a href="http://gmariotti.blogspot.it/2013/10/common-tips-about-gradle.html" rel="nofollow">http://gmariotti.blogspot.it/2013/10/common-tips-about-gradle.html</a></li>
+<li><a href="http://tools.android.com/tech-docs/new-build-system/user-guide" rel="nofollow">http://tools.android.com/tech-docs/new-build-system/user-guide</a></li>
+</ol>
+</div>
+<div class="clearfix mt1 mb3 mx2 py2">
+<div class="clearfix border-bottom" itemprop="author">
+<h4>
+Written by
+<a class="bold user" href="https://coderwall.com/itseranga" id="user_113865" itemid="113865" itemscope="" itemtype="http://schema.org/Person">
+<span class="blue" itemprop="name">eranga bandara</span>
+</a>
+</h4>
+</div>
+<div class="clearfix mt1">
+<div class="btn btn-small pl0 mr1 mb1 xs-block">
+<div data="{&quot;heartableId&quot;:&quot;protip_102764&quot;,&quot;href&quot;:&quot;/p/npki6q/likes&quot;,&quot;labels&quot;:[&quot;Recommend&quot;,&quot;Recommended&quot;]}" id="react-heart-button-protip_102764"><div class="inline pointer center purple"><span class="fixed-space-4"><i class="fa fa-heart-o purple h5"></i></span><span class="black ml1">Recommend</span></div></div>
+</div>
+<a class="btn btn-small pl0 mb1 mr1 xs-block" href="http://twitter.com/home?status=Migrate+existing+android+project+to+gradle+by+%40itseranga%0A%0Ahttps%3A%2F%2Fcoderwall.com%2Fp%2Fnpki6q" target="twitter">
+<span class="fixed-space-4"><i class="fa fa-twitter aqua h4"></i></span>
+<span>Say Thanks</span>
+</a>
+<div class="btn btn-small pl0 mb1 mr1 xs-block">
+<div id="react-protip-subscribe-button"><div class="inline pointer"><span class="fixed-space-4"><i class="fa fa-bell-slash-o"></i></span>Update Notifications Off</div></div>
+</div>
+<a class="btn btn-small pl0 mb1 mr1 xs-block" href="https://coderwall.com/signup">
+<span class="fixed-space-4"><i class="fa fa-comment-o black h4"></i></span>
+Respond
+</a>
+</div>
+</div>
+<div class="clearfix">
+<div class="clearfix mt3 px2">
+<h4>
+3 Responses
+<div class="right hide">
+<div class="btn btn-small green">Add your response</div>
+</div>
+</h4>
+<div class="border-top comment inline-block mb1 py1" id="comment_26651" itemid="26651" itemscope="" itemtype="http://schema.org/Comment" style="width: 100%">
+<div class="hide"><time datetime="2016-02-12T20:45:42Z" itemprop="datePublished">February 12, 2016 20:45</time></div>
+<div class="hide" itemprop="name">26651</div>
+<div class="left mt1 mr2 avatar small" style="background-color: #76581e;">
+<img src="./Migrate existing android project to gradle (Example)_files/none.jpg">
+</div>
+<div class="overflow-hidden py0 mt0">
+<div class="clearfix">
+<div class="author" itemprop="author">
+<a class="bold black no-hover" href="https://coderwall.com/akhilsankar" itemprop="alternateName">
+akhilsankar
+</a>
+</div>
+<div class="content small" itemprop="text"><p>Thanks, this post really helped me pursuing my goal of migrating adt source to gradle..<br>
+Really appreciate your style of braking things down...</p></div>
+<div class="diminish mt1">
+over 1 year ago
+·
+<div data="{&quot;heartableId&quot;:&quot;comment_26651&quot;,&quot;href&quot;:&quot;/comments/26651/likes&quot;,&quot;labels&quot;:[&quot;&quot;,&quot;&quot;]}" id="react-heart-button-comment_26651" style="display:inline-block"><div class="inline pointer center purple"><span class="fixed-space-4"><i class="fa fa-heart-o purple h5"></i></span><span class="black ml1"></span></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-top comment inline-block mb1 py1" id="comment_29847" itemid="29847" itemscope="" itemtype="http://schema.org/Comment" style="width: 100%">
+<div class="hide"><time datetime="2018-04-28T04:54:59Z" itemprop="datePublished">April 28, 2018 04:54</time></div>
+<div class="hide" itemprop="name">29847</div>
+<div class="left mt1 mr2 avatar small" style="background-color: #740818;">
+
+</div>
+<div class="overflow-hidden py0 mt0">
+<div class="clearfix">
+<div class="author" itemprop="author">
+<a class="bold black no-hover" href="https://coderwall.com/ariek" itemprop="alternateName">
+ariek
+</a>
+</div>
+<div class="content small" itemprop="text"><p>Nice post.. i've tried many articles but failed. can i discuss it with you please ? thanks</p></div>
+<div class="diminish mt1">
+6 months ago
+·
+<div data="{&quot;heartableId&quot;:&quot;comment_29847&quot;,&quot;href&quot;:&quot;/comments/29847/likes&quot;,&quot;labels&quot;:[&quot;&quot;,&quot;&quot;]}" id="react-heart-button-comment_29847" style="display:inline-block"><div class="inline pointer center purple"><span class="fixed-space-4"><i class="fa fa-heart-o purple h5"></i></span><span class="black ml1"></span></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-top comment inline-block mb1 py1" id="comment_30171" itemid="30171" itemscope="" itemtype="http://schema.org/Comment" style="width: 100%">
+<div class="hide"><time datetime="2018-07-16T06:35:30Z" itemprop="datePublished">July 16, 2018 06:35</time></div>
+<div class="hide" itemprop="name">30171</div>
+<div class="left mt1 mr2 avatar small" style="background-color: #5c77fa;">
+
+</div>
+<div class="overflow-hidden py0 mt0">
+<div class="clearfix">
+<div class="author" itemprop="author">
+<a class="bold black no-hover" href="https://coderwall.com/Himanshu-mishra" itemprop="alternateName">
+Himanshu-mishra
+</a>
+</div>
+<div class="content small" itemprop="text"><p>Every PC user must have a knowledge of where is the data storage of pc. In most of the operating system you will open the my computer to access the file explorer  but in windows 10 operating system you will get "This PC" to access the file explorer. If you face any issue to find file explorer in windows 10 operating system then here on our website <a href="http://fileexplorerwindows.com/" rel="nofollow">http://fileexplorerwindows.com</a> you will get the easiest way to access the file explorer in windows 10 operating system.</p></div>
+<div class="diminish mt1">
+3 months ago
+·
+<div data="{&quot;heartableId&quot;:&quot;comment_30171&quot;,&quot;href&quot;:&quot;/comments/30171/likes&quot;,&quot;labels&quot;:[&quot;&quot;,&quot;&quot;]}" id="react-heart-button-comment_30171" style="display:inline-block"><div class="inline pointer center purple"><span class="fixed-space-4"><i class="fa fa-heart-o purple h5"></i></span><span class="black ml1"></span></div></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sm-col sm-col sm-col-12 md-col-4">
+<div class="clearfix sm-ml3 mt3 p1 pb3">
+<h5 class="mt0 mb1">
+<i class="fa fa-folder-o mr1"></i>
+Filed Under
+</h5>
+<hr>
+<div class="topic clearfix py1">
+<a href="https://coderwall.com/t/tools/popular">
+<div class="bold"><span class="translation_missing" title="translation missing: en.categories.long.tools">Tools</span></div>
+</a>
+</div>
+<div class="topic clearfix py1">
+<a href="https://coderwall.com/t/android/popular">
+<div class="bold">Android Development Tips</div>
+</a>
+</div>
+</div>
+<div id="react-sponsors"><div class="clearfix sm-ml3 mt3 p1"><h5 class="mt0 mb1"><i class="fa fa-hand-o-right mr1"></i>Sponsors</h5><hr class="mt1"></div></div>
+<div class="clearfix sm-ml3 mt3 p1">
+<div class="clearfix">
+<div class="col col-7">
+<h5 class="mt0">
+<i class="fa fa-diamond mr1"></i>
+Awesome Job
+</h5>
+</div>
+<div class="col col-5">
+<div class="right font-sm bold">
+<a class="block" href="https://coderwall.com/jobs">
+See All Jobs
+<i class="fa fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<hr>
+<div class="clearfix py1">
+<a class="link no-hover mt2" ga-event-action="Protip Sidebar - Featured Job" ga-event-category="Jobs" ga-event-label="Client Success - 5d9de122-14af-4d8e-92d3-5243bf0015dd" href="https://www.indeed.com/viewjob?t=senior+front+end+engineer&amp;jk=9a1a6edbf331d2cc&amp;_ga=2.97030111.1187284888.1537903927-1122429108.1518468972" rel="nofollow" target="_blank">
+<div class="col col-3 hide md-col-2">
+
+</div>
+</a><div class="overflow-hidden pl2"><a class="link no-hover mt2" ga-event-action="Protip Sidebar - Featured Job" ga-event-category="Jobs" ga-event-label="Client Success - 5d9de122-14af-4d8e-92d3-5243bf0015dd" href="https://www.indeed.com/viewjob?t=senior+front+end+engineer&amp;jk=9a1a6edbf331d2cc&amp;_ga=2.97030111.1187284888.1537903927-1122429108.1518468972" rel="nofollow" target="_blank">
+<div class="blue bold">
+Sr. Frontend Engineer (Javascript) 
+</div>
+</a><div class="font-sm black"><a class="link no-hover mt2" ga-event-action="Protip Sidebar - Featured Job" ga-event-category="Jobs" ga-event-label="Client Success - 5d9de122-14af-4d8e-92d3-5243bf0015dd" href="https://www.indeed.com/viewjob?t=senior+front+end+engineer&amp;jk=9a1a6edbf331d2cc&amp;_ga=2.97030111.1187284888.1537903927-1122429108.1518468972" rel="nofollow" target="_blank">
+</a><div class="inline"><a class="link no-hover mt2" ga-event-action="Protip Sidebar - Featured Job" ga-event-category="Jobs" ga-event-label="Client Success - 5d9de122-14af-4d8e-92d3-5243bf0015dd" href="https://www.indeed.com/viewjob?t=senior+front+end+engineer&amp;jk=9a1a6edbf331d2cc&amp;_ga=2.97030111.1187284888.1537903927-1122429108.1518468972" rel="nofollow" target="_blank"></a><a rel="nofollow" target="_blank" ga-event-category="Jobs" ga-event-action="Protip Sidebar - Featured Job" ga-event-label="Client Success - 5d9de122-14af-4d8e-92d3-5243bf0015dd" href="https://www.clientsuccess.com/">Client Success</a></div>
+·
+<div class="inline">American Fork, Utah</div>
+·
+<div class="inline">Full Time</div>
+</div>
+</div>
+
+</div>
+
+<div class="mt2 font-sm">
+<a class="border--green green bold" href="https://coderwall.com/jobs/new">
+Post a job for only
+$299
+</a>
+</div>
+</div>
+<div class="clearfix ml3 mt4">
+<a target="_blank" class="link no-hover" href="https://coderwall.com/r/5/click"><img class="mt-third" src="./Migrate existing android project to gradle (Example)_files/5">
+</a>
+</div>
+<div class="clearfix ml3 mt4" ga-location="Protip Sidebar">
+<div class="bsap bsap_1305410" id="bsap_1305410" data-serve="CVADVK7E"><a href="https://srv.buysellads.com/ads/click/x/GTND42QIF6ADEK7LCAA4YKQMCKAILK7UCYBD6Z3JCW7IL5QUCAAIK5QKC6BIC5QYCAADVK3EHJNCLSIZ" class="ad0 odd " title="Rider by JetBrains" id="bsa_8141054" target="_blank" rel="nofollow">
+<img src="./Migrate existing android project to gradle (Example)_files/dd89b2d96c57ceb83b2abc0041a19dc0-1517226499.png" width="300" height="250" alt=""></a>
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</main>
+<footer class="border-top">
+<nav class="clearfix">
+<div class="col col-4 py1 mt1">
+<a class="btn" href="https://twitter.com/coderwall" rel="nofollow" target="_blank">
+@coderwall
+<i class="fa fa-twitter fa-1x ml1"></i>
+</a>
+</div>
+<div class="col col-8 py2 mt1">
+<div class="right">
+<a class="inline-block ml1" href="https://github.com/coderwall/coderwall-next" rel="nofollow">
+<i class="fa fa-github-alt"></i>
+</a>
+<a class="inline-block ml1" href="https://coderwall.com/t/hackerdesk/popular">
+<div class="sm-show"><i class="fa fa-gift"></i></div>
+</a>
+<a class="inline-block ml1 mr1" href="mailto:support@coderwall.com">
+Contact
+</a>
+<a class="inline-block mr1" href="https://coderwall.com/privacy_policy">Privacy</a>
+<a class="inline-block mr1" href="https://coderwall.com/tos">Terms</a>
+<p class="inline-block diminish inline mr1">Copyright 2018</p>
+</div>
+</div>
+</nav>
+</footer>
+</div>
+<div data="{&quot;currentUser&quot;:{&quot;item&quot;:null},&quot;currentProtip&quot;:{&quot;item&quot;:{&quot;id&quot;:102764,&quot;body&quot;:&quot;# Android with ant\r\n\r\n* Before introducing Android Studio, android apps build with ant(in eclipse and Idea) \r\n\r\n* I have existing android application which build with ant, in rest of this tip I&#39;m gonna demonstrate how to migrate the application in to Gradle \r\n\r\n* I have used IntelliJ Idea for ant based project and gonna use Android Studio with Gradle android project\r\n\r\n# Existing Idea project\r\n\r\n* Following is my exiting project(which build with ant) \r\n\r\n![Picture](https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/3330/Screen_Shot_2014-09-15_at_1.56.59_PM.png)\r\n\r\n* Project name is SenZors. It contains src, res, lib, asserts etc\r\n\r\n# Gradle based project structure\r\n\r\n* Gradle based project looks like below\r\n\r\n```\r\n└── project/\r\n    └── module/\r\n        └── build.gradle/\r\n    └── build.gradle\r\n    └── settings.gradle\r\n```\r\n\r\n* Main project contains `build.gradle` and `settings.gradle` file \r\n\r\n* Each module contains separate `build.gradle` file\r\n\r\n## Project vs Module\r\n\r\n* A project is a complete android app. Projects can consist of one or more modules. \r\n\r\n* Module is a component of the project that can build, test, or debug independently\r\n\r\n* There are three types of modules\r\n\r\n1. Java library modules \r\n2. Android library modules \r\n3. Android application modules\r\n\r\n* In above project structure `module` is an application module\r\n\r\n* Many Android apps consists of only one application module. The build system generates an APK package for application modules\r\n\r\n* More info - http://developer.android.com/sdk/installing/studio-build.html\r\n\r\n## settings.gradle file\r\n\r\n* This file tells gradle about which modules to build, example from SenZors \r\n\r\n```\r\ninclude &#39;:senz&#39;\r\n```\r\n\r\n* This specifies to include `senz` module when building our SenZors project \r\n\r\n## Top level build.gradle file\r\n\r\n* It is the top level gradle build file, which can use to define configuration options common to all sub modules\r\n\r\n* I&#39;l give more details about this `build.gradle` file content later \r\n\r\n## Module&#39;s build.gradle file\r\n\r\n* Each module contains separate `build.gradle` file, so the module can build independently\r\n\r\n* It can define android specific settings, dependency settings etc..\r\n\r\n* I&#39;l discuss more details about this file content later\r\n\r\n## Gradle application module structure\r\n\r\n* My main application module name is `senz`\r\n\r\n```\r\n└── senz/\r\n    └── build/\r\n    └── libs/\r\n    └── src/\r\n        └── main/\r\n            └── java/\r\n            └── res/\r\n            └── asserts/\r\n    └── build.gradle\r\n```\r\n\r\n* When migrating existing ant project to gradle we need move ant project content according to the gradle project structure\r\n\r\n# Migrating SenZors to gradle\r\n\r\n* Main project is `SenZors`, I&#39;m use `senz` as the main application module\r\n\r\n## Define project structure\r\n\r\n* Following are the steps for creating project structure\r\n\r\n```\r\n1. Create new application module directory `senz` in `SenZors`\r\nmkdir -p SenZors/senz/src/main/java\r\n\r\n2. Move source codes to senz\r\nmv SenZors/src/com SenZors/senz/src/main/java\r\n\r\n3. Move res and asserts\r\nmv SenZors/res SenZors/senz/src/main\r\nmv SenZors/asserts SenZors/senz/src/main  \r\n\r\n4. Move libs\r\nmv SenZors/libs SenZors/senz/\r\n\r\n5. Move AndroidManifest \r\nmv SenZors/AndroidManifest.xml SenZors/senz/src/main\r\n\r\n6. Create gradle build  files\r\ntouch SenZors/build.gradle\r\ntouch SenZors/settings.gradle\r\ntouch SenZors/senz/build.gradle\r\n```\r\n\r\n## Define settings.gradle\r\n\r\n* Define which modules to build in settings.gradle file(we have only one application module senz)\r\n\r\n```\r\ninclude &#39;:senz&#39;\r\n```\r\n\r\n## Top level build.gradle \r\n\r\n```\r\nbuildscript {\r\n    repositories {\r\n        mavenCentral()\r\n    }\r\n    dependencies {\r\n        classpath &#39;com.android.tools.build:gradle:0.9.+&#39;\r\n    }\r\n}\r\n\r\nallprojects {\r\n    repositories {\r\n        mavenCentral()\r\n    }\r\n}\r\n\r\n# Gradle wrapper task\r\ntask wrapper(type: Wrapper) {\r\n    gradleVersion = &#39;1.12&#39;\r\n}\r\n```\r\n\r\n* There are two main parts in here\r\n\r\n### buildscript settings\r\n\r\n* In here `buildscript { ... }` configures the code driving the build\r\n\r\n* It declares that it uses the Maven Central repository, and that there is a classpath dependency on a Maven artifact\r\n\r\n* This artifact is the library that contains the Android plugin for Gradle in version `0.9.+`\r\n\r\n### Gradle wrapper task\r\n\r\n* The Gradle Wrapper is the preferred way of starting a Gradle build\r\n\r\n*  Gradle wrapper consists a batch script for Windows support and a shell script for support on OS-X and Linux \r\n\r\n* These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system(this is very helpful on continuos integration with `jenkins`)\r\n\r\n* In above gradle we define gradle wrapper with gradle version 1.12 (`gradleVersion` is the version you&#39;d like the project to use)\r\n\r\n* Now execute following command from command line\r\n\r\n```\r\ngradle wrapper\r\n```\r\n\r\n* This command will generates some more files in the root of your project\r\n\r\n```\r\n└── SenZors\r\n    └── gradlew\r\n    └── gradlew.bat\r\n    └── gradle\r\n        └── wrapper\r\n            └── gradle-wrapper.jar\r\n            └── gradle-wrapper.properties\r\n\r\n     ...\r\n\r\n    └── build.gradle\r\n    └── settings.gradle\r\n```\r\n\r\n* The first time you run the wrapper for a specified version of Gradle, it downloads and caches the Gradle binaries for that version\r\n\r\n* These Gradle Wrapper files are designed to be committed to source control.  \r\n\r\n* Then anyone can build the project without having to first install and configure a specific version of Gradle\r\n\r\n* Now you can use `./gradlew build` to build the project\r\n\r\n* More info about Gradle wrapper -http://www.gradle.org/docs/current/userguide/gradle_wrapper.html\r\n\r\n## senz module build.gradle file\r\n\r\n```\r\napply plugin: &#39;android&#39;\r\n\r\nandroid {\r\n    compileSdkVersion 19\r\n    buildToolsVersion \&quot;19.1.0\&quot;\r\n\r\n    defaultConfig {\r\n        minSdkVersion 14\r\n        targetSdkVersion 19\r\n        versionCode 1\r\n        versionName \&quot;1.0\&quot;\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            runProguard false\r\n            debuggable false\r\n            proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.txt&#39;\r\n        }\r\n\r\n        debug {\r\n            debuggable true\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    compile &#39;com.android.support:appcompat-v7:19.1.0&#39;\r\n    compile &#39;com.android.support:support-v4:19.1.0&#39;\r\n    compile &#39;com.google.android.gms:play-services:5.+&#39;\r\n    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])\r\n}\r\n```\r\n\r\n* Few interesting thing in here\r\n\r\n### apply plugin: &#39;android&#39;\r\n\r\n* It applies the `Android plugin for Gradle` to this build\r\n\r\n### Android specific build option\r\n\r\n* android {...} configures all the Android-specific build options \r\n\r\n* It specifies SDK versions, release/debug build configurations etc..\r\n\r\n### Dependencies\r\n\r\n* The dependencies element is outside and after the android element\r\n\r\n* This element declares the dependencies for this module\r\n\r\n# Sync the project with Android Studio\r\n\r\n* Open Android Studio and import the SenZors project. It will sync gradle android project\r\n\r\n* Make sure to tick `use default gradle wrapper` option in Android Studio preferences\r\n\r\n![Picture](https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/3332/Screen_Shot_2014-09-15_at_7.01.21_PM.png)\r\n  \r\n* Finalised project directory structure would be looks like below\r\n\r\n![Picture](https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/3334/Screen_Shot_2014-09-15_at_7.13.31_PM.png)\r\n\r\n# Build from command line\r\n\r\n```\r\n# build project from command line\r\n./gradlew build\r\n\r\n# list all available gradle tasks \r\n./gradlew tasks\r\n```\r\n\r\n# References\r\n\r\n1. http://ryanharter.com/blog/2013/07/17/migrating-android-projects-to-gradle/\r\n2. http://developer.android.com/sdk/installing/studio-build.html\r\n3. http://spring.io/guides/gs/gradle-android/\r\n4. http://gmariotti.blogspot.it/2013/10/common-tips-about-gradle.html\r\n5. http://tools.android.com/tech-docs/new-build-system/user-guide&quot;,&quot;created_at&quot;:&quot;2014-09-15T13:24:55.215Z&quot;,&quot;heartableId&quot;:&quot;protip_102764&quot;,&quot;hearts&quot;:8,&quot;html&quot;:&quot;\u003ch1\u003eAndroid with ant\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eBefore introducing Android Studio, android apps build with ant(in eclipse and Idea) \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eI have existing android application which build with ant, in rest of this tip I&#39;m gonna demonstrate how to migrate the application in to Gradle \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eI have used IntelliJ Idea for ant based project and gonna use Android Studio with Gradle android project\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch1\u003eExisting Idea project\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003eFollowing is my exiting project(which build with ant) \u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003e\u003cimg src=\&quot;https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/3330/Screen_Shot_2014-09-15_at_1.56.59_PM.png\&quot; alt=\&quot;Picture\&quot;\u003e\u003c/p\u003e\n\n\u003cul\u003e\n\u003cli\u003eProject name is SenZors. It contains src, res, lib, asserts etc\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch1\u003eGradle based project structure\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003eGradle based project looks like below\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003e└── project/\n    └── module/\n        └── build.gradle/\n    └── build.gradle\n    └── settings.gradle\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eMain project contains \u003ccode class=\&quot;prettyprint\&quot;\u003ebuild.gradle\u003c/code\u003e and \u003ccode class=\&quot;prettyprint\&quot;\u003esettings.gradle\u003c/code\u003e file \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eEach module contains separate \u003ccode class=\&quot;prettyprint\&quot;\u003ebuild.gradle\u003c/code\u003e file\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eProject vs Module\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eA project is a complete android app. Projects can consist of one or more modules. \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eModule is a component of the project that can build, test, or debug independently\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eThere are three types of modules\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003col\u003e\n\u003cli\u003eJava library modules \u003c/li\u003e\n\u003cli\u003eAndroid library modules \u003c/li\u003e\n\u003cli\u003eAndroid application modules\u003c/li\u003e\n\u003c/ol\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eIn above project structure \u003ccode class=\&quot;prettyprint\&quot;\u003emodule\u003c/code\u003e is an application module\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eMany Android apps consists of only one application module. The build system generates an APK package for application modules\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eMore info - \u003ca href=\&quot;http://developer.android.com/sdk/installing/studio-build.html\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://developer.android.com/sdk/installing/studio-build.html\u003c/a\u003e\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003esettings.gradle file\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003eThis file tells gradle about which modules to build, example from SenZors \u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003einclude &#39;:senz&#39;\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003eThis specifies to include \u003ccode class=\&quot;prettyprint\&quot;\u003esenz\u003c/code\u003e module when building our SenZors project \u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eTop level build.gradle file\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eIt is the top level gradle build file, which can use to define configuration options common to all sub modules\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eI&#39;l give more details about this \u003ccode class=\&quot;prettyprint\&quot;\u003ebuild.gradle\u003c/code\u003e file content later \u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eModule&#39;s build.gradle file\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eEach module contains separate \u003ccode class=\&quot;prettyprint\&quot;\u003ebuild.gradle\u003c/code\u003e file, so the module can build independently\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eIt can define android specific settings, dependency settings etc..\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eI&#39;l discuss more details about this file content later\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eGradle application module structure\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003eMy main application module name is \u003ccode class=\&quot;prettyprint\&quot;\u003esenz\u003c/code\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003e└── senz/\n    └── build/\n    └── libs/\n    └── src/\n        └── main/\n            └── java/\n            └── res/\n            └── asserts/\n    └── build.gradle\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003eWhen migrating existing ant project to gradle we need move ant project content according to the gradle project structure\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch1\u003eMigrating SenZors to gradle\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003eMain project is \u003ccode class=\&quot;prettyprint\&quot;\u003eSenZors\u003c/code\u003e, I&#39;m use \u003ccode class=\&quot;prettyprint\&quot;\u003esenz\u003c/code\u003e as the main application module\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDefine project structure\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003eFollowing are the steps for creating project structure\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003e1. Create new application module directory `senz` in `SenZors`\nmkdir -p SenZors/senz/src/main/java\n\n2. Move source codes to senz\nmv SenZors/src/com SenZors/senz/src/main/java\n\n3. Move res and asserts\nmv SenZors/res SenZors/senz/src/main\nmv SenZors/asserts SenZors/senz/src/main  \n\n4. Move libs\nmv SenZors/libs SenZors/senz/\n\n5. Move AndroidManifest \nmv SenZors/AndroidManifest.xml SenZors/senz/src/main\n\n6. Create gradle build  files\ntouch SenZors/build.gradle\ntouch SenZors/settings.gradle\ntouch SenZors/senz/build.gradle\u003c/code\u003e\u003c/pre\u003e\n\n\u003ch2\u003eDefine settings.gradle\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003eDefine which modules to build in settings.gradle file(we have only one application module senz)\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003einclude &#39;:senz&#39;\u003c/code\u003e\u003c/pre\u003e\n\n\u003ch2\u003eTop level build.gradle\u003c/h2\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003ebuildscript {\n    repositories {\n        mavenCentral()\n    }\n    dependencies {\n        classpath &#39;com.android.tools.build:gradle:0.9.+&#39;\n    }\n}\n\nallprojects {\n    repositories {\n        mavenCentral()\n    }\n}\n\n# Gradle wrapper task\ntask wrapper(type: Wrapper) {\n    gradleVersion = &#39;1.12&#39;\n}\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003eThere are two main parts in here\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch3\u003ebuildscript settings\u003c/h3\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eIn here \u003ccode class=\&quot;prettyprint\&quot;\u003ebuildscript { ... }\u003c/code\u003e configures the code driving the build\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eIt declares that it uses the Maven Central repository, and that there is a classpath dependency on a Maven artifact\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eThis artifact is the library that contains the Android plugin for Gradle in version \u003ccode class=\&quot;prettyprint\&quot;\u003e0.9.+\u003c/code\u003e\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch3\u003eGradle wrapper task\u003c/h3\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eThe Gradle Wrapper is the preferred way of starting a Gradle build\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eGradle wrapper consists a batch script for Windows support and a shell script for support on OS-X and Linux \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eThese scripts allow you to run a Gradle build without requiring that Gradle be installed on your system(this is very helpful on continuos integration with \u003ccode class=\&quot;prettyprint\&quot;\u003ejenkins\u003c/code\u003e)\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eIn above gradle we define gradle wrapper with gradle version 1.12 (\u003ccode class=\&quot;prettyprint\&quot;\u003egradleVersion\u003c/code\u003e is the version you&#39;d like the project to use)\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eNow execute following command from command line\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003egradle wrapper\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003eThis command will generates some more files in the root of your project\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003e└── SenZors\n    └── gradlew\n    └── gradlew.bat\n    └── gradle\n        └── wrapper\n            └── gradle-wrapper.jar\n            └── gradle-wrapper.properties\n\n     ...\n\n    └── build.gradle\n    └── settings.gradle\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eThe first time you run the wrapper for a specified version of Gradle, it downloads and caches the Gradle binaries for that version\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eThese Gradle Wrapper files are designed to be committed to source control.  \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eThen anyone can build the project without having to first install and configure a specific version of Gradle\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eNow you can use \u003ccode class=\&quot;prettyprint\&quot;\u003e./gradlew build\u003c/code\u003e to build the project\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eMore info about Gradle wrapper -\u003ca href=\&quot;http://www.gradle.org/docs/current/userguide/gradle_wrapper.html\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://www.gradle.org/docs/current/userguide/gradle_wrapper.html\u003c/a\u003e\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003esenz module build.gradle file\u003c/h2\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003eapply plugin: &#39;android&#39;\n\nandroid {\n    compileSdkVersion 19\n    buildToolsVersion \&quot;19.1.0\&quot;\n\n    defaultConfig {\n        minSdkVersion 14\n        targetSdkVersion 19\n        versionCode 1\n        versionName \&quot;1.0\&quot;\n    }\n\n    buildTypes {\n        release {\n            runProguard false\n            debuggable false\n            proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.txt&#39;\n        }\n\n        debug {\n            debuggable true\n        }\n    }\n}\n\ndependencies {\n    compile &#39;com.android.support:appcompat-v7:19.1.0&#39;\n    compile &#39;com.android.support:support-v4:19.1.0&#39;\n    compile &#39;com.google.android.gms:play-services:5.+&#39;\n    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])\n}\u003c/code\u003e\u003c/pre\u003e\n\n\u003cul\u003e\n\u003cli\u003eFew interesting thing in here\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch3\u003eapply plugin: &#39;android&#39;\u003c/h3\u003e\n\n\u003cul\u003e\n\u003cli\u003eIt applies the \u003ccode class=\&quot;prettyprint\&quot;\u003eAndroid plugin for Gradle\u003c/code\u003e to this build\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch3\u003eAndroid specific build option\u003c/h3\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eandroid {...} configures all the Android-specific build options \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eIt specifies SDK versions, release/debug build configurations etc..\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch3\u003eDependencies\u003c/h3\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eThe dependencies element is outside and after the android element\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eThis element declares the dependencies for this module\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch1\u003eSync the project with Android Studio\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eOpen Android Studio and import the SenZors project. It will sync gradle android project\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eMake sure to tick \u003ccode class=\&quot;prettyprint\&quot;\u003euse default gradle wrapper\u003c/code\u003e option in Android Studio preferences\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003e\u003cimg src=\&quot;https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/3332/Screen_Shot_2014-09-15_at_7.01.21_PM.png\&quot; alt=\&quot;Picture\&quot;\u003e\u003c/p\u003e\n\n\u003cul\u003e\n\u003cli\u003eFinalised project directory structure would be looks like below\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003e\u003cimg src=\&quot;https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/3334/Screen_Shot_2014-09-15_at_7.13.31_PM.png\&quot; alt=\&quot;Picture\&quot;\u003e\u003c/p\u003e\n\n\u003ch1\u003eBuild from command line\u003c/h1\u003e\n\n\u003cpre\u003e\u003ccode class=\&quot;prettyprint\&quot;\u003e# build project from command line\n./gradlew build\n\n# list all available gradle tasks \n./gradlew tasks\u003c/code\u003e\u003c/pre\u003e\n\n\u003ch1\u003eReferences\u003c/h1\u003e\n\n\u003col\u003e\n\u003cli\u003e\u003ca href=\&quot;http://ryanharter.com/blog/2013/07/17/migrating-android-projects-to-gradle/\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://ryanharter.com/blog/2013/07/17/migrating-android-projects-to-gradle/\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;http://developer.android.com/sdk/installing/studio-build.html\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://developer.android.com/sdk/installing/studio-build.html\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;http://spring.io/guides/gs/gradle-android/\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://spring.io/guides/gs/gradle-android/\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;http://gmariotti.blogspot.it/2013/10/common-tips-about-gradle.html\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://gmariotti.blogspot.it/2013/10/common-tips-about-gradle.html\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;http://tools.android.com/tech-docs/new-build-system/user-guide\&quot; rel=\&quot;nofollow\&quot;\u003ehttp://tools.android.com/tech-docs/new-build-system/user-guide\u003c/a\u003e\u003c/li\u003e\n\u003c/ol\u003e\n&quot;,&quot;public_id&quot;:&quot;npki6q&quot;,&quot;subscribed&quot;:false,&quot;tags&quot;:[&quot;shell&quot;,&quot;build&quot;,&quot;gradle&quot;,&quot;android-studio&quot;,&quot;android&quot;],&quot;title&quot;:&quot;Migrate existing android project to gradle&quot;,&quot;upvotes&quot;:8}},&quot;comments&quot;:{&quot;items&quot;:[{&quot;id&quot;:26651,&quot;hearts&quot;:0,&quot;heartableId&quot;:&quot;comment_26651&quot;},{&quot;id&quot;:29847,&quot;hearts&quot;:0,&quot;heartableId&quot;:&quot;comment_29847&quot;},{&quot;id&quot;:30171,&quot;hearts&quot;:0,&quot;heartableId&quot;:&quot;comment_30171&quot;}]}}" id="initial-redux-store"></div>
+
+
+</body></html>

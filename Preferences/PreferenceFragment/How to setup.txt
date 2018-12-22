@@ -1,0 +1,6 @@
+1- create xml folder in resources
+2- create xml file to add your preference views (checkboxPreference , ... etc)
+3- create a java class extends from PreferenceFragmentCompat
+4- in OnCreatePreference add this code (the connection between java and xml)
+    
+    addpreferencesfromresource(R.xml.your_recource_xml_file_name);

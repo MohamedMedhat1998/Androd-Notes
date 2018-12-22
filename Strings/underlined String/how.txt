@@ -1,0 +1,3 @@
+<resources>
+    <string name="your_string_here">This is an <u>underline</u>.</string>
+</resources>

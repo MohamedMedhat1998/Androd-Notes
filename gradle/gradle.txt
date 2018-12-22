@@ -1,0 +1,4 @@
+Gradle in Android Studio
+Gradle is the build system of choice for Android Studio. 
+Because of that, there's various functionality available within the platform. 
+When you make a project, there are a few gradle build scripts automatically generated for you

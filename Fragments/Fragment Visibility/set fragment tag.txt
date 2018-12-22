@@ -1,0 +1,1 @@
+fragmentTransaction.add(R.id.fragment_video_instructions_in_details_activity,fragmentIngredients,INGREDIENT_FRAGMENT_TAG);

@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/7397391/event-for-handling-the-focus-of-the-edittext

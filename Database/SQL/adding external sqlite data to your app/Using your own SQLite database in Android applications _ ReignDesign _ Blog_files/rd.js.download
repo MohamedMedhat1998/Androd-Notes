@@ -1,0 +1,17 @@
+jQuery("#menu-trigger").click(function() {
+    jQuery(this).toggleClass("active");
+    jQuery(".top-bar").toggleClass("show-menu");
+});
+
+//Remove open menu on resize
+jQuery(window).resize(function() {
+    var w = jQuery(window).width();
+    if (w > 768) {
+        if (jQuery(".top-bar").hasClass("show-menu")) {
+            jQuery(".top-bar").removeClass("show-menu");
+        }
+        if (jQuery("#menu-trigger").hasClass("active")) {
+            jQuery("#menu-trigger").removeClass("active");
+        }
+    }
+});

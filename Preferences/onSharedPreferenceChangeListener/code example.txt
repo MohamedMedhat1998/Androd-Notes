@@ -1,0 +1,35 @@
+public class VisualizerActivity extends AppCompatActivity
+  implements SharedPreferences.OnSharedPreferenceChangeListener{ //----------------------implement-------------------
+	.
+	.
+	.
+	.
+	.
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+	.
+	.
+	.
+	.
+	sharedPreferences.registerOnSharedPreferenceChangeListener(this); //------------------------register--------------------
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this); //---------------------unregister-----------------------
+    }
+
+
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { //---------------------------Override Method------------------------
+        if(key.equals(getString(R.string.pref_show_bass_key))){
+            mVisualizerView.setShowBass(sharedPreferences.getBoolean(getString(R.string.pref_show_bass_key),true));
+        }
+    }
+
+
+}

@@ -1,0 +1,13 @@
+NotificationManager n_manager;
+    Notification n;
+n_manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Intent i = new Intent(MainActivity.this , MainActivity.class);
+        PendingIntent pint = PendingIntent.getActivity(getBaseContext(),0,i,0);
+        n = new Notification.Builder(getBaseContext())
+                .setContentTitle("Notification ")
+                .setContentText("your child is in fucking danger")
+                .setSmallIcon(R.drawable.pic)
+                .setContentIntent(pint)
+                .build();
+        n.defaults = Notification.DEFAULT_ALL;
+        n_manager.notify("Hello people to notification" , my_id ,n);

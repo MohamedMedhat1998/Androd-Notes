@@ -1,0 +1,6 @@
+When you rotate the screen of your mobil device , the activity is destroyed and a new one is created
+the async tasks lasts until the task is finished even if the activity is destroyed , and posts the results in the 
+destroyed activity , this is a waste in memory and not effecient because a new async task is created also
+imagine this occurs every time you rotate the screen , of course a bad practice
+----
+the solution is to use a loader

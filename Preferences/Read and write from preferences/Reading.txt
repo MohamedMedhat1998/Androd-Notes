@@ -1,0 +1,7 @@
+1- you need a SharedPreferencesObject
+2- you need to call get methods to access the shared preferences attributes
+
+Example
+
+SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean bassState = sharedPreferences.getBoolean("show_bass"/*key*/ , true/*default value*/);

@@ -1,0 +1,8 @@
+var feed = new Instafeed({
+  userId: 350188373,
+  get: 'user',
+  accessToken: '350188373.17432d3.264542ef54b147f68a7b65fb55f13dc7',
+  limit: 5,
+  template: '<a target="_blank" href="{{link}}"><img src="{{image}}" /></a>'
+});
+feed.run();

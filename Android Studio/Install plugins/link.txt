@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/30617408/how-to-install-plugin-in-android-studio

@@ -1,0 +1,3420 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://material.io/design/color/the-color-system.html#tools-for-picking-colors -->
+<html lang="en" class="js dom-ready mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>The color system - Material Design</title>
+
+<meta itemprop="name" property="og:title" name="twitter:title" content="The color system">
+    <meta itemprop="description" property="og:description" name="twitter:description" content="The Material Design color system helps you choose colors for your user interface.">
+    <meta itemprop="image" property="og:image" name="twitter:image" content="https://material.io/design/https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1wpQ-cJvJW9vxhgYs-wjSS6f_flVj8RcR%2Fcolor-thumbnail-2x1.png">
+    <meta itemprop="url" property="og:url" name="twitter:url" content="https://material.io/design/color/the-color-system.html">
+    <meta property="og:site_name" content="Material Design">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="https://material.io/favicon.ico">
+<script type="text/javascript" async="" src="./The color system - Material Design_files/analytics.js.download"></script><script async="" src="./The color system - Material Design_files/gtm.js.download"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="./The color system - Material Design_files/main.min.css" rel="stylesheet">
+    <link href="./The color system - Material Design_files/css" rel="stylesheet">
+    <link rel="preload" href="./The color system - Material Design_files/main.min.js.download" as="script">
+    <link rel="preload" href="./The color system - Material Design_files/waypoints.min.js.download" as="script">
+    <link rel="preload" href="./The color system - Material Design_files/prettify_compiled.js.download" as="script">
+  <script type="text/javascript" charset="utf-8" async="" src="./The color system - Material Design_files/hats-integration-release.js.download"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=material.io" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=material.io"></script></head>
+
+  <body class="page--article left-rail breadcrumbs-show" data-comp="Global " data-slug-id="theColorSystem" data-spec-alias="mio-design" data-comp-id="comp_1" style="--scrollbar-width:17px;">
+
+
+
+<header class="header js-header" data-comp="Header" data-comp-id="comp_2">
+    <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button="{&quot;eventName&quot;: &quot;togglenav&quot;}" data-comp-id="comp_3">
+      <i class="material-icons header__hamburger-icon" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="https://material.io/" class="brand-lockup js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;global click&quot;,
+    &quot;label&quot;: &quot;logo&quot;}
+">
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <nav class="header__nav" role="navigation">
+    <ul class="header__nav-list header__nav-list--selected">
+          <li class="header__nav-item  js-header-item">
+    <a href="https://material.io/" class="header__nav-link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;/&quot;}
+">
+      Home
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+          <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="https://material.io/design" class="header__nav-link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;/design&quot;}
+">
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+          <li class="header__nav-item  js-header-item">
+    <a href="https://material.io/develop" class="header__nav-link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;/develop&quot;}
+">
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+          <li class="header__nav-item  js-header-item">
+    <a href="https://material.io/tools" class="header__nav-link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;/tools&quot;}
+">
+      Tools
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+    </ul>
+  </nav>
+
+  <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform="{&quot;basePath&quot;: &quot;/&quot;, &quot;ajax&quot;: false, &quot;showOnLoad&quot;: false}" data-comp-id="comp_4">
+    <button class="search-form__back js-search-back js-analytics-click" type="button" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;search back&quot;,
+    &quot;action&quot;: &quot;click icon&quot;,
+    &quot;label&quot;: &quot;DEFAULT: ga_label&quot;}
+">
+      <i class="material-icons">arrow_back</i>
+    </button>
+
+    <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Press Enter to search.">
+  </form>
+
+  <button class="header__search header__button js-toggle-search js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;search&quot;,
+    &quot;action&quot;: &quot;click icon&quot;,
+    &quot;label&quot;: &quot;DEFAULT: ga_label&quot;}
+">
+    <div class="icons-container mdc-ripple-surface mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" data-mdc-ripple-is-unbounded="" style="--mdc-ripple-fg-size:19.2px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:6px; --mdc-ripple-top:6px;">
+      <i class="material-icons header__spyglass" aria-label="Search">search</i>
+      <i class="material-icons header__search-close" aria-label="Close">close</i>
+    </div>
+  </button>
+</header>
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" data-comp-id="comp_5">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button="{&quot;eventName&quot;: &quot;togglenav&quot;}" data-comp-id="comp_6">
+      <i class="material-icons" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="https://material.io/" class="brand-lockup js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;breadcrumb navigation&quot;,
+    &quot;action&quot;: &quot;global click&quot;,
+    &quot;label&quot;: &quot;logo&quot;}
+">
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list anim-appear">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click " href="https://material.io/design/color" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;breadcrumb navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../color&quot;}
+">Color</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link" href="https://material.io/design/color/the-color-system.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;breadcrumb navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../color/the-color-system.html&quot;}
+">The color system</a>
+      </li>
+      <li class="breadcrumbs__crumb breadcrumbs__chapter" data-current="Tools for picking colors">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash" href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;breadcrumb navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;#color usage and palettes&quot;}
+" data-section-id="tools-for-picking-colors">Tools for picking colors</a>
+      </li>
+  </ol>
+</nav>
+
+<nav class="side-nav initialized" data-comp="SideNav" role="navigation" aria-hidden="false" data-comp-id="comp_7">
+
+<a href="https://material.io/" class="brand-lockup js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;global click&quot;,
+    &quot;label&quot;: &quot;logo&quot;}
+">
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Material System</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/introduction" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../introduction&quot;}
+" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Introduction
+          </a>
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav1" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Material studies
+          </button>
+            <div class="side-nav__wrapper" id="_nav1">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -351px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/about-our-material-studies.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/about-our-material-studies.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            About our Material studies
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/basil.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/basil.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Basil
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/crane.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/crane.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Crane
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/fortnightly.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/fortnightly.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Fortnightly
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/owl.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/owl.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Owl
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/rally.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/rally.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Rally
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/reply.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/reply.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Reply
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-studies/shrine.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-studies/shrine.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Shrine
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Foundation</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/foundation-overview" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../foundation-overview&quot;}
+" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Foundation overview
+          </a>
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav3" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Environment
+          </button>
+            <div class="side-nav__wrapper" id="_nav3">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -143px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/environment/surfaces.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../environment/surfaces.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Surfaces
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/environment/elevation.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../environment/elevation.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Elevation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/environment/light-shadows.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../environment/light-shadows.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Light and shadows
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav4" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Layout
+          </button>
+            <div class="side-nav__wrapper" id="_nav4">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -226px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/layout/understanding-layout.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../layout/understanding-layout.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Understanding layout
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/layout/responsive-layout-grid.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../layout/responsive-layout-grid.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Responsive layout grid
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/layout/spacing-methods.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../layout/spacing-methods.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Spacing methods
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/layout/component-behavior.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../layout/component-behavior.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Component behavior
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/layout/density.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../layout/density.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Density
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav5" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Navigation
+          </button>
+            <div class="side-nav__wrapper" id="_nav5">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -143px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/navigation/understanding-navigation.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../navigation/understanding-navigation.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Understanding navigation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/navigation/navigation-transitions.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../navigation/navigation-transitions.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Navigation transitions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/navigation/search.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../navigation/search.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Search
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface active js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav6" aria-expanded="true" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Color
+          </button>
+            <div class="side-nav__wrapper" id="_nav6">
+    <ul class="side-nav__submenu" data-menu-state="open" aria-hidden="false" style="margin-top: 0px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click side-nav__link--active js-header-show mdc-ripple-upgraded" href="https://material.io/design/color/the-color-system.html" aria-current="page" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../color/the-color-system.html&quot;}
+" tabindex="0" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            The color system
+          </a>
+
+            <div class="side-nav__articles">
+              <i class="side-nav__progress-bar">
+                <i class="side-nav__scrub js-submenu-scrub" style="height: 34px; top: 101px;"></i>
+              </i>
+                <div>
+                  <a class="side-nav__article js-anchor-link js-anchor-link-color-usage-palettes js-analytics-click" href="https://material.io/design/color/the-color-system.html#color-usage-palettes" data-section-id="color-usage-palettes" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;#color-usage-palettes&quot;}
+">
+                    <span class="js-anchor-text">Color usage and palettes</span>
+                  </a>
+                </div>
+                <div>
+                  <a class="side-nav__article js-anchor-link js-anchor-link-color-theme-creation js-analytics-click" href="https://material.io/design/color/the-color-system.html#color-theme-creation" data-section-id="color-theme-creation" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;#color-theme-creation&quot;}
+">
+                    <span class="js-anchor-text">Color theme creation</span>
+                  </a>
+                </div>
+                <div>
+                  <a class="side-nav__article js-anchor-link js-anchor-link-tools-for-picking-colors js-analytics-click active" href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors" data-section-id="tools-for-picking-colors" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;#tools-for-picking-colors&quot;}
+" aria-current="true">
+                    <span class="js-anchor-text">Tools for picking colors</span>
+                  </a>
+                </div>
+            </div>
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/color/applying-color-to-ui.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../color/applying-color-to-ui.html&quot;}
+" tabindex="0" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Applying color to UI
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/color/color-usage.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../color/color-usage.html&quot;}
+" tabindex="0" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Color usage
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/color/text-legibility.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../color/text-legibility.html&quot;}
+" tabindex="0" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Text legibility
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav7" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Typography
+          </button>
+            <div class="side-nav__wrapper" id="_nav7">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -143px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/typography/the-type-system.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../typography/the-type-system.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            The type system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/typography/understanding-typography.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../typography/understanding-typography.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Understanding typography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/typography/language-support.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../typography/language-support.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Language support
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav8" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Iconography
+          </button>
+            <div class="side-nav__wrapper" id="_nav8">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -143px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/iconography/product-icons.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../iconography/product-icons.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Product icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/iconography/system-icons.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../iconography/system-icons.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            System icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/iconography/animated-icons.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../iconography/animated-icons.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Animated icons
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav9" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Shape
+          </button>
+            <div class="side-nav__wrapper" id="_nav9">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -184px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/shape/about-shape.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../shape/about-shape.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            About shape
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/shape/shape-hierarchy.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../shape/shape-hierarchy.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Shape and hierarchy
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/shape/shape-as-expression.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../shape/shape-as-expression.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Shape as expression
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/shape/shape-motion.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../shape/shape-motion.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Shape and motion
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav10" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Motion
+          </button>
+            <div class="side-nav__wrapper" id="_nav10">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -184px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/motion/understanding-motion.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../motion/understanding-motion.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Understanding motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/motion/speed.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../motion/speed.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Speed
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/motion/choreography.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../motion/choreography.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/motion/customization.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../motion/customization.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Customization
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav11" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Interaction
+          </button>
+            <div class="side-nav__wrapper" id="_nav11">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -143px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/interaction/gestures.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../interaction/gestures.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Gestures
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/interaction/selection.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../interaction/selection.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Selection
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/interaction/states.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../interaction/states.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            States
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav12" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Communication
+          </button>
+            <div class="side-nav__wrapper" id="_nav12">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -410px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/confirmation-acknowledgement.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/confirmation-acknowledgement.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.77218;">
+            Confirmation &amp; acknowledgement
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/data-formats.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/data-formats.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Data formats
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/empty-states.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/empty-states.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Empty states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/help-feedback.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/help-feedback.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Help &amp; feedback
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/imagery.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/imagery.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Imagery
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/launch-screen.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/launch-screen.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Launch screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/onboarding.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/onboarding.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Onboarding
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/writing.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/writing.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Writing
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/communication/offline-states.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../communication/offline-states.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Offline states
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Guidelines</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/guidelines-overview" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../guidelines-overview&quot;}
+" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Guidelines overview
+          </a>
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav14" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Material Theming
+          </button>
+            <div class="side-nav__wrapper" id="_nav14">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -101px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-theming/overview.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-theming/overview.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Overview
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/material-theming/implementing-your-theme.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../material-theming/implementing-your-theme.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Implementing your theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav15" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Components
+          </button>
+            <div class="side-nav__wrapper" id="_nav15">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -1076px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/app-bars-bottom.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/app-bars-bottom.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            App bars: bottom
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/app-bars-top.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/app-bars-top.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            App bars: top
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/backdrop.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/backdrop.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Backdrop
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/banners.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/banners.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Banners
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/bottom-navigation.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/bottom-navigation.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Bottom navigation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/buttons.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/buttons.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Buttons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/buttons-floating-action-button.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/buttons-floating-action-button.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.77218;">
+            Buttons: floating action button
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/cards.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/cards.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Cards
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/chips.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/chips.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Chips
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/data-tables.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/data-tables.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Data tables
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/dialogs.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/dialogs.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Dialogs
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/dividers.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/dividers.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Dividers
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/image-lists.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/image-lists.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Image lists
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/lists.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/lists.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Lists
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/menus.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/menus.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Menus
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/navigation-drawer.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/navigation-drawer.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Navigation drawer
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/progress-indicators.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/progress-indicators.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Progress indicators
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/selection-controls.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/selection-controls.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Selection controls
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/sheets-bottom.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/sheets-bottom.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Sheets: bottom
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/sheets-side.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/sheets-side.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Sheets: side
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/sliders.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/sliders.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Sliders
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/snackbars.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/snackbars.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Snackbars
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/tabs.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/tabs.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Tabs
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/text-fields.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/text-fields.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Text fields
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/components/tooltips.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../components/tooltips.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Tooltips
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav16" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Usability
+          </button>
+            <div class="side-nav__wrapper" id="_nav16">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -101px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/usability/accessibility.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../usability/accessibility.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Accessibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/usability/bidirectionality.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../usability/bidirectionality.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Bidirectionality
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle mdc-ripple-upgraded" aria-controls="_nav17" aria-expanded="false" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Platform guidance
+          </button>
+            <div class="side-nav__wrapper" id="_nav17">
+    <ul class="side-nav__submenu" data-menu-state="closed" aria-hidden="true" style="margin-top: -594px;">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-bars.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-bars.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android bars
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-fingerprint.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-fingerprint.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android fingerprint
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-haptics.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-haptics.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android haptics
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-icons.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-icons.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-navigating-between-apps.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-navigating-between-apps.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.77218;">
+            Android navigating between apps
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-notifications.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-notifications.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android notifications
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-permissions.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-permissions.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android permissions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-settings.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-settings.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android settings
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-split-screen.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-split-screen.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android split-screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-swipe-to-refresh.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-swipe-to-refresh.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android swipe to refresh
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-text-selection-toolbar.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-text-selection-toolbar.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.77218;">
+            Android text selection toolbar
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/android-widget.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/android-widget.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Android widget
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click mdc-ripple-upgraded" href="https://material.io/design/platform-guidance/cross-platform-adaptation.html" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;left rail navigation&quot;,
+    &quot;action&quot;: &quot;nav click&quot;,
+    &quot;label&quot;: &quot;../platform-guidance/cross-platform-adaptation.html&quot;}
+" tabindex="-1" style="--mdc-ripple-fg-size:157.32px; --mdc-ripple-fg-scale:1.75108;">
+            Cross-platform adaptation
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+  </ul>
+</nav>
+    <main class="main" role="main">
+
+<article class="article" data-comp="Waypoints" data-comp-id="comp_8">
+  <div class="article__intro container container--large js-waypoints-trigger-initial anim-appear">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger anim-appear">
+
+        The color system
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger anim-appear">
+        <div>
+<div aria-hidden="true" class="keywords hidden">color, color system</div>
+<h2>The Material Design color system can be used to create a color theme that reflects your brand or style.</h2></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger anim-appear">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="https://material.io/design/color/the-color-system.html#color-usage-palettes" data-section-id="color-usage-palettes" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;content&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;#color-usage-palettes&quot;}
+">Color usage and palettes</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="https://material.io/design/color/the-color-system.html#color-theme-creation" data-section-id="color-theme-creation" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;content&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;#color-theme-creation&quot;}
+">Color theme creation</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors" data-section-id="tools-for-picking-colors" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;content&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;#tools-for-picking-colors&quot;}
+">Tools for picking colors</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr>
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger anim-appear">
+      <section id="color-usage-palettes" class="container container--large js-waypoints-trigger article__section anim-appear" data-section-title="Color usage and palettes" aria-label="Color usage and palettes">
+          <h2 class="article__chapter-title">
+            Color usage and palettes
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">color, color system</div>
+<p>The Material Design color system uses an organized approach to applying color to your UI. In this system, a primary and a secondary color are typically selected to represent your brand. Dark and light variants of each color can then be applied to your UI in different ways. </p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card mdc-ripple-upgraded" data-comp="Reference" data-comp-id="comp_9" style="--mdc-ripple-fg-size:144px; --mdc-ripple-fg-scale:1.94035;">
+<a class="object-card__link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;object card&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;/mio-tools/theme-editor&quot;}
+" href="https://material.io/tools/theme-editor" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F17EyGT99sP-xAvxJ-Ay4HFDsb330qAAjI%2Ftheme-editor-thumbnail-1x1-circle.png" style="background-image: url(&#39;https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F17EyGT99sP-xAvxJ-Ay4HFDsb330qAAjI%2Ftheme-editor-thumbnail-1x1-circle.png&#39;);"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Material Theme Editor</h2>
+<p class="object-card__body">The Material Theme Editor helps you make your own branded symbol library and apply global style changes to color, shape, and typography.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Colors and theming</h2><p>Your app’s primary and secondary colors, and their variants, help create a color theme that is harmonious, ensures accessible text, and distinguishes UI elements and surfaces from one another.</p><p>To select primary and secondary colors, and generate light and dark variants of each, use the Material Design palette tool, Theme Editor, or 2014 Material Design palettes. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-usage-palettes-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1G9utlx7O2-lxBVs5e3BbWq7kbAdXMwOE%2Fcolor-colorsystem-usagepalettes-1.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1G9utlx7O2-lxBVs5e3BbWq7kbAdXMwOE%2Fcolor-colorsystem-usagepalettes-1.png">
+</div>
+</div>
+<figcaption id="color-usage-palettes-figure-caption-0">
+<p>A sample primary and secondary palette</p><ol class="lst-kix_yquw1ikke0pi-0 start" start="1"><li>Primary color indicator</li><li>Secondary color indicator</li><li>Light and dark variants</li></ol></figcaption>
+</figure></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_10"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Color indicates which elements are interactive, how they relate to other elements, and their level of prominence. Important elements should stand out the most. Text...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1CDIE_WPaD8z_nonnMOuDLC19hAGiY6b1%2Fcolor-illos-01.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1CDIE_WPaD8z_nonnMOuDLC19hAGiY6b1%2Fcolor-illos-01.png">
+</div>
+</div>
+</figure><h2>Hierarchical</h2><p>Color indicates which elements are interactive, how they relate to other elements, and their level of prominence. Important elements should stand out the most.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F11CLsrEcY3rp-rqzhlYTgZeePvdHav1lP%2Fcolor-illos-02.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F11CLsrEcY3rp-rqzhlYTgZeePvdHav1lP%2Fcolor-illos-02.png">
+</div>
+</div>
+</figure><h2>Legible</h2><p>Text and important elements, like icons, should meet legibility standards when appearing on colored backgrounds, across all screen and device types.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1E7obU8zEYjTdP_ICDzqr63fuhyc_dQmd%2Fcolor-illos-03.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1E7obU8zEYjTdP_ICDzqr63fuhyc_dQmd%2Fcolor-illos-03.png">
+</div>
+</div>
+</figure><h2>Expressive</h2><p>Reinforce your brand by showing brand colors at memorable moments that reinforce your brand’s style.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr>      <section id="color-theme-creation" class="container container--large js-waypoints-trigger article__section anim-appear" data-section-title="Color theme creation" aria-label="Color theme creation">
+          <h2 class="article__chapter-title">
+            Color theme creation
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">color, color system</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_11"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse The baseline Material color theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">The baseline Material color theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Material Design comes designed with a built-in, baseline theme that can be used as-is, straight out of the proverbial box. This includes default colors for...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Material Design comes designed with a built-in, baseline theme that can be used as-is, straight out of the proverbial box. </p><p>This includes default colors for primary, secondary, and their variants. This baseline theme also includes additional colors that define your UI, such as the colors for backgrounds, surfaces, errors, typography, and iconography. All of these colors can be customized for your app.  </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 90.3947368421%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="90.3947368421%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1hg4iTKzTMMgtJRx7bhaE2kSYR5BRYz1g%2Fcolor-colorsystem-schemecreation-theme.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1hg4iTKzTMMgtJRx7bhaE2kSYR5BRYz1g%2Fcolor-colorsystem-schemecreation-theme.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-0">
+<p>The baseline Material color theme.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_12"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Primary color Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Primary color</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>A primary color is the color displayed most frequently across your app’s screens and components. If you don’t have a secondary color, your primary color...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><p>A <strong>primary color</strong> is the color displayed most frequently across your app’s screens and components. </p><p>If you don’t have a secondary color, your primary color can also be used to accent elements.</p><h2>Dark and light primary variants</h2><p>You can make a color theme for your app using your primary color, as well as dark and light primary variants.</p><h2>Distinguish UI elements</h2><p>To create contrast between UI elements, such as distinguishing a top app bar from a system bar, you can use light or dark variants of your primary color on each elements. You can also use variants to distinguish elements within a component, such different variants used on a floating action button container, and the icon within it.</p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder bordered frame video-player--mouse" data-comp="VideoPlayer" data-props-videoplayer="{&quot;autoPlay&quot;: false, &quot;hideControls&quot;: false}" style="padding-top: 74.2105%;" data-comp-id="comp_13">
+<video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" poster="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F16hjGdE8qoAJ0M3FdX1223HPfUlE2J7CC%2Fcolor-colorsystem-schemecreation-primary-baseline-1a.png" preload="metadata" tabindex="0">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1_0WGypORQm2ttQ2EAY6W9Shc41yqsVSn%2Fcolor-colorsystem-schemecreation-primary-baseline-1a-v5.mp4" src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1_0WGypORQm2ttQ2EAY6W9Shc41yqsVSn%2Fcolor-colorsystem-schemecreation-primary-baseline-1a-v5.mp4" type="video/mp4"> </video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Mute&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_14">
+<i class="material-icons video-player__icon">volume_up</i>
+<div class="tooltip js-tooltip-bottom">
+      Mute</div></button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Unmute&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_15">
+<i class="material-icons video-player__icon">volume_off</i>
+<div class="tooltip js-tooltip-bottom">
+      Unmute</div></button>
+</div>
+</div></figure><figcaption>
+<p>Light and dark variants of a primary color distinguish a top app bar from a system bar.</p></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1LpI_jDbOurvKaj-Xj0EvOuyjx0IuWFPB%2Fcolor-colorsystem-schemecreation-primary-baseline-2.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1LpI_jDbOurvKaj-Xj0EvOuyjx0IuWFPB%2Fcolor-colorsystem-schemecreation-primary-baseline-2.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-1">
+<p>This UI uses a primary color and two primary variants.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_16"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Secondary color Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Secondary color</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>A secondary color provides more ways to accent and distinguish your product. Having a secondary color is optional, and should be applied sparingly to accent...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><p>A <strong>secondary color</strong> provides more ways to accent and distinguish your product. Having a secondary color is optional, and should be applied sparingly to accent select parts of your UI.</p><p>Secondary colors are best for:</p><ul class="lst-kix_tn245r56mamw-0 start"><li>Floating action buttons</li><li>Selection controls, like sliders and switches</li><li>Highlighting selected text</li><li>Progress bars</li><li>Links and headlines</li></ul><h2>Dark and light secondary variants</h2><p>Just like the primary color, your secondary color can have dark and light variants. You can make a color theme by using your primary color, secondary color, and dark and light variants of each color. </p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder bordered frame video-player--mouse" data-comp="VideoPlayer" data-props-videoplayer="{&quot;autoPlay&quot;: false, &quot;hideControls&quot;: false}" style="padding-top: 74.2105%;" data-comp-id="comp_17">
+<video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" poster="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1ppL5W5FelE25W4mXlutSfnVtVCA3FBRh%2Fcolor-colorsystem-schemecreation-secondary-baseline-1a.png" preload="metadata" tabindex="0">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F10pANQAawTXfXDLzAtsjHIIKXuHHrfNTr%2Fcolor-colorsystem-schemecreation-secondary-baseline-1a.mp4" src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F10pANQAawTXfXDLzAtsjHIIKXuHHrfNTr%2Fcolor-colorsystem-schemecreation-secondary-baseline-1a.mp4" type="video/mp4"> </video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Mute&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_18">
+<i class="material-icons video-player__icon">volume_up</i>
+<div class="tooltip js-tooltip-bottom">
+      Mute</div></button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Unmute&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_19">
+<i class="material-icons video-player__icon">volume_off</i>
+<div class="tooltip js-tooltip-bottom">
+      Unmute</div></button>
+</div>
+</div></figure><figcaption>
+<p>Dark and light variants of primary and secondary colors</p></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F13Oed330QwZjx6LCPqXlIiWPzVI_fZZh8%2Fcolor-colorsystem-schemecreation-secondary-baseline-1.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F13Oed330QwZjx6LCPqXlIiWPzVI_fZZh8%2Fcolor-colorsystem-schemecreation-secondary-baseline-1.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-2">
+<p>This UI uses a color theme with a primary, primary variant, and secondary color.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_20"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Surface, background, and error colors Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Surface, background, and error colors</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Surface, background, and error colors typically don’t represent brand:</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Surface, background, and error colors typically don’t represent brand:</p><ul class="lst-kix_w0ywgyqwh5ak-0 start"><li>Surface colors affect surfaces of components, such as cards, sheets, and menus. </li><li>The background color appears behind scrollable content. The baseline background and surface color is #FFFFFF. </li><li>Error color indicates errors components, such as text fields. The baseline error color is #B00020.</li></ul><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1hn9Ffe7iuhpl4HpJsIC6ikz0IPMwEfcJ%2Ftheming-color-surfacesbgs.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1hn9Ffe7iuhpl4HpJsIC6ikz0IPMwEfcJ%2Ftheming-color-surfacesbgs.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-3">
+<p>A UI showcasing the baseline colors for background, surface, and error color.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-comp-id="comp_21"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Typography and iconography colors Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Typography and iconography colors</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The elements in an app use colors from specific categories in your color palette, such as a primary color. Whenever other screen elements, such as...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>“On” colors</h2><p>The elements in an app use colors from specific categories in your color palette, such as a primary color. Whenever other screen elements, such as text or icons, appear in front of surfaces using those colors, those elements should use colors specifically designed to appear clearly and legibly against the colors behind them.</p><p>This category of colors is called “on” colors, referring to the fact that they color elements that are sometimes placed “on” top of key surfaces that use a primary color, secondary color, surface color, background color, or error color. These are labelled using the original category name (such as primary color) with the prefix “on”.  </p><p>“On” colors are primarily applied to text, iconography, and strokes. Sometimes, they are also applied to surfaces.</p><p> The defaults for these colors are #FFFFFF and #000000. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1jTwR_tLfYC3x-B1bD8hN7Nza9x2y1Kny%2Ftheming-color-oncolors.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1jTwR_tLfYC3x-B1bD8hN7Nza9x2y1Kny%2Ftheming-color-oncolors.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-4">
+<p>A UI showcases the baseline colors for text and iconography.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-comp-id="comp_22"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Accessible colors Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Accessible colors</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>To ensure that a color provides an accessible background behind light or dark text, you can use light and dark variants of your primary and...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><p>To ensure that a color provides an accessible background behind light or dark text, you can use light and dark variants of your primary and secondary colors. </p><p>Alternatively, these colors can be used for typography that appears in front of light and dark backgrounds. </p><h2>Color swatches</h2><p>A <strong>swatch</strong> is a sample of a color chosen from a range of similar colors.</p><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder hide-controls bordered frame video-player--mouse is-playing" data-comp="VideoPlayer" data-props-videoplayer="{&quot;autoPlay&quot;: true, &quot;hideControls&quot;: true}" style="padding-top: 50.0%;" data-comp-id="comp_23">
+<video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1T0tTFmW3QrkCjrDS0aH5W2PVA8XmBQVk%2Fcolor-colorsystem-schemecreation-accessibility-1a.mp4" src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1T0tTFmW3QrkCjrDS0aH5W2PVA8XmBQVk%2Fcolor-colorsystem-schemecreation-accessibility-1a.mp4" type="video/mp4"> </video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Mute&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_24">
+<i class="material-icons video-player__icon">volume_up</i>
+<div class="tooltip js-tooltip-bottom">
+      Mute</div></button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Unmute&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_25">
+<i class="material-icons video-player__icon">volume_off</i>
+<div class="tooltip js-tooltip-bottom">
+      Unmute</div></button>
+</div>
+</div></figure><figcaption>
+<p>Check marks indicate whether a text color is legible in front of a background:</p><ul class="lst-kix_d6isfwgsyjg0-0 start"><li>A white check mark indicates when white text is legible on a background color</li><li>A black check mark indicates when black text is legible on a background color</li></ul></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1PqH1prDsSruO48qhgq6ZkuG-GSVVixMR%2Fcolor-colorsystem-schemecreation-accessibility-2.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1PqH1prDsSruO48qhgq6ZkuG-GSVVixMR%2Fcolor-colorsystem-schemecreation-accessibility-2.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-5">
+<p>For apps that use white text, backgrounds must be accessible against white. These white check marks indicate when white text is accessible against various background color swatches. The 400 color swatch is applied to this UI.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F19cntUn82CP2Tx-oNjQpVAaamndQu7RSI%2Fcolor-colorsystem-schemecreation-accessibility-3.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F19cntUn82CP2Tx-oNjQpVAaamndQu7RSI%2Fcolor-colorsystem-schemecreation-accessibility-3.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-6">
+<p>For apps that use black text, backgrounds must be accessible against black. These black check marks indicate when black text is accessible against various background color swatches. The 50 color swatch is applied to this UI.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_26"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Alternative colors Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Alternative colors</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The Material Design color system supports alternative colors, which are colors used as alternatives to your brand’s primary and secondary colors (they constitute additional colors...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>The Material Design color system supports <strong>alternative colors</strong>, which are colors used as alternatives to your brand’s primary and secondary colors (they constitute additional colors to your theme). Apps can use alternative colors to establish themes that distinguish different sections. </p><p>Alternative colors are best for:</p><ul class="lst-kix_at1pwk8fndwt-0 start"><li>Apps with light and dark themes</li><li>Apps with different themes in different sections</li><li>Apps that exist as part of a suite of products </li></ul><p>Alternative colors should be used cautiously, because they can be challenging to implement cohesively with existing color themes. </p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_27"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Alternative colors for section themes Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Alternative colors for section themes</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Alternative colors can be used to theme different parts of an app. Owl is an educational app that provides courses for people who want to...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Alternative colors can be used to theme different parts of an app.</p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card mdc-ripple-upgraded" data-comp="Reference" data-comp-id="comp_28" style="--mdc-ripple-fg-size:144px; --mdc-ripple-fg-scale:1.94035;">
+<a class="object-card__link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;object card&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;../material-studies/owl.html#owl&quot;}
+" href="https://material.io/design/material-studies/owl.html#owl" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1GSIKpAFhpGjFaKRl5xQHO5p_aL4OoNxa%2Fowl-thumbnail-1x1-circle.png" style="background-image: url(&#39;https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1GSIKpAFhpGjFaKRl5xQHO5p_aL4OoNxa%2Fowl-thumbnail-1x1-circle.png&#39;);"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Owl</h2>
+<p class="object-card__body">Owl is an educational app that provides courses for people who want to explore and learn new skills.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Jo9yjAaKpYl3jijuskjU6_pfmML7n7B5%2Fcolor-colorsystem-schemecreation-altprimarysecondary-3.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1Jo9yjAaKpYl3jijuskjU6_pfmML7n7B5%2Fcolor-colorsystem-schemecreation-altprimarysecondary-3.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-7"><p>This app has three primary colors. Distinct themes are used in different parts of the app, allowing users to better locate themselves within it. </p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Theme 1</h2><p>Yellow is used as the primary color for areas such as onboarding and choosing areas of interest.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F181H5cwjIitZNB5aMubkSHjqfBAr8mos2%2Fcolor-colorsystem-schemecreation-altprimarysecondary-4.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F181H5cwjIitZNB5aMubkSHjqfBAr8mos2%2Fcolor-colorsystem-schemecreation-altprimarysecondary-4.png">
+</div>
+</div>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Theme 2</h2><p>Blue is used as the primary color for areas of the app that relate to the user’s personal account, such as selected classes.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1gNgK8xWBxDYQSuNvK1MoS3kFfPbetcgs%2Fcolor-colorsystem-schemecreation-altprimarysecondary-5.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1gNgK8xWBxDYQSuNvK1MoS3kFfPbetcgs%2Fcolor-colorsystem-schemecreation-altprimarysecondary-5.png">
+</div>
+</div>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Theme 3</h2><p>Pink is used as the primary color for classes. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1SDGX3-el7fSZgwPwWVnMr7ri00_YV-Al%2Fcolor-colorsystem-schemecreation-altprimarysecondary-6.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1SDGX3-el7fSZgwPwWVnMr7ri00_YV-Al%2Fcolor-colorsystem-schemecreation-altprimarysecondary-6.png">
+</div>
+</div>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_29"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Additional colors for data visualization Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Additional colors for data visualization</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Apps can use additional colors to convey categories that are outside of your main color theme. They are still a part of your full color...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Apps can use additional colors to convey categories that are outside of your main color theme. They are still a part of your full color palette. </p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card mdc-ripple-upgraded" data-comp="Reference" data-comp-id="comp_30" style="--mdc-ripple-fg-size:144px; --mdc-ripple-fg-scale:1.94035;">
+<a class="object-card__link js-analytics-click" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;object card&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;../material-studies/rally.html#rally&quot;}
+" href="https://material.io/design/material-studies/rally.html#rally" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1-j0649fxMdnVm5zC0-uXEQc07NsZLlc8%2Frally-thumbnail-1x1-circle.png" style="background-image: url(&#39;https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1-j0649fxMdnVm5zC0-uXEQc07NsZLlc8%2Frally-thumbnail-1x1-circle.png&#39;);"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Rally</h2>
+<p class="object-card__body">Rally is a personal finance app that demonstrates how Material Design can be used for finance.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 71.1842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="color-theme-creation-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image anim-appear" data-aspect-ratio="71.1842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Cr__9NRDY9K--yaovyZdora4YWV5bICC%2Fcolor-colorsystem-schemecreation-dataviz.png" src="./The color system - Material Design_files/mio-design%2Fassets%2F1Cr__9NRDY9K--yaovyZdora4YWV5bICC%2Fcolor-colorsystem-schemecreation-dataviz.png">
+</div>
+</div>
+<figcaption id="color-theme-creation-figure-caption-8">
+<p>This app has a color theme with five additional colors, which it uses when multiple data visualizations are shown on the same page. </p><ol class="lst-kix_tgrz1an6vx46-0 start" start="1"><li>The Accounts section uses green </li><li>The Bills section uses orange and yellow </li><li>The Budget section uses purple and blue </li></ol><p>(Scaled down to 50%)</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr>      <section id="tools-for-picking-colors" class="container container--large js-waypoints-trigger article__section anim-appear" data-section-title="Tools for picking colors" aria-label="Tools for picking colors">
+          <h2 class="article__chapter-title">
+            Tools for picking colors
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">color, color system</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_31"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Material palette generator Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Material palette generator</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The Material palette generator can be used to generate a palette for any color you input. An algorithmic adjustment of hue, chroma, and lightness creates...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The Material palette generator<em> </em>can be used to generate a palette for any color you input. An algorithmic adjustment of hue, chroma, and lightness creates palettes that are both usable and aesthetically pleasing.  </p><h2>Input colors </h2><p>Color palettes can be generated based on the primary input color, and whether the desired palette should be analogous, complementary, or triadic in relation to the primary color. Alternatively, the tool can generate expanded palettes for any primary and secondary color input. </p><h2>Color variations for accessibility</h2><p>These palettes provide additional ways to use your primary and secondary colors, by providing lighter and darker options to separate surfaces and provide colors that meet accessibility standards.</p><iframe class="js-scroll-to-iframe " src="./The color system - Material Design_files/color.html" style="height: 540px"></iframe></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible="{&quot;collapsed&quot;: false}" data-comp-id="comp_32"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse 2014 Material Design color palettes Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">2014 Material Design color palettes</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>These color palettes, originally created by Material Design in 2014, comprises of colors designed to work together harmoniously, and can be used to develop your...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>These color palettes, originally created by Material Design in 2014, comprises of colors designed to work together harmoniously, and can be used to develop your brand palette. To generate your own harmonious palettes, use either the palette generation tool or Material Theme Editor.</p></div></section></div><div class="col-list"><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #FFEBEE;">
+<div class="details">
+<span class="shade">Red 50</span>
+<span class="hex">#FFEBEE</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFCDD2;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#FFCDD2</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #EF9A9A;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#EF9A9A</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #E57373;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#E57373</span>
+</div>
+</div><div class="color-tag light" style="background-color: #EF5350;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#EF5350</span>
+</div>
+</div><div class="color-tag light" style="background-color: #F44336;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#F44336</span>
+</div>
+</div><div class="color-tag light" style="background-color: #E53935;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#E53935</span>
+</div>
+</div><div class="color-tag light" style="background-color: #D32F2F;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#D32F2F</span>
+</div>
+</div><div class="color-tag light" style="background-color: #C62828;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#C62828</span>
+</div>
+</div><div class="color-tag light" style="background-color: #B71C1C;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#B71C1C</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF8A80;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#FF8A80</span>
+</div>
+</div><div class="color-tag light" style="background-color: #FF5252;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#FF5252</span>
+</div>
+</div><div class="color-tag light" style="background-color: #FF1744;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#FF1744</span>
+</div>
+</div><div class="color-tag light" style="background-color: #D50000;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#D50000</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #FCE4EC;">
+<div class="details">
+<span class="shade">Pink 50</span>
+<span class="hex">#FCE4EC</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F8BBD0;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#F8BBD0</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F48FB1;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#F48FB1</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F06292;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#F06292</span>
+</div>
+</div><div class="color-tag light" style="background-color: #EC407A;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#EC407A</span>
+</div>
+</div><div class="color-tag light" style="background-color: #E91E63;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#E91E63</span>
+</div>
+</div><div class="color-tag light" style="background-color: #D81B60;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#D81B60</span>
+</div>
+</div><div class="color-tag light" style="background-color: #C2185B;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#C2185B</span>
+</div>
+</div><div class="color-tag light" style="background-color: #AD1457;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#AD1457</span>
+</div>
+</div><div class="color-tag light" style="background-color: #880E4F;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#880E4F</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF80AB;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#FF80AB</span>
+</div>
+</div><div class="color-tag light" style="background-color: #FF4081;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#FF4081</span>
+</div>
+</div><div class="color-tag light" style="background-color: #F50057;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#F50057</span>
+</div>
+</div><div class="color-tag light" style="background-color: #C51162;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#C51162</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #F3E5F5;">
+<div class="details">
+<span class="shade">Purple 50</span>
+<span class="hex">#F3E5F5</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #E1BEE7;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#E1BEE7</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #CE93D8;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#CE93D8</span>
+</div>
+</div><div class="color-tag light" style="background-color: #BA68C8;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#BA68C8</span>
+</div>
+</div><div class="color-tag light" style="background-color: #AB47BC;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#AB47BC</span>
+</div>
+</div><div class="color-tag light" style="background-color: #9C27B0;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#9C27B0</span>
+</div>
+</div><div class="color-tag light" style="background-color: #8E24AA;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#8E24AA</span>
+</div>
+</div><div class="color-tag light" style="background-color: #7B1FA2;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#7B1FA2</span>
+</div>
+</div><div class="color-tag light" style="background-color: #6A1B9A;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#6A1B9A</span>
+</div>
+</div><div class="color-tag light" style="background-color: #4A148C;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#4A148C</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #EA80FC;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#EA80FC</span>
+</div>
+</div><div class="color-tag light" style="background-color: #E040FB;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#E040FB</span>
+</div>
+</div><div class="color-tag light" style="background-color: #D500F9;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#D500F9</span>
+</div>
+</div><div class="color-tag light" style="background-color: #AA00FF;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#AA00FF</span>
+</div>
+</div></div></section><section class="module-module-module col-3"><div class="module"><hr class="spacer" role="presentation"></div><div class="module"></div><div class="module"></div></section><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #EDE7F6;">
+<div class="details">
+<span class="shade">Deep purple 50</span>
+<span class="hex">#EDE7F6</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #D1C4E9;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#D1C4E9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B39DDB;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#B39DDB</span>
+</div>
+</div><div class="color-tag light" style="background-color: #9575CD;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#9575CD</span>
+</div>
+</div><div class="color-tag light" style="background-color: #7E57C2;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#7E57C2</span>
+</div>
+</div><div class="color-tag light" style="background-color: #673AB7;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#673AB7</span>
+</div>
+</div><div class="color-tag light" style="background-color: #5E35B1;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#5E35B1</span>
+</div>
+</div><div class="color-tag light" style="background-color: #512DA8;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#512DA8</span>
+</div>
+</div><div class="color-tag light" style="background-color: #4527A0;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#4527A0</span>
+</div>
+</div><div class="color-tag light" style="background-color: #311B92;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#311B92</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B388FF;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#B388FF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #7C4DFF;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#7C4DFF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #651FFF;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#651FFF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #6200EA;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#6200EA</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #E8EAF6;">
+<div class="details">
+<span class="shade">Indigo 50</span>
+<span class="hex">#E8EAF6</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #C5CAE9;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#C5CAE9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #9FA8DA;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#9FA8DA</span>
+</div>
+</div><div class="color-tag light" style="background-color: #7986CB;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#7986CB</span>
+</div>
+</div><div class="color-tag light" style="background-color: #5C6BC0;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#5C6BC0</span>
+</div>
+</div><div class="color-tag light" style="background-color: #3F51B5;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#3F51B5</span>
+</div>
+</div><div class="color-tag light" style="background-color: #3949AB;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#3949AB</span>
+</div>
+</div><div class="color-tag light" style="background-color: #303F9F;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#303F9F</span>
+</div>
+</div><div class="color-tag light" style="background-color: #283593;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#283593</span>
+</div>
+</div><div class="color-tag light" style="background-color: #1A237E;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#1A237E</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #8C9EFF;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#8C9EFF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #536DFE;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#536DFE</span>
+</div>
+</div><div class="color-tag light" style="background-color: #3D5AFE;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#3D5AFE</span>
+</div>
+</div><div class="color-tag light" style="background-color: #304FFE;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#304FFE</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #E3F2FD;">
+<div class="details">
+<span class="shade">Blue 50</span>
+<span class="hex">#E3F2FD</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #BBDEFB;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#BBDEFB</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #90CAF9;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#90CAF9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #64B5F6;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#64B5F6</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #42A5F5;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#42A5F5</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #2196F3;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#2196F3</span>
+</div>
+</div><div class="color-tag light" style="background-color: #1E88E5;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#1E88E5</span>
+</div>
+</div><div class="color-tag light" style="background-color: #1976D2;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#1976D2</span>
+</div>
+</div><div class="color-tag light" style="background-color: #1565C0;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#1565C0</span>
+</div>
+</div><div class="color-tag light" style="background-color: #0D47A1;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#0D47A1</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #82B1FF;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#82B1FF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #448AFF;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#448AFF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #2979FF;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#2979FF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #2962FF;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#2962FF</span>
+</div>
+</div></div></section><section class="module-module-module col-3"><div class="module"><hr class="spacer" role="presentation"></div><div class="module"></div><div class="module"></div></section><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #E1F5FE;">
+<div class="details">
+<span class="shade">Light Blue 50</span>
+<span class="hex">#E1F5FE</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B3E5FC;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#B3E5FC</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #81D4FA;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#81D4FA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #4FC3F7;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#4FC3F7</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #29B6F6;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#29B6F6</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #03A9F4;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#03A9F4</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #039BE5;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#039BE5</span>
+</div>
+</div><div class="color-tag light" style="background-color: #0288D1;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#0288D1</span>
+</div>
+</div><div class="color-tag light" style="background-color: #0277BD;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#0277BD</span>
+</div>
+</div><div class="color-tag light" style="background-color: #01579B;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#01579B</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #80D8FF;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#80D8FF</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #40C4FF;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#40C4FF</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00B0FF;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#00B0FF</span>
+</div>
+</div><div class="color-tag light" style="background-color: #0091EA;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#0091EA</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #E0F7FA;">
+<div class="details">
+<span class="shade">Cyan 50</span>
+<span class="hex">#E0F7FA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B2EBF2;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#B2EBF2</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #80DEEA;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#80DEEA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #4DD0E1;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#4DD0E1</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #26C6DA;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#26C6DA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00BCD4;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#00BCD4</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00ACC1;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#00ACC1</span>
+</div>
+</div><div class="color-tag light" style="background-color: #0097A7;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#0097A7</span>
+</div>
+</div><div class="color-tag light" style="background-color: #00838F;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#00838F</span>
+</div>
+</div><div class="color-tag light" style="background-color: #006064;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#006064</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #84FFFF;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#84FFFF</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #18FFFF;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#18FFFF</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00E5FF;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#00E5FF</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00B8D4;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#00B8D4</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #E0F2F1;">
+<div class="details">
+<span class="shade">Teal 50</span>
+<span class="hex">#E0F2F1</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B2DFDB;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#B2DFDB</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #80CBC4;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#80CBC4</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #4DB6AC;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#4DB6AC</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #26A69A;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#26A69A</span>
+</div>
+</div><div class="color-tag light" style="background-color: #009688;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#009688</span>
+</div>
+</div><div class="color-tag light" style="background-color: #00897B;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#00897B</span>
+</div>
+</div><div class="color-tag light" style="background-color: #00796B;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#00796B</span>
+</div>
+</div><div class="color-tag light" style="background-color: #00695C;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#00695C</span>
+</div>
+</div><div class="color-tag light" style="background-color: #004D40;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#004D40</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #A7FFEB;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#A7FFEB</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #64FFDA;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#64FFDA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #1DE9B6;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#1DE9B6</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00BFA5;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#00BFA5</span>
+</div>
+</div></div></section><section class="module-module-module col-3"><div class="module"><hr class="spacer" role="presentation"></div><div class="module"></div><div class="module"></div></section><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #E8F5E9;">
+<div class="details">
+<span class="shade">Green 50</span>
+<span class="hex">#E8F5E9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #C8E6C9;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#C8E6C9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #A5D6A7;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#A5D6A7</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #81C784;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#81C784</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #66BB6A;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#66BB6A</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #4CAF50;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#4CAF50</span>
+</div>
+</div><div class="color-tag light" style="background-color: #43A047;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#43A047</span>
+</div>
+</div><div class="color-tag light" style="background-color: #388E3C;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#388E3C</span>
+</div>
+</div><div class="color-tag light" style="background-color: #2E7D32;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#2E7D32</span>
+</div>
+</div><div class="color-tag light" style="background-color: #1B5E20;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#1B5E20</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B9F6CA;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#B9F6CA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #69F0AE;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#69F0AE</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00E676;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#00E676</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #00C853;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#00C853</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #F1F8E9;">
+<div class="details">
+<span class="shade">Light Green 50</span>
+<span class="hex">#F1F8E9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #DCEDC8;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#DCEDC8</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #C5E1A5;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#C5E1A5</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #AED581;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#AED581</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #9CCC65;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#9CCC65</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #8BC34A;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#8BC34A</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #7CB342;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#7CB342</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #689F38;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#689F38</span>
+</div>
+</div><div class="color-tag light" style="background-color: #558B2F;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#558B2F</span>
+</div>
+</div><div class="color-tag light" style="background-color: #33691E;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#33691E</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #CCFF90;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#CCFF90</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B2FF59;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#B2FF59</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #76FF03;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#76FF03</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #64DD17;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#64DD17</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #F9FBE7;">
+<div class="details">
+<span class="shade">Lime 50</span>
+<span class="hex">#F9FBE7</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F0F4C3;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#F0F4C3</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #E6EE9C;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#E6EE9C</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #DCE775;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#DCE775</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #D4E157;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#D4E157</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #CDDC39;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#CDDC39</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #C0CA33;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#C0CA33</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #AFB42B;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#AFB42B</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #9E9D24;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#9E9D24</span>
+</div>
+</div><div class="color-tag light" style="background-color: #827717;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#827717</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F4FF81;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#F4FF81</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #EEFF41;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#EEFF41</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #C6FF00;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#C6FF00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #AEEA00;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#AEEA00</span>
+</div>
+</div></div></section><section class="module-module-module col-3"><div class="module"><hr class="spacer" role="presentation"></div><div class="module"></div><div class="module"></div></section><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #FFFDE7;">
+<div class="details">
+<span class="shade">Yellow 50</span>
+<span class="hex">#FFFDE7</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFF9C4;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#FFF9C4</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFF59D;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#FFF59D</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFF176;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#FFF176</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFEE58;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#FFEE58</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFEB3B;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#FFEB3B</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FDD835;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#FDD835</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FBC02D;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#FBC02D</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F9A825;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#F9A825</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F57F17;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#F57F17</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFFF8D;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#FFFF8D</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFFF00;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#FFFF00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFEA00;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#FFEA00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFD600;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#FFD600</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #FFF8E1;">
+<div class="details">
+<span class="shade">Amber 50</span>
+<span class="hex">#FFF8E1</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFECB3;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#FFECB3</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFE082;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#FFE082</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFD54F;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#FFD54F</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFCA28;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#FFCA28</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFC107;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#FFC107</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFB300;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#FFB300</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFA000;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#FFA000</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF8F00;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#FF8F00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF6F00;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#FF6F00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFE57F;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#FFE57F</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFD740;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#FFD740</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFC400;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#FFC400</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFAB00;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#FFAB00</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #FFF3E0;">
+<div class="details">
+<span class="shade">Orange 50</span>
+<span class="hex">#FFF3E0</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFE0B2;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#FFE0B2</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFCC80;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#FFCC80</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFB74D;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#FFB74D</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFA726;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#FFA726</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF9800;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#FF9800</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FB8C00;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#FB8C00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F57C00;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#F57C00</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #EF6C00;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#EF6C00</span>
+</div>
+</div><div class="color-tag light" style="background-color: #E65100;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#E65100</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFD180;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#FFD180</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFAB40;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#FFAB40</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF9100;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#FF9100</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF6D00;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#FF6D00</span>
+</div>
+</div></div></section><section class="module-module-module col-3"><div class="module"><hr class="spacer" role="presentation"></div><div class="module"></div><div class="module"></div></section><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #FBE9E7;">
+<div class="details">
+<span class="shade">Deep Orange 50</span>
+<span class="hex">#FBE9E7</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFCCBC;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#FFCCBC</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFAB91;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#FFAB91</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF8A65;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#FF8A65</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF7043;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#FF7043</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF5722;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#FF5722</span>
+</div>
+</div><div class="color-tag light" style="background-color: #F4511E;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#F4511E</span>
+</div>
+</div><div class="color-tag light" style="background-color: #E64A19;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#E64A19</span>
+</div>
+</div><div class="color-tag light" style="background-color: #D84315;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#D84315</span>
+</div>
+</div><div class="color-tag light" style="background-color: #BF360C;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#BF360C</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF9E80;">
+<div class="details">
+<span class="shade">A100</span>
+<span class="hex">#FF9E80</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FF6E40;">
+<div class="details">
+<span class="shade">A200</span>
+<span class="hex">#FF6E40</span>
+</div>
+</div><div class="color-tag light" style="background-color: #FF3D00;">
+<div class="details">
+<span class="shade">A400</span>
+<span class="hex">#FF3D00</span>
+</div>
+</div><div class="color-tag light" style="background-color: #DD2C00;">
+<div class="details">
+<span class="shade">A700</span>
+<span class="hex">#DD2C00</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #EFEBE9;">
+<div class="details">
+<span class="shade">Brown 50</span>
+<span class="hex">#EFEBE9</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #D7CCC8;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#D7CCC8</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #BCAAA4;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#BCAAA4</span>
+</div>
+</div><div class="color-tag light" style="background-color: #A1887F;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#A1887F</span>
+</div>
+</div><div class="color-tag light" style="background-color: #8D6E63;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#8D6E63</span>
+</div>
+</div><div class="color-tag light" style="background-color: #795548;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#795548</span>
+</div>
+</div><div class="color-tag light" style="background-color: #6D4C41;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#6D4C41</span>
+</div>
+</div><div class="color-tag light" style="background-color: #5D4037;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#5D4037</span>
+</div>
+</div><div class="color-tag light" style="background-color: #4E342E;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#4E342E</span>
+</div>
+</div><div class="color-tag light" style="background-color: #3E2723;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#3E2723</span>
+</div>
+</div></div><div class="module"><div class="color-tag dark" style="background-color: #FAFAFA;">
+<div class="details">
+<span class="shade">Gray 50</span>
+<span class="hex">#FAFAFA</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #F5F5F5;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#F5F5F5</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #EEEEEE;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#EEEEEE</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #E0E0E0;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#E0E0E0</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #BDBDBD;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#BDBDBD</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #9E9E9E;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#9E9E9E</span>
+</div>
+</div><div class="color-tag light" style="background-color: #757575;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#757575</span>
+</div>
+</div><div class="color-tag light" style="background-color: #616161;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#616161</span>
+</div>
+</div><div class="color-tag light" style="background-color: #424242;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#424242</span>
+</div>
+</div><div class="color-tag light" style="background-color: #212121;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#212121</span>
+</div>
+</div></div></section><section class="module-module-module col-3"><div class="module"><hr class="spacer" role="presentation"></div><div class="module"></div><div class="module"></div></section><section class="module-module-module col-3"><div class="module"><div class="color-tag dark" style="background-color: #ECEFF1;">
+<div class="details">
+<span class="shade">Blue Gray 50</span>
+<span class="hex">#ECEFF1</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #CFD8DC;">
+<div class="details">
+<span class="shade">100</span>
+<span class="hex">#CFD8DC</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #B0BEC5;">
+<div class="details">
+<span class="shade">200</span>
+<span class="hex">#B0BEC5</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #90A4AE;">
+<div class="details">
+<span class="shade">300</span>
+<span class="hex">#90A4AE</span>
+</div>
+</div><div class="color-tag light" style="background-color: #78909C;">
+<div class="details">
+<span class="shade">400</span>
+<span class="hex">#78909C</span>
+</div>
+</div><div class="color-tag light" style="background-color: #607D8B;">
+<div class="details">
+<span class="shade">500</span>
+<span class="hex">#607D8B</span>
+</div>
+</div><div class="color-tag light" style="background-color: #546E7A;">
+<div class="details">
+<span class="shade">600</span>
+<span class="hex">#546E7A</span>
+</div>
+</div><div class="color-tag light" style="background-color: #455A64;">
+<div class="details">
+<span class="shade">700</span>
+<span class="hex">#455A64</span>
+</div>
+</div><div class="color-tag light" style="background-color: #37474F;">
+<div class="details">
+<span class="shade">800</span>
+<span class="hex">#37474F</span>
+</div>
+</div><div class="color-tag light" style="background-color: #263238;">
+<div class="details">
+<span class="shade">900</span>
+<span class="hex">#263238</span>
+</div>
+</div></div><div class="module"><div class="color-tag light" style="background-color: #000000;">
+<div class="details">
+<span class="shade">Black</span>
+<span class="hex">#000000</span>
+</div>
+</div><div class="color-tag dark" style="background-color: #FFFFFF;">
+<div class="details">
+<span class="shade">White</span>
+<span class="hex">#FFFFFF</span>
+</div>
+</div></div><div class="module"></div></section></div></div></div></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large anim-appear">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Applying color to UI" class="suggested-articles__item animatable js-anim-scroll js-analytics-click anim-appear" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;suggested articles&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;../color/applying-color-to-ui.html&quot;}
+" href="https://material.io/design/color/applying-color-to-ui.html">
+<div class="suggested-articles__item-img mdc-ripple-surface mdc-ripple-upgraded" data-mdc-ripple-image="" style="background-image: url(&quot;../assets/1LaCMg6-bDI2yXY3yb71D8UTclI5qFq82/color-thumbnail-2x1.png&quot;); --mdc-ripple-fg-size:135.998px; --mdc-ripple-fg-scale:1.9369;">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Color</h3>
+<h4 class="suggested-articles__item-subtitle">Applying color to UI</h4>
+</a>
+<a aria-label="Crane" class="suggested-articles__item animatable js-anim-scroll js-analytics-click anim-appear" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;suggested articles&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;../material-studies/crane.html&quot;}
+" href="https://material.io/design/material-studies/crane.html">
+<div class="suggested-articles__item-img mdc-ripple-surface mdc-ripple-upgraded" data-mdc-ripple-image="" style="background-image: url(&quot;https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Eh7V4Qaqj3yvat9YSV3gN6CWYGNgaOup%2Fcrane-thumbnail-2x1.png&quot;); --mdc-ripple-fg-size:135.998px; --mdc-ripple-fg-scale:1.9369;">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Material studies</h3>
+<h4 class="suggested-articles__item-subtitle">Crane</h4>
+</a>
+<a aria-label="Rally" class="suggested-articles__item animatable js-anim-scroll js-analytics-click anim-appear" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;suggested articles&quot;,
+    &quot;action&quot;: &quot;link click&quot;,
+    &quot;label&quot;: &quot;../material-studies/rally.html&quot;}
+" href="https://material.io/design/material-studies/rally.html">
+<div class="suggested-articles__item-img mdc-ripple-surface mdc-ripple-upgraded" data-mdc-ripple-image="" style="background-image: url(&quot;https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1xKFW3co5-asIBq3WmtPBn0CN5jh6OcHo%2Frally-thumbnail-2x1.png&quot;); --mdc-ripple-fg-size:135.998px; --mdc-ripple-fg-scale:1.9369;">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Material studies</h3>
+<h4 class="suggested-articles__item-subtitle">Rally</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+<footer class="footer">
+  <div class="container container--jumbo anim-appear">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="https://material.io/" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;/&quot;}
+">
+        <img class="footer-block__material-logo" src="./The color system - Material Design_files/material_logo.svg" alt="Material Design">
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click" aria-label="Find us on GitHub" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;https://www.github.com/material-components&quot;}
+">GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click" aria-label="Find us on Twitter" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;https://www.twitter.com/materialdesign&quot;}
+">Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click" aria-label="Find us on YouTube" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;https://www.youtube.com/googledesign&quot;}
+">YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com/" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;https://www.google.com&quot;}
+">
+        <img class="footer-block__google-logo" src="./The color system - Material Design_files/google_logo.svg" alt="Google">
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click" aria-label="Privacy Policy" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;https://policies.google.com/privacy&quot;}
+">Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click" aria-label="Terms of Service" data-analytics="  {
+    &quot;event&quot;: &quot;trackEvent&quot;,
+    &quot;category&quot;: &quot;navigation&quot;,
+    &quot;action&quot;: &quot;footer click&quot;,
+    &quot;label&quot;: &quot;https://policies.google.com/terms&quot;}
+">Terms of Service</a>
+</li><li class="footer-block__legal-nav-item"><a href="javascript:void(0)" class="footer-block__legal-nav-link" onclick="try{userfeedback.api.startFeedback({&#39;productId&#39;: &#39;1027542&#39;, &#39;bucket&#39;: &#39;material_spec&#39;, &#39;locale&#39;: &#39;en&#39;, &#39;allowNonLoggedInFeedback&#39;: true});return false;}catch(e){}">Feedback</a></li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div class="lightbox js-lightbox" data-comp="Lightbox" aria-hidden="true" data-comp-id="comp_33">
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span class="lightbox__button js-lightbox-close" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Close&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_34">
+          <i class="material-icons material-icons--padded mdc-ripple-surface mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" data-mdc-ripple-is-unbounded="" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">close</i>
+        <div class="tooltip js-tooltip-bottom">
+      Close</div></span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;View Specs&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_35">
+          <i class="material-icons material-icons--padded mdc-ripple-surface mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" data-mdc-ripple-is-unbounded="" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:NaN; --mdc-ripple-left:0px; --mdc-ripple-top:0px;">flip</i>
+        <div class="tooltip js-tooltip-bottom">
+      View Specs</div></button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Share&quot;, &quot;direction&quot;: &quot;bottom&quot;}" data-comp-id="comp_36">
+          <i class="material-icons material-icons--padded mdc-ripple-surface mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" data-mdc-ripple-is-unbounded="" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">share</i>
+        <div class="tooltip js-tooltip-bottom">
+      Share</div></button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="./The color system - Material Design_files/loader.svg" alt="loader" aria-hidden="true">      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar" data-comp-id="comp_37">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Image only&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_38">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item mdc-ripple-upgraded" value="image" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons"></i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Image only</div></div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Measurements&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_39">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item mdc-ripple-upgraded" value="measurements" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Measurements</div></div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Text&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_40">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item mdc-ripple-upgraded" value="text" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Text</div></div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Color&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_41">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item mdc-ripple-upgraded" value="colors" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Color</div></div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Shape and Elevation&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_42">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item mdc-ripple-upgraded" value="shapes" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Shape and Elevation</div></div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Components&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_43">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item mdc-ripple-upgraded" value="components" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Components</div></div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Notes&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_44">
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item mdc-ripple-upgraded" value="notes" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+        <i class="material-icons">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    <div class="tooltip js-tooltip-left">
+      Notes</div></div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev mdc-ripple-upgraded" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Previous&quot;, &quot;direction&quot;: &quot;right&quot;}" data-comp-id="comp_45" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+    <i class="material-icons">chevron_left</i>
+  <div class="tooltip js-tooltip-right">
+      Previous</div></button>
+
+  <button class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next mdc-ripple-upgraded" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Next&quot;, &quot;direction&quot;: &quot;left&quot;}" data-comp-id="comp_46" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">
+    <i class="material-icons">chevron_right</i>
+  <div class="tooltip js-tooltip-left">
+      Next</div></button>
+</nav><div class="zoom-buttons" data-comp="Zoom" data-comp-id="comp_47">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Zoom out&quot;, &quot;direction&quot;: &quot;top&quot;}" data-comp-id="comp_48">
+      <i class="material-icons mdc-ripple-surface mdc-ripple-upgraded" style="--mdc-ripple-fg-size:28.8px; --mdc-ripple-fg-scale:2.60817;">remove</i>
+    <div class="tooltip js-tooltip-top">
+      Zoom out</div></button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Reset&quot;, &quot;direction&quot;: &quot;top&quot;}" data-comp-id="comp_49">
+      <i class="material-icons mdc-ripple-surface mdc-ripple-upgraded" style="--mdc-ripple-fg-size:28.8px; --mdc-ripple-fg-scale:2.60817;">search</i>
+    <div class="tooltip js-tooltip-top">
+      Reset</div></button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip="{&quot;tip&quot;: &quot;Zoom in&quot;, &quot;direction&quot;: &quot;top&quot;}" data-comp-id="comp_50">
+      <i class="material-icons mdc-ripple-surface mdc-ripple-upgraded" style="--mdc-ripple-fg-size:28.8px; --mdc-ripple-fg-scale:2.60817;">add</i>
+    <div class="tooltip js-tooltip-top">
+      Zoom in</div></button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip="{&quot;tip&quot;: &quot;Color picker&quot;, &quot;direction&quot;: &quot;top&quot;}" data-comp-id="comp_51 comp_52">
+        <i class="material-icons mdc-ripple-surface mdc-ripple-upgraded" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">colorize</i>
+      <div class="tooltip js-tooltip-top">
+      Color picker</div></button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip="{&quot;tip&quot;: &quot;Ruler&quot;, &quot;direction&quot;: &quot;top&quot;}" data-comp-id="comp_53 comp_54">
+        <i class="material-icons mdc-ripple-surface mdc-ripple-upgraded" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:Infinity;">straighten</i>
+      <div class="tooltip js-tooltip-top">
+      Ruler</div></button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share" data-comp-id="comp_55">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons material-icons--padded mdc-ripple-surface mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" data-mdc-ripple-is-unbounded="" style="--mdc-ripple-fg-size:19.2px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:6px; --mdc-ripple-top:6px;">close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly="" class="mdc-dialog-share-url js-share-url">
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy mdc-ripple-upgraded" style="--mdc-ripple-fg-size:30.72px; --mdc-ripple-fg-scale:2.23777;">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true" data-comp-id="comp_56">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button" aria-hidden="true"></button>
+  </div>
+</div>
+    <script src="./The color system - Material Design_files/prettify_compiled.js.download"></script><script type="text/javascript" id="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+    <script src="./The color system - Material Design_files/waypoints.min.js.download"></script>
+    <script src="./The color system - Material Design_files/main.min.js.download"></script><script src="https://support.google.com/inapp/api.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  
+</body></html>

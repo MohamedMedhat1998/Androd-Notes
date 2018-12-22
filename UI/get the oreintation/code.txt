@@ -1,0 +1,10 @@
+//before setContentView 
+int rotation = getWindowManager().getDefaultDisplay().getRotation();
+        if(rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270){
+            supportRequestWindowFeature(Window.FEATURE_NO_TITLE); //remove the app bar
+        }
+
+
+//source
+
+https://stackoverflow.com/questions/10380989/how-do-i-get-the-current-orientation-activityinfo-screen-orientation-of-an-a

@@ -1,0 +1,6 @@
+if you don't want a specific string in strings values to be translated
+set translatable to false
+
+Example
+
+<string name="pref_color_red_value" translatable="false">red</string>

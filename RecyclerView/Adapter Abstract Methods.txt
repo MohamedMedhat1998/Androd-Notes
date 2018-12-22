@@ -1,0 +1,21 @@
+The Adapter requires us to
+override three functions.
+//------------------------
+The first is onCreateViewHolder,
+
+which is called when the RecyclerView
+instantiates a new ViewHolder instance.
+
+//-----------------------
+The second is onBindViewHolder,
+
+which is called when RecyclerView
+wants to populate the view
+with data from our model, so
+that the user can see it, effectively
+binding it to the data source.
+
+//----------------------
+And third is getItemCount, 
+which returns
+the number of items in our data source.

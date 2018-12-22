@@ -1,0 +1,7 @@
+A Uri object is usually used to tell a ContentProvider -something that gives data- 
+what we want to access by reference.
+It is an immutable one-to-one mapping to a resource or data.
+The method Uri.parse creates a new Uri object from a **properly formated String**
+//--------------
+A URI or a Uniform Resource Identifier :
+is a string of characters that identifies a resource

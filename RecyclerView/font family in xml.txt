@@ -1,0 +1,3 @@
+android:fontFamily="monospace"
+
+changes the type of the text

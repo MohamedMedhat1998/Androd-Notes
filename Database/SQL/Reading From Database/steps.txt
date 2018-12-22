@@ -1,0 +1,9 @@
+1- You need a cursor object to receive data in
+2- The query function returns a cursor object
+3- Then you write this
+
+Cursor cursor = mDB.query(,,,,,,);
+
+Now the cursor is containg the data according to the parameters of query function
+
+after retrieving data , close the cursor

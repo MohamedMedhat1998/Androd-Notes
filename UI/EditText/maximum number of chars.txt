@@ -1,0 +1,1 @@
+android:maxLength="1"

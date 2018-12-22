@@ -1,0 +1,22 @@
+1- Create The Contract Calss
+ex
+public class WaitlistContract {
+
+    public static final class WaitlistEntry implements BaseColumns {
+        public static final String TABLE_NAME = "waitlist";
+        public static final String COLUMN_GUEST_NAME = "guestName";
+        public static final String COLUMN_PARTY_SIZE = "partySize";
+        public static final String COLUMN_TIMESTAMP = "timestamp";
+    }
+
+}
+//BaseColumns is here for _id and _Count
+
+2- create class that extends from SQLiteOpenHelper
+
+3- create 2 static final variables (DATABASE_NAME , DATABASE_VERSION)
+
+4- in the constructor call
+super(context,DATABASE_NAME,null,DATABASE_VERSION);
+
+5- Create a string in onCreate that follows the SQL syntax and pass it in db.execSQL()

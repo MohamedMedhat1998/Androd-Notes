@@ -1,0 +1,5 @@
+If the listview is empty , you can call a fucntion that replaces the content with a view you set before
+its setEmptyState(View v);
+
+you can make a progress bar while fetching the data then hide it when loading finish , 
+do this in onLoadFinished method

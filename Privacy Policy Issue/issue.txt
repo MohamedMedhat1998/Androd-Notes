@@ -1,0 +1,27 @@
+
+Hi developers at Andalus,
+
+After review, Text Encryption, com.andalus.abo_med7at.textencryption, has been removed from Google Play due to a policy violation. This app won’t be available to users until you submit a compliant update.
+
+Issue: Violation of Usage of Android Advertising ID policy and section 4.8 of the Developer Distribution Agreement
+
+Google Play requires developers to provide a valid privacy policy when the app requests or handles sensitive user or device information. We’ve identified that your app collects and transmits the Android advertising identifier, which is subject to a privacy policy requirement. If your app collects the Android advertising ID, you must provide a valid privacy policy in both the designated field in the Play Console, and from within the app.
+
+Next steps: Submit your app for another review
+
+Read through the Usage of Android Advertising ID and User Data policies, as well as the Developer Distribution Agreement, and make appropriate changes to your app. If you decide to collect sensitive user information, be sure to abide by the above policies, and include a link to a valid privacy policy on your app's store listing page and within your app. 
+Make sure that your app is compliant with all other Developer Program Policies. Additional enforcement could occur if there are further policy violations.
+Sign in to your Play Console and submit the update to your app.
+Alternatively, you may opt-out of this requirement by removing any requests for sensitive permissions or user data.
+
+If approved, your app will again be available with all installs, ratings, and reviews intact.  
+
+If you’ve reviewed the policy and feel this removal may have been in error, please reach out to our policy support team. One of my colleagues will get back to you within 2 business days.
+
+Thanks for helping us provide a clear and transparent experience for Google Play users. 
+
+Regards,
+
+Justin
+
+The Google Play Team

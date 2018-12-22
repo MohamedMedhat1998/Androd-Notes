@@ -1,0 +1,3 @@
+//Before setContentView
+
+            supportRequestWindowFeature(Window.FEATURE_NO_TITLE);

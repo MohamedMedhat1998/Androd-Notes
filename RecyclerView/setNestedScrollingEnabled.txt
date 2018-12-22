@@ -1,0 +1,3 @@
+stepListRecyclerView.setNestedScrollingEnabled(false);
+
+Enable or disable nested scrolling for this view.

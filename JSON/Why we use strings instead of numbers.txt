@@ -1,0 +1,17 @@
+Putting a value in double quotes formats it as a String, which is more flexible in nature. 
+Putting it as a standard number, i. e. id: 801 would not allow decimals, 
+numbers outside the integer range, etc
+//-----------------
+Does that mean JSON Data doesn’t have any data type that holds decimal numbers?
+like double or float in java
+And it doesn’t have long for bigger numbers ?
+//-----------------
+JSON is a very basic formatting of data, and while the number data type can hold small floating points, 
+the data types that are supported are only very high level, which are:
+
+a string
+a number
+an object (JSON object)
+an array
+a boolean
+null
