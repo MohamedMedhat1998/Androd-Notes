@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://developer.android.com/reference/android/arch/lifecycle/LiveData -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+          
+<title>LiveData &nbsp;|&nbsp; Android Developers</title>
+
+<meta property="og:title" content="LiveData  |  Android Developers">
+
+  <meta property="og:url" content="https://developer.android.com/reference/android/arch/lifecycle/LiveData">
+
+  <meta property="og:locale" content="en">
+
+
+  
+      
+      
+  
+  
+  
+  
+    
+
+
+
+        <meta property="og:site_name" content="Android Developers">
+    <meta property="og:type" content="website">
+    
+          <meta name="theme-color" content="#78c257">
+    
+    
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="https://developer.android.com/_pwa/android/manifest.json">
+    <link rel="preconnect" href="https://www.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="">
+    <link rel="stylesheet" href="./LiveData  _  Android Developers_files/css">
+    <link rel="stylesheet" href="./LiveData  _  Android Developers_files/app.css">
+    <noscript>
+      <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/css/ce_bundle.css">
+    </noscript>
+    <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/reference/android/arch/lifecycle/LiveData"><link rel="search" type="application/opensearchdescription+xml" href="https://developer.android.com/s/opensearch.xml" data-title="Android Developers"><script type="text/javascript" async="" src="./LiveData  _  Android Developers_files/linkid.js.download"></script><script async="" src="./LiveData  _  Android Developers_files/gtm.js.download"></script><script src="./LiveData  _  Android Developers_files/custom-elements-es5-adapter.js.download"></script><script src="./LiveData  _  Android Developers_files/webcomponents-lite.js.download"></script><script src="./LiveData  _  Android Developers_files/devsite_app.js.download"></script><script src="./LiveData  _  Android Developers_files/analytics.js.download"></script><script src="./LiveData  _  Android Developers_files/devsite_code_module.js.download"></script><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_code.css"><script src="./LiveData  _  Android Developers_files/devsite_expandable_module.js.download"></script><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_expandable.css"><script src="./LiveData  _  Android Developers_files/devsite_heading_module.js.download"></script><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_heading.css"><script src="./LiveData  _  Android Developers_files/devsite_page_rating_module.js.download"></script><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_page_rating.css"><script src="./LiveData  _  Android Developers_files/devsite_snackbar_module.js.download"></script><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_snackbar.css"><script src="./LiveData  _  Android Developers_files/devsite_tooltip_module.js.download"></script><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_tooltip.css"><link rel="stylesheet" type="text/css" href="./LiveData  _  Android Developers_files/devsite_content_footer.css"></head>
+  <body type="reference" theme="android-theme" class="gc-documentation develop reference api apilevel-1.0.0 api apilevel-1.0.0" layout="docs" ready="">
+    <devsite-progress id="app-progress" ds-is="progress"></devsite-progress>
+    <div class="devsite-wrapper"><devsite-header ds-is="header" top-row--height="48" bottom-row--height="104" bottom-tabs--height="48" fixed="" offset="0">
+      
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" aria-label="Close menu">
+        </button>
+        <div class="devsite-product-name-wrapper">
+  <a href="https://developer.android.com/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo">
+  <img src="./LiveData  _  Android Developers_files/lockup.svg" class="devsite-site-logo" alt="Android Developers">
+</a>
+            <span class="devsite-product-name">
+            <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item">
+                              </li>
+  </ul>
+          </span>
+        
+</div>        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+                          <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+  
+<div class="devsite-tabs-wrapper">
+                  <tab>
+          <a href="https://developer.android.com/about" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Platform">
+  Platform
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/studio" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Android Studio">
+  Android Studio
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/distribute" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Google Play">
+  Google Play
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/jetpack" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Android Jetpack">
+  Android Jetpack
+</a>
+
+        </tab>
+                        <tab active="">
+          <a href="https://developer.android.com/docs" class="gc-analytics-event" aria-label="Docs, selected" data-category="Site-Wide Custom Events" data-label="Tab: Docs">
+  Docs
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/news" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: News">
+  News
+</a>
+
+        </tab>
+            <tab overflow-tab="" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#" class="devsite-icon devsite-icon-arrow-drop-down">More</a><div class="devsite-tabs-overflow-menu" scrollbars="" hidden=""></div></tab></div></devsite-tabs>
+
+                       </div>
+          <devsite-search ds-is="search" enable-search="" enable-suggestions="" enable-query-completion="" project-path="">
+  <form class="devsite-search-form" action="https://developer.android.com/s/results/" method="GET">
+    <div class="devsite-search-container">
+      <div id="searchbox" class="devsite-searchbox">
+                <input placeholder="Search" type="text" class="devsite-search-field devsite-search-query" name="q" value="" autocomplete="off" aria-label="Search box">
+        <div class="devsite-search-image material-icons"></div>
+      </div>
+      <button type="button" search-open="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search box"></button>
+    </div>
+  <div class="devsite-popout"><div class="devsite-popout-result devsite-suggest-results-container" devsite-hide="" role="menu" aria-haspopup="true"></div><div class="devsite-popout-result devsite-history-container" devsite-hide="" role="menu" aria-haspopup="true"></div></div></form>
+  <button type="button" search-close="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search box"></button>
+</devsite-search>
+
+        <devsite-search-background style="opacity: 1;"></devsite-search-background></div>
+
+                      </div>    </div>  </div>
+  <div class="devsite-collapsible-section
+    " style="transform: translate3d(0px, 0px, 0px);">
+    <div class="devsite-header-background">
+                        <div class="devsite-product-id-row">
+            <div class="devsite-product-description-row">
+                              <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item">
+                    <a href="https://developer.android.com/docs" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Lower Header" data-value="1">
+            Documentation
+      
+  </a>
+        </li>
+  </ul>
+                                        </div>
+                                                                                    </div>
+                                      <div class="devsite-doc-set-nav-row">
+                              <devsite-tabs ds-is="tabs" class="lower-tabs" connected="">
+  
+<div class="devsite-tabs-wrapper">
+                  <tab>
+          <a href="https://developer.android.com/docs" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Overview">
+  Overview
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/guide" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides">
+  Guides
+</a>
+
+        </tab>
+                        <tab active="">
+          <a href="https://developer.android.com/reference" class="gc-analytics-event" aria-label="Reference, selected" data-category="Site-Wide Custom Events" data-label="Tab: Reference">
+  Reference
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/samples" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Samples">
+  Samples
+</a>
+
+        </tab>
+                        <tab>
+          <a href="https://developer.android.com/design" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Design &amp; Quality">
+  Design &amp; Quality
+</a>
+
+        </tab>
+            <tab overflow-tab="" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#" class="devsite-icon devsite-icon-arrow-drop-down">More</a><div class="devsite-tabs-overflow-menu" scrollbars="" hidden=""></div></tab></div></devsite-tabs>
+
+        </div>
+          </div>  </div></div>
+  
+
+  </devsite-header>      <div class="devsite-book-nav-bg" fixed=""></div><devsite-book-nav ds-is="book-nav" scrollbars="" animatable="" fixed="" style="top: 152px; max-height: 554px; transform: translate3d(0px, 0px, 0px);">
+                  
+
+<nav class="devsite-book-nav devsite-nav nocontent">
+  <div class="devsite-mobile-header">
+    <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation">
+    </button>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+              <ul class="devsite-nav-list">
+                      <li class="devsite-nav-item">
+                                <a href="https://developer.android.com/about" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform">
+      <span class="devsite-nav-text">Platform</span>
+        </a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                                <a href="https://developer.android.com/studio" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio">
+      <span class="devsite-nav-text">Android Studio</span>
+        </a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                                <a href="https://developer.android.com/distribute" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play">
+      <span class="devsite-nav-text">Google Play</span>
+        </a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                                <a href="https://developer.android.com/jetpack" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Jetpack">
+      <span class="devsite-nav-text">Android Jetpack</span>
+        </a>
+  
+                                        </li>
+                      <li class="devsite-nav-item">
+                                <a href="https://developer.android.com/docs" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs">
+      <span class="devsite-nav-text">Docs</span>
+        </a>
+  
+                                            <ul class="devsite-nav-responsive-tabs">
+                                                                                                                      <li class="devsite-nav-item">
+    <a href="https://developer.android.com/docs" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview">
+      <span class="devsite-nav-text">Overview</span>
+        </a>
+  </li>
+
+                                                                                                                      <li class="devsite-nav-item">
+    <a href="https://developer.android.com/guide" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides">
+      <span class="devsite-nav-text">Guides</span>
+        </a>
+  </li>
+
+                                                                                                                      <li class="devsite-nav-item">
+    <a href="https://developer.android.com/reference" id="devsite-nav-forward" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference">
+      <span class="devsite-nav-text" menu="_book">Reference</span>
+        <span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book">
+    </span>
+        </a>
+  </li>
+
+                                                                                                                      <li class="devsite-nav-item">
+    <a href="https://developer.android.com/samples" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples">
+      <span class="devsite-nav-text">Samples</span>
+        </a>
+  </li>
+
+                                                                                                                      <li class="devsite-nav-item">
+    <a href="https://developer.android.com/design" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Design &amp; Quality">
+      <span class="devsite-nav-text">Design &amp; Quality</span>
+        </a>
+  </li>
+
+                                  </ul>
+                          </li>
+                      <li class="devsite-nav-item">
+                                <a href="https://developer.android.com/news" class="devsite-nav-title gc-analytics-event
+            " data-category="Site-Wide Custom Events" data-label="Responsive Tab: News">
+      <span class="devsite-nav-text">News</span>
+        </a>
+  
+                                        </li>
+                            </ul>
+          </div>
+          <div class="devsite-mobile-nav-bottom">
+                                      <ul class="devsite-nav-list" menu="_book">
+                                    <li class="devsite-nav-item"><a href="https://developer.android.com/reference" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/packages" class="devsite-nav-title"><span class="devsite-nav-text">Android Platform</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/support/packages" class="devsite-nav-title"><span class="devsite-nav-text">Android Support Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/androidx/packages" class="devsite-nav-title"><span class="devsite-nav-text">AndroidX</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/androidx/test/packages" class="devsite-nav-title"><span class="devsite-nav-text">AndroidX Test</span></a></li>
+                          <li class="devsite-nav-item           devsite-nav-expandable           devsite-nav-accordion"><devsite-expandable-nav ds-is="expandable-nav" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Architecture Components</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/classes" class="devsite-nav-title"><span class="devsite-nav-text">Class Index</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/packages" class="devsite-nav-title"><span class="devsite-nav-text">Package Index</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text" data-title="android.arch.core.executor.testing">android.arch.core.executor.testing</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/core/executor/testing/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/core/executor/testing/CountingTaskExecutorRule" class="devsite-nav-title"><span class="devsite-nav-text">CountingTaskExecutorRule</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/core/executor/testing/InstantTaskExecutorRule" class="devsite-nav-title"><span class="devsite-nav-text">InstantTaskExecutorRule</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">android.arch.core.util</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/core/util/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Interfaces</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/core/util/Function" class="devsite-nav-title"><span class="devsite-nav-text">Function</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">android.arch.lifecycle</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Annotations</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/OnLifecycleEvent" class="devsite-nav-title"><span class="devsite-nav-text">OnLifecycleEvent</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Interfaces</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/DefaultLifecycleObserver" class="devsite-nav-title"><span class="devsite-nav-text">DefaultLifecycleObserver</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleObserver" class="devsite-nav-title"><span class="devsite-nav-text">LifecycleObserver</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner" class="devsite-nav-title"><span class="devsite-nav-text">LifecycleOwner</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleRegistryOwner" class="devsite-nav-title"><span class="devsite-nav-text">LifecycleRegistryOwner</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/Observer" class="devsite-nav-title"><span class="devsite-nav-text">Observer</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.Factory" class="devsite-nav-title"><span class="devsite-nav-text">ViewModelProvider.Factory</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelStoreOwner" class="devsite-nav-title"><span class="devsite-nav-text">ViewModelStoreOwner</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/AndroidViewModel" class="devsite-nav-title"><span class="devsite-nav-text">AndroidViewModel</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle" class="devsite-nav-title"><span class="devsite-nav-text">Lifecycle</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleRegistry" class="devsite-nav-title"><span class="devsite-nav-text">LifecycleRegistry</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleService" class="devsite-nav-title"><span class="devsite-nav-text">LifecycleService</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData" class="devsite-nav-title devsite-nav-active"><span class="devsite-nav-text">LiveData</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveDataReactiveStreams" class="devsite-nav-title"><span class="devsite-nav-text">LiveDataReactiveStreams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/MediatorLiveData" class="devsite-nav-title"><span class="devsite-nav-text">MediatorLiveData</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/MutableLiveData" class="devsite-nav-title"><span class="devsite-nav-text">MutableLiveData</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ProcessLifecycleOwner" class="devsite-nav-title"><span class="devsite-nav-text">ProcessLifecycleOwner</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ServiceLifecycleDispatcher" class="devsite-nav-title"><span class="devsite-nav-text">ServiceLifecycleDispatcher</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/Transformations" class="devsite-nav-title"><span class="devsite-nav-text">Transformations</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModel" class="devsite-nav-title"><span class="devsite-nav-text">ViewModel</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider" class="devsite-nav-title"><span class="devsite-nav-text">ViewModelProvider</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.AndroidViewModelFactory" class="devsite-nav-title"><span class="devsite-nav-text" data-title="ViewModelProvider.AndroidViewModelFactory">ViewModelProvider.AndroidViewModelFactory</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.NewInstanceFactory" class="devsite-nav-title"><span class="devsite-nav-text" data-title="ViewModelProvider.NewInstanceFactory">ViewModelProvider.NewInstanceFactory</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProviders" class="devsite-nav-title"><span class="devsite-nav-text">ViewModelProviders</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProviders.DefaultFactory" class="devsite-nav-title"><span class="devsite-nav-text" data-title="ViewModelProviders.DefaultFactory">ViewModelProviders.DefaultFactory</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelStore" class="devsite-nav-title"><span class="devsite-nav-text">ViewModelStore</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelStores" class="devsite-nav-title"><span class="devsite-nav-text">ViewModelStores</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Enums</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.Event" class="devsite-nav-title"><span class="devsite-nav-text">Lifecycle.Event</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State" class="devsite-nav-title"><span class="devsite-nav-text">Lifecycle.State</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">android.arch.paging</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Interfaces</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/DataSource.InvalidatedCallback" class="devsite-nav-title"><span class="devsite-nav-text">DataSource.InvalidatedCallback</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/AsyncPagedListDiffer" class="devsite-nav-title"><span class="devsite-nav-text">AsyncPagedListDiffer</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/DataSource" class="devsite-nav-title"><span class="devsite-nav-text">DataSource</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/DataSource.Factory" class="devsite-nav-title"><span class="devsite-nav-text">DataSource.Factory</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/ItemKeyedDataSource" class="devsite-nav-title"><span class="devsite-nav-text">ItemKeyedDataSource</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/ItemKeyedDataSource.LoadCallback" class="devsite-nav-title"><span class="devsite-nav-text">ItemKeyedDataSource.LoadCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/ItemKeyedDataSource.LoadInitialCallback" class="devsite-nav-title"><span class="devsite-nav-text">ItemKeyedDataSource.LoadInitialCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/ItemKeyedDataSource.LoadInitialParams" class="devsite-nav-title"><span class="devsite-nav-text">ItemKeyedDataSource.LoadInitialParams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/ItemKeyedDataSource.LoadParams" class="devsite-nav-title"><span class="devsite-nav-text">ItemKeyedDataSource.LoadParams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/LivePagedListBuilder" class="devsite-nav-title"><span class="devsite-nav-text">LivePagedListBuilder</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedList" class="devsite-nav-title"><span class="devsite-nav-text">PagedList</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedList.BoundaryCallback" class="devsite-nav-title"><span class="devsite-nav-text">PagedList.BoundaryCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedList.Builder" class="devsite-nav-title"><span class="devsite-nav-text">PagedList.Builder</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedList.Callback" class="devsite-nav-title"><span class="devsite-nav-text">PagedList.Callback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedList.Config" class="devsite-nav-title"><span class="devsite-nav-text">PagedList.Config</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedList.Config.Builder" class="devsite-nav-title"><span class="devsite-nav-text">PagedList.Config.Builder</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PagedListAdapter" class="devsite-nav-title"><span class="devsite-nav-text">PagedListAdapter</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PageKeyedDataSource" class="devsite-nav-title"><span class="devsite-nav-text">PageKeyedDataSource</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PageKeyedDataSource.LoadCallback" class="devsite-nav-title"><span class="devsite-nav-text">PageKeyedDataSource.LoadCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PageKeyedDataSource.LoadInitialCallback" class="devsite-nav-title"><span class="devsite-nav-text">PageKeyedDataSource.LoadInitialCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PageKeyedDataSource.LoadInitialParams" class="devsite-nav-title"><span class="devsite-nav-text">PageKeyedDataSource.LoadInitialParams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PageKeyedDataSource.LoadParams" class="devsite-nav-title"><span class="devsite-nav-text">PageKeyedDataSource.LoadParams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PositionalDataSource" class="devsite-nav-title"><span class="devsite-nav-text">PositionalDataSource</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PositionalDataSource.LoadInitialCallback" class="devsite-nav-title"><span class="devsite-nav-text">PositionalDataSource.LoadInitialCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PositionalDataSource.LoadInitialParams" class="devsite-nav-title"><span class="devsite-nav-text">PositionalDataSource.LoadInitialParams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PositionalDataSource.LoadRangeCallback" class="devsite-nav-title"><span class="devsite-nav-text">PositionalDataSource.LoadRangeCallback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/PositionalDataSource.LoadRangeParams" class="devsite-nav-title"><span class="devsite-nav-text">PositionalDataSource.LoadRangeParams</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/paging/RxPagedListBuilder" class="devsite-nav-title"><span class="devsite-nav-text">RxPagedListBuilder</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">android.arch.persistence.db</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Interfaces</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteDatabase" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteDatabase</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteOpenHelper" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteOpenHelper</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteOpenHelper.Factory" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteOpenHelper.Factory</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteProgram" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteProgram</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteQuery" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteQuery</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteStatement" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteStatement</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SimpleSQLiteQuery" class="devsite-nav-title"><span class="devsite-nav-text">SimpleSQLiteQuery</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteOpenHelper.Callback" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteOpenHelper.Callback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteOpenHelper.Configuration" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteOpenHelper.Configuration</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteOpenHelper.Configuration.Builder" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteOpenHelper.Configuration.Builder</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/SupportSQLiteQueryBuilder" class="devsite-nav-title"><span class="devsite-nav-text">SupportSQLiteQueryBuilder</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text" data-title="android.arch.persistence.db.framework">android.arch.persistence.db.framework</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/framework/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/db/framework/FrameworkSQLiteOpenHelperFactory" class="devsite-nav-title"><span class="devsite-nav-text">FrameworkSQLiteOpenHelperFactory</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">android.arch.persistence.room</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Annotations</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/ColumnInfo" class="devsite-nav-title"><span class="devsite-nav-text">ColumnInfo</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/ColumnInfo.Collate" class="devsite-nav-title"><span class="devsite-nav-text">ColumnInfo.Collate</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/ColumnInfo.SQLiteTypeAffinity" class="devsite-nav-title"><span class="devsite-nav-text">ColumnInfo.SQLiteTypeAffinity</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Dao" class="devsite-nav-title"><span class="devsite-nav-text">Dao</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Database" class="devsite-nav-title"><span class="devsite-nav-text">Database</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Delete" class="devsite-nav-title"><span class="devsite-nav-text">Delete</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Embedded" class="devsite-nav-title"><span class="devsite-nav-text">Embedded</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Entity" class="devsite-nav-title"><span class="devsite-nav-text">Entity</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/ForeignKey" class="devsite-nav-title"><span class="devsite-nav-text">ForeignKey</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/ForeignKey.Action" class="devsite-nav-title"><span class="devsite-nav-text">ForeignKey.Action</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Ignore" class="devsite-nav-title"><span class="devsite-nav-text">Ignore</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room" class="devsite-nav-title"><span class="devsite-nav-text">Index</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Insert" class="devsite-nav-title"><span class="devsite-nav-text">Insert</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/OnConflictStrategy" class="devsite-nav-title"><span class="devsite-nav-text">OnConflictStrategy</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/PrimaryKey" class="devsite-nav-title"><span class="devsite-nav-text">PrimaryKey</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Query" class="devsite-nav-title"><span class="devsite-nav-text">Query</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RawQuery" class="devsite-nav-title"><span class="devsite-nav-text">RawQuery</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Relation" class="devsite-nav-title"><span class="devsite-nav-text">Relation</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/SkipQueryVerification" class="devsite-nav-title"><span class="devsite-nav-text">SkipQueryVerification</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Transaction" class="devsite-nav-title"><span class="devsite-nav-text">Transaction</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/TypeConverter" class="devsite-nav-title"><span class="devsite-nav-text">TypeConverter</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/TypeConverters" class="devsite-nav-title"><span class="devsite-nav-text">TypeConverters</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Update" class="devsite-nav-title"><span class="devsite-nav-text">Update</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/DatabaseConfiguration" class="devsite-nav-title"><span class="devsite-nav-text">DatabaseConfiguration</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/InvalidationTracker" class="devsite-nav-title"><span class="devsite-nav-text">InvalidationTracker</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/InvalidationTracker.Observer" class="devsite-nav-title"><span class="devsite-nav-text">InvalidationTracker.Observer</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/Room" class="devsite-nav-title"><span class="devsite-nav-text">Room</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase" class="devsite-nav-title"><span class="devsite-nav-text">RoomDatabase</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.Builder" class="devsite-nav-title"><span class="devsite-nav-text">RoomDatabase.Builder</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.Callback" class="devsite-nav-title"><span class="devsite-nav-text">RoomDatabase.Callback</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.MigrationContainer" class="devsite-nav-title"><span class="devsite-nav-text">RoomDatabase.MigrationContainer</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RoomWarnings" class="devsite-nav-title"><span class="devsite-nav-text">RoomWarnings</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RxRoom" class="devsite-nav-title"><span class="devsite-nav-text">RxRoom</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Enums</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.JournalMode" class="devsite-nav-title"><span class="devsite-nav-text">RoomDatabase.JournalMode</span></a></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Exceptions</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/EmptyResultSetException" class="devsite-nav-title"><span class="devsite-nav-text">EmptyResultSetException</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text" data-title="android.arch.persistence.room.migration">android.arch.persistence.room.migration</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/migration/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/migration/Migration" class="devsite-nav-title"><span class="devsite-nav-text">Migration</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text" data-title="android.arch.persistence.room.testing">android.arch.persistence.room.testing</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/testing/package-summary" class="devsite-nav-title"><span class="devsite-nav-text">Overview</span></a></li><li class="devsite-nav-item           devsite-nav-expandable"><devsite-expandable-nav ds-is="expandable-nav" collapsed="" connected="" animatable="">
+    <a class="devsite-nav-toggle"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0"><span class="devsite-nav-text">Classes</span></div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/persistence/room/testing/MigrationTestHelper" class="devsite-nav-title"><span class="devsite-nav-text">MigrationTestHelper</span></a></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li></ul></devsite-expandable-nav></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/car/packages" class="devsite-nav-title"><span class="devsite-nav-text">Android Automotive Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/databinding/packages" class="devsite-nav-title"><span class="devsite-nav-text">Databinding Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/support/constraint/packages" class="devsite-nav-title"><span class="devsite-nav-text">Constraint Layout Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/com/google/android/material/packages" class="devsite-nav-title"><span class="devsite-nav-text">Material Components</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/support/test/packages" class="devsite-nav-title"><span class="devsite-nav-text">Test Support Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/support/wearable/packages" class="devsite-nav-title"><span class="devsite-nav-text">Wearable Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/com/android/billingclient/packages" class="devsite-nav-title"><span class="devsite-nav-text">Play Billing Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/com/google/android/play/core/packages" class="devsite-nav-title"><span class="devsite-nav-text">Play Core Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/com/android/installreferrer/packages" class="devsite-nav-title"><span class="devsite-nav-text">Play Install Referrer Library</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/com/google/android/things/packages" class="devsite-nav-title"><span class="devsite-nav-text">Android Things</span></a></li>
+                          <li class="devsite-nav-item           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path"><span class="devsite-nav-text">Kotlin API Reference (Preview)</span></div></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/kotlin/packages" class="devsite-nav-title"><span class="devsite-nav-text">Android Platform</span></a></li>
+                          <li class="devsite-nav-item"><a href="https://developer.android.com/reference/kotlin/androidx/packages" class="devsite-nav-title"><span class="devsite-nav-text">AndroidX</span></a></li>
+                      </ul>
+                                                                                                                                                                            </div>
+      </div>
+</nav>
+              </devsite-book-nav>
+      <div id="gc-wrapper" style="margin-top: 152px;">
+        <div class="devsite-main-content" has-book-nav="" has-toc="">
+          <devsite-toc ds-is="toc" class="devsite-nav devsite-toc" visible="" fixed="" max-height="506" offset="0"><ul class="devsite-nav-list" scrollbars="" style="transform: translate3d(0px, 0px, 0px); max-height: 506px; max-width: 246px;"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-nav-title"><span class="devsite-nav-text">Contents</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#summary" class="devsite-nav-title"><span class="devsite-nav-text">Summary</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-constructors" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="0.0"><span class="devsite-nav-text">Public constructors</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-methods" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="0.1"><span class="devsite-nav-text">Public methods</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#protected-methods" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="0.2"><span class="devsite-nav-text">Protected methods</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#inherited-methods" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="0.3"><span class="devsite-nav-text">Inherited methods</span></a></li></ul></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-constructors_1" class="devsite-nav-title"><span class="devsite-nav-text">Public constructors</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#livedata_1" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="1.0"><span class="devsite-nav-text">LiveData</span></a></li></ul></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-methods_1" class="devsite-nav-title"><span class="devsite-nav-text">Public methods</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#getvalue" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.0"><span class="devsite-nav-text">getValue</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#hasactiveobservers" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.1"><span class="devsite-nav-text">hasActiveObservers</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#hasobservers" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.2"><span class="devsite-nav-text">hasObservers</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#observe" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.3"><span class="devsite-nav-text">observe</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#observeforever" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.4"><span class="devsite-nav-text">observeForever</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#removeobserver" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.5"><span class="devsite-nav-text">removeObserver</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#removeobservers" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2.6"><span class="devsite-nav-text">removeObservers</span></a></li></ul></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#protected-methods_1" class="devsite-nav-title"><span class="devsite-nav-text">Protected methods</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#onactive" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3.0"><span class="devsite-nav-text">onActive</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#oninactive" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3.1"><span class="devsite-nav-text">onInactive</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#postvalue" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3.2"><span class="devsite-nav-text">postValue</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#setvalue" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3.3"><span class="devsite-nav-text">setValue</span></a></li></ul></li></ul></devsite-toc>
+          <devsite-content ds-is="content">
+                          
+
+<article class="devsite-article">
+  <article class="devsite-article-inner"><style type="text/css">/* Style the top-level left nav links to match the accordion */
+
+.devsite-section-nav > ul > .devsite-nav-item:not(:first-child):not(.devsite-nav-accordion) {
+  border-top: 1px solid #cfd8dc;
+  margin: 16px -16px -16px;
+  padding: 15px 16px 16px;
+}
+
+.devsite-section-nav > ul > .devsite-nav-item {
+  font-weight: bold;
+}
+
+.devsite-section-nav > ul > .devsite-nav-item > ul {
+  font-weight: normal;
+}
+
+.devsite-section-nav > ul > .devsite-nav-item:not(.devsite-nav-active) > .devsite-nav-title {
+  color: #757575;
+}
+
+.devsite-section-nav > ul > .devsite-nav-item:not(.devsite-nav-active):not(.devsite-nav-item-heading) > .devsite-nav-title:hover {
+  color: #424242;
+}
+
+devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-accordion) .devsite-nav-title {
+  border-bottom: 1px solid #ddd;
+  color: #757575;
+  font-weight: bold;
+  padding-bottom: 15px;
+  padding-top: 16px;
+}
+
+devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-active) .devsite-nav-title:hover,
+devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-active) .devsite-nav-title:focus {
+  color: #424242;
+}
+
+devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-accordion):not(.devsite-nav-divider):first-child {
+  margin-top: 0 !important;
+}
+
+devsite-book-nav .devsite-nav-accordion + .devsite-nav-item:not(.devsite-nav-accordion):not(.devsite-nav-divider),
+devsite-book-nav .devsite-nav-divider + .devsite-nav-item:not(.devsite-nav-accordion):not(.devsite-nav-divider),
+devsite-book-nav .devsite-nav-item:not(.devsite-nav-accordion):not(.devsite-nav-divider) + .devsite-nav-accordion,
+devsite-book-nav .devsite-nav-item:not(.devsite-nav-accordion):not(.devsite-nav-divider) + .devsite-nav-divider {
+  margin-top: -1px;
+}
+
+/* Style for left nav "heading" to distinguish from accordions */
+
+.devsite-section-nav > ul > .devsite-nav-item.devsite-nav-item-heading:not(.fake-selector) {
+  background: #fff;
+  padding-top: 32px;
+}
+
+.devsite-section-nav > ul > .devsite-nav-item-heading:not(.fake-selector) > .devsite-nav-title {
+  color: #444;
+}
+
+.devsite-section-nav > ul > .devsite-nav-item.devsite-nav-item-heading + .devsite-nav-item {
+  border-top: 0;
+}
+
+devsite-book-nav .devsite-nav-list > .devsite-nav-item.devsite-nav-heading:not(.devsite-nav-accordion) .devsite-nav-title {
+  background: #f8f9fa;
+  color: #444;
+  margin-top: -23px;
+  padding-top: 32px;
+}
+
+devsite-book-nav .devsite-nav-list > .devsite-nav-heading:not(.devsite-nav-divider) {
+  border-top: 0;
+}
+
+/* class signature at the top of the page */
+
+.api-signature {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-weight: normal;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.api-signature .devsite-code-button {
+  display: none;
+}
+
+/* the "added in" info on all APIs */
+.api-level {
+  float: right;
+  font-size: smaller;
+  margin-top: -40px;
+}
+
+/* the "added in" block at the top of the page */
+#api-info-block .api-level {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .api-level {
+    float: none;
+    margin-top: 0;
+  }
+  #api-info-block .api-level {
+    margin-bottom: 20px;
+  }
+}
+
+.api-level a,
+.api-level a:active,
+.api-level a:visited {
+  color: #222;
+}
+
+.api-level a:hover {
+  color: #888;
+}
+
+/* This element is obsolete now that devsite provides TOC */
+#api-info-block .sum-details-links {
+  display: none;
+}
+
+
+/* The table that shows this class's inheritance tree */
+
+.jd-inheritance-table tr,
+.jd-inheritance-table tr td {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jd-inheritance-table .jd-inheritance-space {
+  width: 2em;
+}
+
+/* The devsite expandable widget */
+
+td>.expandable {
+  margin-top: 0;
+}
+
+.expand-control:not(button):not(.button) {
+  color: inherit;
+  cursor: pointer;
+  padding-left: 24px;
+  position: relative;
+}
+
+.expand-control::before {
+  background: url(/images/styles/disclosure_down.png) no-repeat center center;
+  background-size: 34px 34px;
+  color: transparent;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
+
+.expand-control.exw-expanded::before {
+  background: url(/images/styles/disclosure_up.png) no-repeat center center;
+}
+
+/* Known subclasses list */
+
+.jd-sumtable-subclasses #subclasses-direct,
+.jd-sumtable-subclasses #subclasses-indirect {
+  /* left margin matches width of the toggle image,
+     so this section aligns with the text above */
+  margin: 0 0 0 24px;
+}
+
+.jd-sumtable-subclasses .expand-control.exw-expanded + .showalways {
+  /* Hide the comma list when expanded to show the table */
+  display: none;
+}
+
+.jd-sumtable-subclasses tr,
+.jd-sumtable-subclasses td {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#subclasses-direct-summary,
+#subclasses-indirect-summary {
+  padding-left: 24px;
+}
+
+.jd-sumtable-expando td {
+  border: solid 1px #ddd;
+  padding: 4px;
+}
+
+.jd-inherited-apis .exw-expanded-content {
+  /* Force override for some lengthy devsite style selectors */
+  padding-left: 24px !important;
+  margin-top: 12px !important;
+}
+
+
+/* Styles for legacy doclava HTML that uses custom expando.
+ * The list of direct/indirect subclasses does not expand at all,
+ * and the list of inherited members/methods is expanded by default. */
+
+.jd-sumtable-subclasses #subclasses-direct-list,
+.jd-sumtable-subclasses #subclasses-indirect-list {
+  /* Force line-wraps for CSVs with no spaces */
+  word-break: break-word;
+}
+
+:not(.expandable)>#subclasses-direct-summary,
+:not(.expandable)>#subclasses-indirect-summary {
+  display: none !important;
+}
+
+.jd-sumtable #subclasses-direct.jd-expando-trigger,
+.jd-sumtable #subclasses-indirect.jd-expando-trigger{
+  margin: 0;
+}
+
+
+/* Force the broken legacy expandos into something that looks WAI */
+
+.jd-expando-trigger {
+  display: inline-block;
+  height: 0;
+  margin: 0;
+  padding-top: 10px;
+  width: 24px;
+}
+
+.jd-expando-trigger img {
+  /* display: none; */
+  height: inherit;
+}
+
+.jd-expando-trigger ~ div > div {
+  display: block !important; /* Force all inline-hidden divs to appear */
+}
+
+table.responsive td td:first-child,
+table.responsive td tr:last-child td,
+table.responsive td tr:first-child td{
+  padding: 7px 8px 8px;
+}
+
+.data-reference-resources-wrapper {
+  display: none;
+}
+
+#lattrs td:first-child,
+.inhtable td:first-child {
+  white-space: nowrap;
+}
+
+#lattrs td+td,
+.inhtable td+td {
+  white-space: normal;
+}
+
+
+/* Styles to highlight the preview APIs */
+
+
+/* Must be updated with each letter-appropriate preview */
+body.apilevel-P .api-title,
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) h3,
+
+[data-version-added="P"] .api-title,
+#jd-content:not(.devsite-future-version) [data-version-added="P"]:not(.devsite-future-version) h3 {
+  color: #f5ba15;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) .api-level a,
+body.apilevel-P #api-info-block .api-level a,
+
+#jd-content[data-version-added="P"]:not(.devsite-future-version) .api-level a {
+  color: #f5ba15;
+  font-size: 14px;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) tr.apilevel-P:not(.devsite-future-version),
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) tr,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr.apilevel-P:not(.devsite-future-version),
+body.apilevel-P #jd-content table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr,
+
+#jd-content:not(.devsite-future-version) tr[data-version-added="P"]:not(.devsite-future-version),
+#jd-content:not(.devsite-future-version) [data-version-added="P"]:not(.devsite-future-version) tr,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr[data-version-added="P"]:not(.devsite-future-version),
+#jd-content[data-version-added="P"] table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr {
+  background: none;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) td,
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) th,
+body.apilevel-P #jd-content:not(.devsite-future-version) table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr:not(.devsite-future-version) td,
+body.apilevel-P #jd-content:not(.devsite-future-version) th,
+
+#jd-content:not(.devsite-future-version) [data-version-added="P"]:not(.devsite-future-version) td,
+#jd-content:not(.devsite-future-version) [data-version-added="P"]:not(.devsite-future-version) th,
+#jd-content[data-version-added="P"]:not(.devsite-future-version) table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr:not(.devsite-future-version) td,
+#jd-content[data-version-added="P"]:not(.devsite-future-version) th {
+  background: rgba(245, 185, 16, .2);
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) tr.apilevel-P:not(.devsite-future-version) td,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) .apilevel-P:not(.devsite-future-version) td,
+
+#jd-content:not(.devsite-future-version) tr[data-version-added="P"]:not(.devsite-future-version) td,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) [data-version-added="P"]:not(.devsite-future-version) td {
+  background: rgba(245, 185, 16, .2);
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) th,
+body.apilevel-P #jd-content:not(.devsite-future-version) th,
+
+#jd-content:not(.devsite-future-version) [data-version-added="P"]:not(.devsite-future-version) th,
+#jd-content[data-version-added="P"]:not(.devsite-future-version) th {
+  background: #f5ba15;
+}
+
+
+
+/* Misc styles used in the reference */
+
+h1.api-title {
+  margin-bottom: 0;
+}
+
+h2.api-section:not(#summary) {
+  margin-top: 60px;
+  margin-bottom: -20px;
+}
+
+h3.api-name {
+  margin-top: 60px;
+}
+
+.nolist, .nolist ul, .nolist ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+table.inhtable>tbody>tr>td {
+  padding-left: 0;
+}
+
+table.inhtable>tbody>tr>td div:first-of-type {
+  padding-left: 12px;
+}
+</style>    
+    <div class="devsite-article-meta">
+      <ul class="devsite-breadcrumb-list">
+    <li class="devsite-breadcrumb-item">
+                    <a href="https://developer.android.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1">
+            Android Developers
+      
+  </a>
+        </li>
+    <li class="devsite-breadcrumb-item">
+                <div class="devsite-breadcrumb-guillemet material-icons"></div>
+                    <a href="https://developer.android.com/docs" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2">
+            Docs
+      
+  </a>
+        </li>
+    <li class="devsite-breadcrumb-item">
+                <div class="devsite-breadcrumb-guillemet material-icons"></div>
+                    <a href="https://developer.android.com/reference" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3">
+            Reference
+      
+  </a>
+        </li>
+  </ul>
+               <devsite-page-rating position="header" selected-rating="0" hover-rating-star="0">
+         <div><div class="devsite-rating-stars"><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" role="button" data-title="Unusable documentation" aria-label="Site content star ratings, rating 1 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" role="button" data-title="Poor documentation" aria-label="Site content star ratings, rating 2 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" role="button" data-title="OK documentation" aria-label="Site content star ratings, rating 3 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" role="button" data-title="Good documentation" aria-label="Site content star ratings, rating 4 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" role="button" data-title="Excellent documentation" aria-label="Site content star ratings, rating 5 out of 5"></div></div><div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div></div></devsite-page-rating>
+          </div>
+
+        
+    <devsite-toc ds-is="toc" class="devsite-nav devsite-toc-embedded" devsite-toc-embedded="" expandable="" visible=""><ul class="devsite-nav-list" scrollbars="" style="transform: translate3d(0px, 0px, 0px);"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-nav-title"><span class="devsite-nav-text">Contents</span></a><button type="button" title="Expand/collapse contents" class="devsite-nav-show-all button-transparent material-icons"></button></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#summary" class="devsite-nav-title"><span class="devsite-nav-text">Summary</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-constructors" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0.0"><span class="devsite-nav-text">Public constructors</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-methods" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0.1"><span class="devsite-nav-text">Public methods</span></a></li><li class="devsite-nav-item"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#protected-methods" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0.2"><span class="devsite-nav-text">Protected methods</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#inherited-methods" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0.3"><span class="devsite-nav-text">Inherited methods</span></a></li></ul></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-constructors_1" class="devsite-nav-title"><span class="devsite-nav-text">Public constructors</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#livedata_1" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="1.0"><span class="devsite-nav-text">LiveData</span></a></li></ul></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#public-methods_1" class="devsite-nav-title"><span class="devsite-nav-text">Public methods</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#getvalue" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.0"><span class="devsite-nav-text">getValue</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#hasactiveobservers" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.1"><span class="devsite-nav-text">hasActiveObservers</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#hasobservers" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.2"><span class="devsite-nav-text">hasObservers</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#observe" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.3"><span class="devsite-nav-text">observe</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#observeforever" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.4"><span class="devsite-nav-text">observeForever</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#removeobserver" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.5"><span class="devsite-nav-text">removeObserver</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#removeobservers" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2.6"><span class="devsite-nav-text">removeObservers</span></a></li></ul></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#protected-methods_1" class="devsite-nav-title"><span class="devsite-nav-text">Protected methods</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#onactive" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.0"><span class="devsite-nav-text">onActive</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#oninactive" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.1"><span class="devsite-nav-text">onInactive</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#postvalue" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.2"><span class="devsite-nav-text">postValue</span></a></li><li class="devsite-nav-item" hidden=""><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#setvalue" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.3"><span class="devsite-nav-text">setValue</span></a></li></ul></li><li class="devsite-toc-toggle"><button type="button" class="button-flat devsite-nav-more-items material-icons" title="Expand/collapse contents" aria-hidden="true"></button></li></ul></devsite-toc>
+
+    <div class="devsite-article-body clearfix
+              devsite-no-page-title
+        ">
+
+              <div id="doc-api-level" class="1.0.0" style="display:none"></div>
+
+<div itemscope="" itemtype="http://developers.google.com/ReferenceObject">
+<!-- This DIV closes at the end of the BODY -->
+  <meta itemprop="name" content="android.arch.lifecycle.LiveData">
+  <meta itemprop="path" content="Support Library">
+
+
+
+<div id="naMessage"></div>
+
+<div id="api-info-block">
+<div class="api-level">
+  
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a>
+  
+    <br>
+  belongs to Maven artifact android.arch.lifecycle:livedata-core:1.1.1
+  
+  
+  
+  
+
+</div>
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+Summary:
+
+
+
+
+
+
+
+
+
+  <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#pubctors">Ctors</a>
+  
+
+
+
+  | <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#pubmethods">Methods</a>
+  
+
+
+  | <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#promethods">Protected Methods</a>
+  
+
+
+  | <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#inhmethods">Inherited Methods</a>
+
+
+</div><!-- end sum-details-links -->
+</div><!-- end api-info-block -->
+
+<div class="api apilevel-1.0.0" id="jd-content" data-version-added="1.0.0">
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<devsite-heading ds-is="heading" text="LiveData" id="livedata" level="h1" class="api-title"><h1 class="" is-upgraded="">LiveData</h1></devsite-heading>
+<p>
+<code class="api-signature">
+  public
+  
+  
+  abstract
+  class
+  LiveData
+</code>
+<br>
+
+
+<code class="api-signature">
+  
+    extends Object
+  
+  
+  
+</code>
+
+<code class="api-signature">
+  
+  
+  
+</code>
+
+</p><div class="devsite-table-wrapper"><table class="jd-inheritance-table">
+
+
+  <tbody><tr>
+    
+    <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object
+    </td>
+  </tr>
+  
+
+  <tr>
+    
+      <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td>
+    
+    <td colspan="1" class="jd-inheritance-class-cell">android.arch.lifecycle.LiveData&lt;T&gt;
+    </td>
+  </tr>
+  
+
+</tbody></table></div>
+  <div class="devsite-table-wrapper"><table class="jd-sumtable jd-sumtable-subclasses">
+    <tbody><tr>
+      <td class="expandable-container">
+        <devsite-expandable ds-is="expandable">
+          <span class="expand-control">Known direct subclasses</span>
+          
+  <div id="subclasses-direct" class="showalways"> <a href="https://developer.android.com/reference/android/arch/lifecycle/MutableLiveData.html">MutableLiveData</a>&lt;T&gt;
+  </div>
+  <div id="subclasses-direct-summary">
+    
+  
+  <div class="devsite-table-wrapper"><table class="jd-sumtable-expando">
+    
+      <tbody><tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+        <td class="jd-linkcol"><a href="https://developer.android.com/reference/android/arch/lifecycle/MutableLiveData.html">MutableLiveData</a>&lt;T&gt;</td>
+        <td class="jd-descrcol" width="100%">
+          <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html">LiveData</a></code> which publicly exposes <code><a href="https://developer.android.com/reference/android/arch/lifecycle/MutableLiveData.html#setValue(T)">setValue(T)</a></code> and <code><a href="https://developer.android.com/reference/android/arch/lifecycle/MutableLiveData.html#postValue(T)">postValue(T)</a></code> method.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+  </tbody></table></div>
+
+  </div>
+        </devsite-expandable>
+      </td>
+    </tr>
+  </tbody></table></div>
+  
+  
+  <div class="devsite-table-wrapper"><table class="jd-sumtable jd-sumtable-subclasses">
+    <tbody><tr>
+      <td class="expandable-container">
+        <devsite-expandable ds-is="expandable">
+          <span class="expand-control">Known indirect subclasses</span>
+          
+  <div id="subclasses-indirect" class="showalways"> <a href="https://developer.android.com/reference/android/arch/lifecycle/MediatorLiveData.html">MediatorLiveData</a>&lt;T&gt;
+  </div>
+  <div id="subclasses-indirect-summary">
+    
+  
+  <div class="devsite-table-wrapper"><table class="jd-sumtable-expando">
+    
+      <tbody><tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+        <td class="jd-linkcol"><a href="https://developer.android.com/reference/android/arch/lifecycle/MediatorLiveData.html">MediatorLiveData</a>&lt;T&gt;</td>
+        <td class="jd-descrcol" width="100%">
+          <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html">LiveData</a></code> subclass which may observe other <code>LiveData</code> objects and react on
+ <code>OnChanged</code> events from them.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+  </tbody></table></div>
+
+  </div>
+        </devsite-expandable>
+      </td>
+    </tr>
+  </tbody></table></div>
+
+    
+
+<br><hr>
+
+
+  <p>LiveData is a data holder class that can be observed within a given lifecycle.
+ This means that an <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a></code> can be added in a pair with a <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a></code>, and
+ this observer will be notified about modifications of the wrapped data only if the paired
+ LifecycleOwner is in active state. LifecycleOwner is considered as active, if its state is
+ <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#STARTED">STARTED</a></code> or <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#RESUMED">RESUMED</a></code>. An observer added via
+ <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#observeForever(android.arch.lifecycle.Observer%3CT%3E)">observeForever(Observer)</a></code> is considered as always active and thus will be always notified
+ about modifications. For those observers, you should manually call
+ <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#removeObserver(android.arch.lifecycle.Observer%3CT%3E)">removeObserver(Observer)</a></code>.
+
+ </p><p> An observer added with a Lifecycle will be automatically removed if the corresponding
+ Lifecycle moves to <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#DESTROYED">DESTROYED</a></code> state. This is especially useful for
+ activities and fragments where they can safely observe LiveData and not worry about leaks:
+ they will be instantly unsubscribed when they are destroyed.
+
+ </p><p>
+ In addition, LiveData has <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#onActive()">onActive()</a></code> and <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#onInactive()">onInactive()</a></code> methods
+ to get notified when number of active <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a></code>s change between 0 and 1.
+ This allows LiveData to release any heavy resources when it does not have any Observers that
+ are actively observing.
+ </p><p>
+ This class is designed to hold individual data fields of <code><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModel.html">ViewModel</a></code>,
+ but can also be used for sharing data between different modules in your application
+ in a decoupled fashion.</p>
+
+
+
+
+
+  <div>
+      <p><b>See also:</b></p>
+      <ul class="nolist"><li><code><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModel.html">ViewModel</a></code></li>
+      </ul>
+  </div>
+
+
+
+
+<devsite-heading ds-is="heading" text="Summary" id="summary" level="h2" link="" toc="" class="api-section" back-to-top=""><h2 class="" is-upgraded="">Summary<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<div class="devsite-table-wrapper"><table id="pubctors" class="responsive constructors">
+<tbody><tr><th colspan="2"><devsite-heading ds-is="heading" text="Public constructors" id="public-constructors" level="h3" toc="" class=""><h3 is-upgraded="">Public constructors</h3></devsite-heading></th></tr>
+
+
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#LiveData()">LiveData</a>()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+
+</tbody></table></div>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<div class="devsite-table-wrapper"><table id="pubmethods" class="responsive methods">
+<tbody><tr><th colspan="2"><devsite-heading ds-is="heading" text="Public methods" id="public-methods" level="h3" toc="" class=""><h3 is-upgraded="">Public methods</h3></devsite-heading></th></tr>
+
+
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        T</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#getValue()">getValue</a>()
+      </code>
+      
+        <p>Returns the current value.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#hasActiveObservers()">hasActiveObservers</a>()
+      </code>
+      
+        <p>Returns true if this LiveData has active observers.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#hasObservers()">hasObservers</a>()
+      </code>
+      
+        <p>Returns true if this LiveData has observers.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#observe(android.arch.lifecycle.LifecycleOwner,%20android.arch.lifecycle.Observer%3CT%3E)">observe</a>(<a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a> owner, <a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a>&lt;T&gt; observer)
+      </code>
+      
+        <p>Adds the given observer to the observers list within the lifespan of the given
+ owner.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#observeForever(android.arch.lifecycle.Observer%3CT%3E)">observeForever</a>(<a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a>&lt;T&gt; observer)
+      </code>
+      
+        <p>Adds the given observer to the observers list.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#removeObserver(android.arch.lifecycle.Observer%3CT%3E)">removeObserver</a>(<a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a>&lt;T&gt; observer)
+      </code>
+      
+        <p>Removes the given observer from the observers list.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#removeObservers(android.arch.lifecycle.LifecycleOwner)">removeObservers</a>(<a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a> owner)
+      </code>
+      
+        <p>Removes all observers that are tied to the given <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a></code>.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+
+</tbody></table></div>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<div class="devsite-table-wrapper"><table id="promethods" class="reponsive methods">
+<tbody><tr><th colspan="2"><devsite-heading ds-is="heading" text="Protected methods" id="protected-methods" level="h3" toc="" class=""><h3 is-upgraded="">Protected methods</h3></devsite-heading></th></tr>
+
+
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#onActive()">onActive</a>()
+      </code>
+      
+        <p>Called when the number of active observers change to 1 from 0.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#onInactive()">onInactive</a>()
+      </code>
+      
+        <p>Called when the number of active observers change from 1 to 0.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#postValue(T)">postValue</a>(T value)
+      </code>
+      
+        <p>Posts a task to a main thread to set the given value.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-1.0.0" data-version-added="1.0.0">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      <a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#setValue(T)">setValue</a>(T value)
+      </code>
+      
+        <p>Sets the value.
+        
+    
+</p>
+      
+    </td>
+  </tr>
+  
+
+
+</tbody></table></div>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<div class="devsite-table-wrapper"><table id="inhmethods" class="responsive methods inhtable">
+<tbody><tr><th><devsite-heading ds-is="heading" text="Inherited methods" id="inherited-methods" level="h3" toc="" class=""><h3 is-upgraded="">Inherited methods</h3></devsite-heading></th></tr>
+
+
+<tr class="api apilevel-">
+<td colspan="2" class="expandable-container">
+  <devsite-expandable ds-is="expandable">
+    <span class="expand-control">From class
+      <code>
+        
+          java.lang.Object
+        
+      </code>
+    </span>
+    <div class="devsite-table-wrapper"><table class="responsive">
+      
+
+
+  
+  <tbody><tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        Object</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      clone()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        boolean</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      equals(Object arg0)
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      finalize()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        Class&lt;?&gt;</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      getClass()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        int</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      hashCode()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      notify()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      notifyAll()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        
+        
+        String</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      toString()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      wait(long arg0, int arg1)
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      wait(long arg0)
+      </code>
+      
+    </td>
+  </tr>
+  
+
+  
+  <tr class="api apilevel-">
+  
+  
+    <td><code>
+        
+        
+        
+        final
+        
+        void</code>
+    </td>
+  
+    <td width="100%">
+      <code>
+      wait()
+      </code>
+      
+    </td>
+  </tr>
+  
+
+
+    </tbody></table></div>
+  </devsite-expandable>
+</td></tr>
+
+
+</tbody></table></div>
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<devsite-heading ds-is="heading" text="Public constructors" id="public-constructors_1" level="h2" link="" toc="" class="api-section" back-to-top=""><h2 class="" is-upgraded="">Public constructors<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+
+
+<a name="LiveData()"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="LiveData" id="livedata_1" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">LiveData<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">LiveData ()</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p></p><p></p>
+
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<devsite-heading ds-is="heading" text="Public methods" id="public-methods_1" level="h2" link="" toc="" class="api-section" back-to-top=""><h2 class="" is-upgraded="">Public methods<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+
+
+<a name="getValue()"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="getValue" id="getvalue" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">getValue<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">T getValue ()</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Returns the current value.
+ Note that calling this method on a background thread does not guarantee that the latest
+ value set will be received.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+      <tbody><tr><th colspan="2">Returns</th></tr>
+      <tr>
+        <td><code>T</code></td>
+        <td width="100%">the current value
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="hasActiveObservers()"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="hasActiveObservers" id="hasactiveobservers" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">hasActiveObservers<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">boolean hasActiveObservers ()</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Returns true if this LiveData has active observers.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+      <tbody><tr><th colspan="2">Returns</th></tr>
+      <tr>
+        <td><code>boolean</code></td>
+        <td width="100%">true if this LiveData has active observers
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="hasObservers()"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="hasObservers" id="hasobservers" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">hasObservers<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">boolean hasObservers ()</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Returns true if this LiveData has observers.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+      <tbody><tr><th colspan="2">Returns</th></tr>
+      <tr>
+        <td><code>boolean</code></td>
+        <td width="100%">true if this LiveData has observers
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="observe(android.arch.lifecycle.LifecycleOwner, android.arch.lifecycle.Observer&lt;T&gt;)"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="observe" id="observe" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">observe<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void observe (<a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a> owner, 
+                <a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a>&lt;T&gt; observer)</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Adds the given observer to the observers list within the lifespan of the given
+ owner. The events are dispatched on the main thread. If LiveData already has data
+ set, it will be delivered to the observer.
+ </p><p>
+ The observer will only receive events if the owner is in <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#STARTED">STARTED</a></code>
+ or <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#RESUMED">RESUMED</a></code> state (active).
+ </p><p>
+ If the owner moves to the <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#DESTROYED">DESTROYED</a></code> state, the observer will
+ automatically be removed.
+ </p><p>
+ When data changes while the <code>owner</code> is not active, it will not receive any updates.
+ If it becomes active again, it will receive the last available data automatically.
+ </p><p>
+ LiveData keeps a strong reference to the observer and the owner as long as the
+ given LifecycleOwner is not destroyed. When it is destroyed, LiveData removes references to
+ the observer &amp; the owner.
+ </p><p>
+ If the given owner is already in <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#DESTROYED">DESTROYED</a></code> state, LiveData
+ ignores the call.
+ </p><p>
+ If the given owner, observer tuple is already in the list, the call is ignored.
+ If the observer is already in the list with another owner, LiveData throws an
+ <code><a href="https://developer.android.com/reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></code>.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>owner</code></td>
+        <td width="100%">
+          <code>LifecycleOwner</code>: The LifecycleOwner which controls the observer<p></p></td>
+      </tr>
+      <tr>
+        <td><code>observer</code></td>
+        <td width="100%">
+          <code>Observer</code>: The observer that will receive the events
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="observeForever(android.arch.lifecycle.Observer&lt;T&gt;)"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="observeForever" id="observeforever" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">observeForever<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void observeForever (<a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a>&lt;T&gt; observer)</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Adds the given observer to the observers list. This call is similar to
+ <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#observe(android.arch.lifecycle.LifecycleOwner,%20android.arch.lifecycle.Observer%3CT%3E)">observe(LifecycleOwner, Observer)</a></code> with a LifecycleOwner, which
+ is always active. This means that the given observer will receive all events and will never
+ be automatically removed. You should manually call <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#removeObserver(android.arch.lifecycle.Observer%3CT%3E)">removeObserver(Observer)</a></code> to stop
+ observing this LiveData.
+ While LiveData has one of such observers, it will be considered
+ as active.
+ </p><p>
+ If the observer was already added with an owner to this LiveData, LiveData throws an
+ <code><a href="https://developer.android.com/reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></code>.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>observer</code></td>
+        <td width="100%">
+          <code>Observer</code>: The observer that will receive the events
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="removeObserver(android.arch.lifecycle.Observer&lt;T&gt;)"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="removeObserver" id="removeobserver" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">removeObserver<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void removeObserver (<a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a>&lt;T&gt; observer)</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Removes the given observer from the observers list.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>observer</code></td>
+        <td width="100%">
+          <code>Observer</code>: The Observer to receive events.
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="removeObservers(android.arch.lifecycle.LifecycleOwner)"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="removeObservers" id="removeobservers" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">removeObservers<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void removeObservers (<a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a> owner)</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Removes all observers that are tied to the given <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a></code>.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>owner</code></td>
+        <td width="100%">
+          <code>LifecycleOwner</code>: The <code>LifecycleOwner</code> scope for the observers to be removed.
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<devsite-heading ds-is="heading" text="Protected methods" id="protected-methods_1" level="h2" link="" toc="" class="api-section" back-to-top=""><h2 class="" is-upgraded="">Protected methods<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+
+
+
+<a name="onActive()"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="onActive" id="onactive" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">onActive<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void onActive ()</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Called when the number of active observers change to 1 from 0.
+ </p><p>
+ This callback can be used to know that this LiveData is being used thus should be kept
+ up to date.
+</p><p></p>
+
+</div>
+
+
+<a name="onInactive()"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="onInactive" id="oninactive" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">onInactive<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void onInactive ()</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Called when the number of active observers change from 1 to 0.
+ </p><p>
+ This does not mean that there are no observers left, there may still be observers but their
+ lifecycle states aren't <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#STARTED">STARTED</a></code> or <code><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html#RESUMED">RESUMED</a></code>
+ (like an Activity in the back stack).
+ </p><p>
+ You can check if there are observers via <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#hasObservers()">hasObservers()</a></code>.
+</p><p></p>
+
+</div>
+
+
+<a name="postValue(T)"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="postValue" id="postvalue" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">postValue<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void postValue (T value)</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Posts a task to a main thread to set the given value. So if you have a following code
+ executed in the main thread:
+ </p><devsite-code ds-is="code"><pre class="" is-upgraded=""><span class="pln">&nbsp;liveData</span><span class="pun">.</span><span class="pln">postValue</span><span class="pun">(</span><span class="str">"a"</span><span class="pun">);</span><span class="pln"><br>&nbsp;liveData</span><span class="pun">.</span><span class="pln">setValue</span><span class="pun">(</span><span class="str">"b"</span><span class="pun">);</span><span class="pln"><br>&nbsp;</span></pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+ The value "b" would be set at first and later the main thread would override it with
+ the value "a".
+ <p>
+ If you called this method multiple times before a main thread executed a posted task, only
+ the last value would be dispatched.</p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>value</code></td>
+        <td width="100%">
+          <code>T</code>: The new value
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+<a name="setValue(T)"></a>
+
+<div class="api apilevel-1.0.0" data-version-added="1.0.0">
+    <devsite-heading ds-is="heading" text="setValue" id="setvalue" level="h3" link="" toc="" class="api-name"><h3 class="" is-upgraded="">setValue<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button></h3></devsite-heading>
+    <div class="api-level">
+      <div>
+    added in <a href="https://developer.android.com/topic/libraries/support-library/revisions.html">version 1.0.0</a></div>
+      
+  
+
+    </div>
+<devsite-code ds-is="code"><pre class="api-signature no-pretty-print" is-upgraded="">void setValue (T value)</pre><div class="devsite-code-buttons-container"><button class="gc-analytics-event material-icons devsite-icon-copy" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-title="Click to copy"></button><button class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-title="Dark code theme"></button><button class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light" data-category="Site-Wide Custom Events" data-label="Light Code Toggle" track-type="exampleCode" track-name="lightCodeToggle" data-title="Light code theme"></button></div></devsite-code>
+    
+    
+
+    
+  <p>Sets the value. If there are active observers, the value will be dispatched to them.
+ </p><p>
+ This method must be called from the main thread. If you need set a value from a background
+ thread, you can use <code><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html#postValue(T)">postValue(Object)</a></code></p><p></p>
+    <div class="devsite-table-wrapper"><table class="responsive">
+    <tbody><tr><th colspan="2">Parameters</th></tr>
+      <tr>
+        <td><code>value</code></td>
+        <td width="100%">
+          <code>T</code>: The new value
+<p></p></td>
+      </tr>
+    </tbody></table></div>
+
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div><!-- end jd-content -->
+
+
+
+<div class="data-reference-resources-wrapper">
+  
+  <ul data-reference-resources="">
+    
+    <li><devsite-heading ds-is="heading" text="Annotations" id="annotations" level="h2" link="" class="" back-to-top=""><h2 class="hide-from-toc" is-upgraded="">Annotations<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+      <ul>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/OnLifecycleEvent.html">OnLifecycleEvent</a></li>
+      </ul>
+    </li>
+    
+    <li><devsite-heading ds-is="heading" text="Interfaces" id="interfaces" level="h2" link="" class="" back-to-top=""><h2 class="hide-from-toc" is-upgraded="">Interfaces<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+      <ul>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/DefaultLifecycleObserver.html">DefaultLifecycleObserver</a></li>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleObserver.html">LifecycleObserver</a></li>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleOwner.html">LifecycleOwner</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleRegistryOwner.html">LifecycleRegistryOwner</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/Observer.html">Observer</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.Factory.html">ViewModelProvider.Factory</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelStoreOwner.html">ViewModelStoreOwner</a></li>
+      </ul>
+    </li>
+    
+    <li><devsite-heading ds-is="heading" text="Classes" id="classes" level="h2" link="" class="" back-to-top=""><h2 class="hide-from-toc" is-upgraded="">Classes<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+      <ul>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/AndroidViewModel.html">AndroidViewModel</a></li>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.html">Lifecycle</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleRegistry.html">LifecycleRegistry</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/LifecycleService.html">LifecycleService</a></li>
+          <li class="selected api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData.html">LiveData</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveDataReactiveStreams.html">LiveDataReactiveStreams</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/MediatorLiveData.html">MediatorLiveData</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/MutableLiveData.html">MutableLiveData</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ProcessLifecycleOwner.html">ProcessLifecycleOwner</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ServiceLifecycleDispatcher.html">ServiceLifecycleDispatcher</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/Transformations.html">Transformations</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModel.html">ViewModel</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.html">ViewModelProvider</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.AndroidViewModelFactory.html">ViewModelProvider.AndroidViewModelFactory</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.NewInstanceFactory.html">ViewModelProvider.NewInstanceFactory</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProviders.html">ViewModelProviders</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProviders.DefaultFactory.html">ViewModelProviders.DefaultFactory</a></li>
+          <li class="api apilevel-1.0.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelStore.html">ViewModelStore</a></li>
+          <li class="api apilevel-1.1.0"><a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelStores.html">ViewModelStores</a></li>
+      </ul>
+    </li>
+    
+    <li><devsite-heading ds-is="heading" text="Enums" id="enums" level="h2" link="" class="" back-to-top=""><h2 class="hide-from-toc" is-upgraded="">Enums<button role="button" class="devsite-heading-link button-flat material-icons" data-title="Copy link to this section"></button><a href="https://developer.android.com/reference/android/arch/lifecycle/LiveData#top_of_page" class="devsite-back-to-top-link material-icons" data-title="Back to top"></a></h2></devsite-heading>
+      <ul>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.Event.html">Lifecycle.Event</a></li>
+          <li class="api apilevel-"><a href="https://developer.android.com/reference/android/arch/lifecycle/Lifecycle.State.html">Lifecycle.State</a></li>
+      </ul>
+    </li>
+    
+    
+  </ul>
+  
+</div>
+
+
+
+</div><!-- end devsite ReferenceObject -->
+
+          </div>
+
+    
+                   <devsite-page-rating position="footer" selected-rating="0" hover-rating-star="0">
+         <div><div class="devsite-rating-caption">Was this page helpful?</div><div class="devsite-rating-stars"><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" role="button" data-title="Unusable documentation" aria-label="Site content star ratings, rating 1 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" role="button" data-title="Poor documentation" aria-label="Site content star ratings, rating 2 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" role="button" data-title="OK documentation" aria-label="Site content star ratings, rating 3 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" role="button" data-title="Good documentation" aria-label="Site content star ratings, rating 4 out of 5"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" role="button" data-title="Excellent documentation" aria-label="Site content star ratings, rating 5 out of 5"></div></div><div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div></div></devsite-page-rating>
+                   
+          </article>
+</article>
+
+<devsite-content-footer ds-is="content-footer" class="nocontent">
+  <p>Content and code samples on this page are subject to the licenses described in the <a href="https://developer.android.com/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+</devsite-content-footer>
+
+
+                      </devsite-content>
+        </div>
+        <devsite-footer-promos ds-is="footer-promos" class="devsite-footer">
+                      <nav>
+  <ul class="devsite-footer-promos-list">
+        <li class="devsite-footer-promo">
+      <a href="https://twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo">
+                        <img class="devsite-footer-promo-icon" src="./LiveData  _  Android Developers_files/logo-twitter.svg" alt="Twitter">
+                Twitter
+      </a>
+      <div class="devsite-footer-promo-description">Follow @AndroidDev on Twitter</div>
+    </li>
+        <li class="devsite-footer-promo">
+      <a href="https://www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo">
+                        <img class="devsite-footer-promo-icon" src="./LiveData  _  Android Developers_files/youtube_48dp.png" alt="YouTube">
+                YouTube
+      </a>
+      <div class="devsite-footer-promo-description">Check out Android Developers on YouTube</div>
+    </li>
+      </ul>
+</nav>
+
+                  </devsite-footer-promos>
+        <devsite-footer-linkboxes ds-is="footer-linkboxes" class="devsite-footer">
+                      <nav class="devsite-footer-linkboxes nocontent">
+  <ul class="devsite-footer-linkboxes-list">
+        <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading">More Android</h3>      <ul class="devsite-footer-linkbox-list">
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://www.android.com/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Android
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://www.android.com/enterprise/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            Enterprise
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://www.android.com/security-center/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            Security
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://source.android.com/" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            Source
+          </a>
+        </li>
+              </ul>
+    </li>
+        <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading">Support</h3>      <ul class="devsite-footer-linkbox-list">
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Report platform bug
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://issuetracker.google.com/issues/new?component=192697" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            Report documentation bug
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://support.google.com/googleplay/android-developer" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            Google Play support
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf27XIxoFmNpTjTYdk-m1uKWGqEnd7_4C_E1AD5fdCfyTBWNA/viewform?usp=pp_url&amp;entry.1909689089&amp;entry.208743710&amp;entry.408796755&amp;entry.1341430893&amp;entry.594931249&amp;entry.1640656812&amp;entry.1759804042&amp;entry.1441312344=developer.android.com" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            Join user studies
+          </a>
+        </li>
+              </ul>
+    </li>
+        <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading">Documentation</h3>      <ul class="devsite-footer-linkbox-list">
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/guide" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Developer guides
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/design" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            Design guides
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/reference" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            API reference
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/samples" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            Samples
+          </a>
+        </li>
+                <li class="devsite-footer-linkbox-item">
+          <a href="https://developer.android.com/studio/intro" class="devsite-footer-linkbox-link
+                    gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)">
+            Android Studio
+          </a>
+        </li>
+              </ul>
+    </li>
+      </ul>
+</nav>
+                  </devsite-footer-linkboxes>
+        <devsite-footer-utility ds-is="footer-utility" class="devsite-footer">
+                      <div class="devsite-footer-utility">
+    <nav class="devsite-nav devsite-footer-sites">
+    <a href="https://developers.google.com/" class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link">
+      <img class="devsite-footer-sites-logo" src="./LiveData  _  Android Developers_files/lockup-color.png" alt="Google Developers">
+    </a>
+    <ul class="devsite-footer-sites-list">
+            <li class="devsite-footer-sites-item">
+        <a href="https://developer.android.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link">
+          Android
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://developer.chrome.com/home" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link">
+          Chrome
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://firebase.google.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link">
+          Firebase
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://cloud.google.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link">
+          Google Cloud Platform
+        </a>
+      </li>
+            <li class="devsite-footer-sites-item">
+        <a href="https://developers.google.com/products/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link">
+          All products
+        </a>
+      </li>
+          </ul>
+  </nav>
+  
+  <nav class="devsite-nav">
+        <ul class="devsite-footer-utility-list">
+            <li class="devsite-footer-utility-item
+                 ">
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer Privacy link">
+          Privacy
+        </a>
+              </li>
+            <li class="devsite-footer-utility-item
+                 ">
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://developer.android.com/license" data-category="Site-Wide Custom Events" data-label="Footer License link">
+          License
+        </a>
+              </li>
+            <li class="devsite-footer-utility-item
+                 ">
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines" data-category="Site-Wide Custom Events" data-label="Footer Brand guidelines link">
+          Brand guidelines
+        </a>
+              </li>
+            <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+                <span class="devsite-footer-utility-description">Get news and tips by email</span>
+                        <a class="devsite-footer-utility-link
+                  gc-analytics-event" href="https://developer.android.com/newsletter/#subscribe" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link">
+          Subscribe
+        </a>
+              </li>
+          </ul>
+    
+        <form class="devsite-footer-utility-language">
+      <select class="devsite-footer-utility-language-select" name="language" track-name="click" track-type="languageSelector">
+                  <option value="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector">
+            Bahasa Indonesia
+          </option>
+                  <option value="de" track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed" track-type="languageSelector">
+            Deutsch
+          </option>
+                  <option value="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector" selected="selected">
+            English
+          </option>
+                  <option value="es" track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed" track-type="languageSelector">
+            Español
+          </option>
+                  <option value="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector">
+            Español (América Latina)
+          </option>
+                  <option value="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector">
+            Português Brasileiro
+          </option>
+                  <option value="vi" track-metadata-original-language="en" track-metadata-selected-language="vi" track-name="changed" track-type="languageSelector">
+            Tiếng Việt
+          </option>
+                  <option value="tr" track-metadata-original-language="en" track-metadata-selected-language="tr" track-name="changed" track-type="languageSelector">
+            Türkçe
+          </option>
+                  <option value="fr" track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed" track-type="languageSelector">
+            français
+          </option>
+                  <option value="ru" track-metadata-original-language="en" track-metadata-selected-language="ru" track-name="changed" track-type="languageSelector">
+            Русский
+          </option>
+                  <option value="th" track-metadata-original-language="en" track-metadata-selected-language="th" track-name="changed" track-type="languageSelector">
+            ภาษาไทย
+          </option>
+                  <option value="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector">
+            日本語
+          </option>
+                  <option value="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector">
+            简体中文
+          </option>
+                  <option value="zh_tw" track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed" track-type="languageSelector">
+            繁體中文
+          </option>
+                  <option value="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector">
+            한국어
+          </option>
+              </select>
+    </form>
+      </nav>
+</div>
+                  </devsite-footer-utility>
+      </div></div>
+    <devsite-sitemask ds-is="site-mask"></devsite-sitemask>
+    <devsite-snackbar ds-is="snackbar" type="notification-survey" notification-survey-link-txt="Take survey" notification-survey-link="https://developer.android.com/survey" notification-survey-message="Please help us improve the Android Developer
+                                               experience by taking a survey." notification-survey-store-key="">
+</devsite-snackbar>
+    <devsite-tooltip ds-is="tooltip"></devsite-tooltip>
+    <devsite-analytics ds-is="analytics">
+              <script async="" src="./LiveData  _  Android Developers_files/app_loader.js.download"></script><script type="application/json" analytics="">[{"metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}, "dimensions": {"dimension6": "en", "dimension4": "Android Developers", "dimension5": "en", "dimension3": false, "dimension1": "Signed out"}, "gaid": "UA-5831155-1"}, {"metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}, "dimensions": {"dimension6": "en", "dimension4": "Android Developers", "dimension5": "en", "dimension3": false, "dimension1": "Signed out"}, "gaid": "UA-49880327-2"}]</script>
+<script type="application/json" gtm="">["GTM-KMSWPCJ"]</script>
+          </devsite-analytics>
+    <script>
+    (function(d,e,v,E,l,o,p,r,s,_,__){d['GoogleDevelopersObject']=[!0,l,o,p,r,s];
+    _=e.createElement(v);_.async=1;_.src=E;__=e.getElementsByTagName(v)[0];
+    __.parentNode.insertBefore(_,__);})(window, document, 'script',
+      'https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/js/app_loader.js',
+      'en',
+      'https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/js/devsite_app.js',
+      'https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android',
+      !1,
+      ['/_pwa/android/manifest.json',
+       '/_static/images/video-placeholder.svg',
+       'https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/images/favicon.png','https://www.gstatic.com/devrel-devsite/vc67ef93e81a468795c57df87eca3f8427d65cbe85f09fbb51c82a12b89aa3d7e/android/images/lockup.svg','https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons'],
+       'https://android-dot-devsite-v2-prod.appspot.com')
+   </script>  
+</body></html>

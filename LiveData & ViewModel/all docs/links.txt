@@ -1,0 +1,11 @@
+https://developer.android.com/reference/android/arch/lifecycle/ViewModel
+
+https://developer.android.com/reference/android/arch/lifecycle/LiveData
+
+https://developer.android.com/topic/libraries/architecture/livedata.html
+
+https://developer.android.com/topic/libraries/architecture/viewmodel.html
+
+https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider
+
+https://developer.android.com/reference/android/arch/lifecycle/ViewModelProviders
